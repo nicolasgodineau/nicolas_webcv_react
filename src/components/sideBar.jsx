@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "../components/theme/theme";
+import theme from "./theme/theme";
 
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
@@ -19,6 +19,7 @@ import {
     ListItemText,
     Avatar,
     Link,
+    IconButton,
 } from "@mui/material";
 import Button from "@mui/material/Button";
 
@@ -38,18 +39,21 @@ export default function () {
                         sx={{
                             position: "fixed",
                             left: 0,
-                            top: "50%",
+                            top: "112px",
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
                             justifyContent: "space-evenly",
                             margin: 0,
                             padding: 7,
+                            height: 700,
                             border: "1px solid white",
                             borderRadius: 7,
+                            backgroundColor: theme.palette.background.dark,
                         }}
                     >
                         <Container
+                            component="div"
                             sx={{
                                 width: "100%",
                                 display: "flex",
@@ -58,9 +62,11 @@ export default function () {
                             }}
                         >
                             <Typography
-                                variant="h4"
                                 component="h2"
-                                color={theme.palette.light.main}
+                                variant="h4"
+                                sx={{
+                                    color: theme.palette.text.primary,
+                                }}
                             >
                                 Nicolas
                             </Typography>
@@ -74,25 +80,35 @@ export default function () {
                             sx={{ width: 240, height: 240 }}
                         />
                         <List
-                            sx={{ color: theme.palette.light.main, margin: 4 }}
+                            sx={{
+                                color: theme.palette.text.secondary,
+                                margin: 4,
+                            }}
                         >
                             <ListItem
-                                disablePadding="true"
                                 component="h2"
-                                sx={{ fontSize: 24 }}
+                                disablePadding="true"
+                                sx={{
+                                    fontSize: 24,
+                                    color: theme.palette.text.primary,
+                                }}
                             >
                                 hello@nicolasgodineau.com
                             </ListItem>
                             <ListItem
-                                disablePadding="true"
                                 component="h2"
-                                sx={{ fontSize: 24, marginBottom: 3 }}
+                                disablePadding="true"
+                                sx={{
+                                    fontSize: 24,
+                                    marginBottom: 3,
+                                    color: theme.palette.text.primary,
+                                }}
                             >
                                 Base in Montreal, Canada
                             </ListItem>
                             <ListItem
-                                disablePadding="true"
                                 component="h3"
+                                disablePadding="true"
                                 sx={{ fontSize: 16, marginBottom: 4 }}
                             >
                                 ©{currentYear} Nicolas.All right reserved
@@ -121,12 +137,19 @@ export default function () {
                                     borderRadius: "50%",
                                     ":hover": {
                                         cursor: "pointer",
-                                        color: theme.palette.accent.main,
-                                        border: `1px solid ${theme.palette.accent.main}`,
+                                        color: theme.palette.accent,
+                                        border: `1px solid ${theme.palette.accent}`,
                                     },
                                 }}
                             >
-                                <Link href="#" color="inherit">
+                                <Link
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="Instagram"
+                                    href="#"
+                                    color="inherit"
+                                >
+                                    {" "}
                                     <InstagramIcon />
                                 </Link>
                             </ListItem>
@@ -142,12 +165,18 @@ export default function () {
                                     borderRadius: "50%",
                                     ":hover": {
                                         cursor: "pointer",
-                                        color: theme.palette.accent.main,
-                                        border: `1px solid ${theme.palette.accent.main}`,
+                                        color: theme.palette.accent,
+                                        border: `1px solid ${theme.palette.accent}`,
                                     },
                                 }}
                             >
-                                <Link href="#" color="inherit">
+                                <Link
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="GitHub"
+                                    href="#"
+                                    color="inherit"
+                                >
                                     <GitHubIcon />
                                 </Link>
                             </ListItem>
@@ -163,12 +192,18 @@ export default function () {
                                     borderRadius: "50%",
                                     ":hover": {
                                         cursor: "pointer",
-                                        color: theme.palette.accent.main,
-                                        border: `1px solid ${theme.palette.accent.main}`,
+                                        color: theme.palette.accent,
+                                        border: `1px solid ${theme.palette.accent}`,
                                     },
                                 }}
                             >
-                                <Link href="#" color="inherit">
+                                <Link
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="My website"
+                                    href="#"
+                                    color="inherit"
+                                >
                                     <WebsiteIcon />
                                 </Link>
                             </ListItem>
@@ -178,12 +213,12 @@ export default function () {
                                 width: "100%",
                                 padding: "12px 44px",
                                 borderRadius: 32,
-                                backgroundColor: theme.palette.accent.main,
-                                border: `2px solid ${theme.palette.accent.main}`,
+                                backgroundColor: theme.palette.accent,
+                                border: `2px solid ${theme.palette.accent}`,
                                 color: "black",
                                 ":hover": {
                                     cursor: "pointer",
-                                    color: theme.palette.accent.main,
+                                    color: theme.palette.accent,
                                     backgroundColor:
                                         theme.palette.background.dark,
                                 },
