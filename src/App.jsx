@@ -1,17 +1,18 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./components/theme/theme";
 
-import MainOne from "./components/mainOne.jsx";
-import SideBar from "./components/sideBar.jsx";
+import SideBar from "./components/SideBar.jsx";
+import Introduction from "components/Introduction.jsx";
+import ContainerMain from "components/ContainerMain.jsx";
 
 function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
-                <div className="h-[100svh] text-text bg-blackTheme">
-                    <SideBar />
-                    {/*  <MainOne /> */}
-                </div>
+                <SideBar />
+                <ContainerMain>
+                    <Introduction />
+                </ContainerMain>
             </CssBaseline>
         </ThemeProvider>
     );
