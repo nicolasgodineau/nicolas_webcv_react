@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material";
 
 const theme = createTheme({
+    spacing: 8,
     palette: {
         background: {
             dark: "#1f1f1f",
@@ -16,7 +17,7 @@ const theme = createTheme({
     },
     breakpoints: {
         values: {
-            xs: 0,
+            xs: 400,
             sm: 600,
             md: 900,
             lg: 1200,

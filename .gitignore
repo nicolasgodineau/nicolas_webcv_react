@@ -25,3 +25,6 @@ yarn-error.log*
 package-lock.json
 README.md
 .gitignore
+README.md
+src/data.json
+README.md

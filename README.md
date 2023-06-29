@@ -5,6 +5,19 @@
 https://dribbble.com/shots/21314715-Drake-Personal-Portfolio
 https://wpriverthemes.com/HTML/drake/index.html
 
+Correspondance entre les chiffres et les px
+theme.spacing(0) : 0 pixels
+theme.spacing(1) : 8 pixels
+theme.spacing(2) : 16 pixels
+theme.spacing(3) : 24 pixels
+theme.spacing(4) : 32 pixels
+theme.spacing(5) : 40 pixels
+theme.spacing(6) : 48 pixels
+theme.spacing(7) : 56 pixels
+theme.spacing(8) : 64 pixels
+theme.spacing(9) : 72 pixels
+theme.spacing(10) : 80 pixels
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

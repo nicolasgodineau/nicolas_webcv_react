@@ -1,9 +1,27 @@
 import React from "react";
+import theme from "./theme/theme";
+
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
+
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import WebsiteIcon from "@mui/icons-material/Language";
+import {
+    CssBaseline,
+    Container,
+    Box,
+    Typography,
+    ThemeProvider,
+    List,
+    ListItem,
+    ListItemText,
+    Avatar,
+    Link,
+    IconButton,
+} from "@mui/material";
+import Button from "@mui/material/Button";
 
 import Nicolas from "../images/Nicolas.webp";
 
@@ -12,74 +30,218 @@ export default function () {
 
     return (
         <>
-            <aside className="fixed flex flex-col items-center gap-0 left-6 top-[50%] max-w-sm p-8 border border-white/40 rounded-3xl">
-                <div className="flex justify-between w-full">
-                    <h2 className="text-4xl text-white">Nicolas</h2>
-                    <ul className="text-white">
-                        <li>Web Developer</li>
-                        <li>& Photographer</li>
-                    </ul>
-                </div>
-                <img
-                    className="max-w- max-h-60 rounded-3xl object-cover m-11"
-                    src={Nicolas}
-                    alt=""
-                />
-                <a
-                    className="text-2xl text-white"
-                    href="mailto:hello@nicolasgodineau.com"
-                >
-                    hello@nicolasgodineau.com
-                </a>
-                <h2 className="text-2xl text-white mb-8">
-                    Base in Montreal, Canada
-                </h2>
-                <p className="mb-7">
-                    ©{currentYear} Nicolas.All right reserved
-                </p>
-                <ul className="flex justify-evenly w-full mb-8">
-                    <li className="h-12 w-12 flex items-center justify-center ">
-                        <Tooltip title="Instagram">
-                            <a href="">
-                                <FontAwesomeIcon
-                                    className="p-3 border-2 border-white/40 rounded-full hover:border-2 hover:border-blueCallToAction   hover:text-blueCallToAction"
-                                    icon={faInstagram}
-                                />
-                            </a>
-                        </Tooltip>
-                    </li>
-                    <li>
-                        <Tooltip title="Github">
-                            <a c href="">
-                                <FontAwesomeIcon
-                                    className="p-3 border-2 border-white/40 rounded-full hover:border-2 hover:border-blueCallToAction   hover:text-blueCallToAction"
-                                    icon={faGithub}
-                                />
-                            </a>
-                        </Tooltip>
-                    </li>
-                    <li>
-                        <Tooltip title="Web site">
-                            <a href="">
-                                <FontAwesomeIcon
-                                    className="p-3 border-2 border-white/40 rounded-full hover:border-2 hover:border-blueCallToAction   hover:text-blueCallToAction"
-                                    icon={faGlobe}
-                                />
-                            </a>
-                        </Tooltip>
-                    </li>
-                </ul>
-                <a
-                    className="flex items-center justify-center gap-2 bg-blueCallToAction w-full rounded-3xl py-3 px-11 text-center border-2 border-transparent text-black hover:bg-transparent hover:border-2 hover:border-blueCallToAction   hover:text-blueCallToAction"
-                    href=""
-                >
-                    <FontAwesomeIcon
-                        className="h-6 w-6 fill-white"
-                        icon={faEnvelope}
-                    />
-                    {" HIRE ME !"}
-                </a>
-            </aside>
+            <ThemeProvider theme={theme}>
+                <CssBaseline>
+                    <Container
+                        component="aside"
+                        fixed
+                        maxWidth="false"
+                        disablegutters="true"
+                        sx={{
+                            width: "400px",
+                            position: "fixed",
+                            left: 0,
+                            top: "50%",
+                            transform: "translateY(-50%)",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "space-evenly",
+                            margin: "0 0 0 30px",
+                            padding: 5,
+                            height: 700,
+                            border: `2px solid ${theme.palette.text.secondary}`,
+                            borderRadius: 7,
+                            backgroundColor: theme.palette.background.dark,
+                        }}
+                    >
+                        <Box
+                            component="div"
+                            sx={{
+                                width: "100%",
+                                display: "flex",
+                                alignItems: "start",
+                                justifyContent: "space-between",
+                            }}
+                        >
+                            <Typography
+                                component="h2"
+                                variant="h4"
+                                sx={{
+                                    color: theme.palette.text.primary,
+                                }}
+                            >
+                                Nicolas
+                            </Typography>
+                            <List sx={{ padding: "0px" }}>
+                                <ListItemText>Web Developper</ListItemText>
+                                <ListItemText>& Photographer</ListItemText>
+                            </List>
+                        </Box>
+                        <Avatar
+                            component="div"
+                            variant="square"
+                            src={Nicolas}
+                            sx={{
+                                width: 240,
+                                height: 240,
+                                borderRadius: 7,
+                            }}
+                        />
+                        <List
+                            dense="true"
+                            disablePadding={true}
+                            sx={{
+                                color: theme.palette.text.secondary,
+                                margin: 0,
+                            }}
+                        >
+                            <ListItem
+                                component="h2"
+                                disablePadding={true}
+                                sx={{
+                                    fontSize: 24,
+                                    color: theme.palette.text.primary,
+                                }}
+                            >
+                                hello@nicolasgodineau.com
+                            </ListItem>
+                            <ListItem
+                                component="h2"
+                                disablePadding={true}
+                                sx={{
+                                    fontSize: 24,
+                                    marginBottom: 3,
+                                    color: theme.palette.text.primary,
+                                }}
+                            >
+                                Base in Montreal, Canada
+                            </ListItem>
+                            <ListItem
+                                component="h3"
+                                disablePadding={true}
+                                sx={{ fontSize: 16, marginBottom: 4 }}
+                            >
+                                ©{currentYear} Nicolas.All right reserved
+                            </ListItem>
+                        </List>
+                        <List
+                            dense="true"
+                            disablePadding={true}
+                            sx={{
+                                width: "100%",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "space-evenly",
+                                marginBottom: 0,
+                            }}
+                        >
+                            <ListItem
+                                sx={{
+                                    width: "50px",
+                                    height: "50px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    padding: 0,
+                                    border: `2px solid ${theme.palette.text.secondary}`,
+                                    borderRadius: "50%",
+                                    ":hover": {
+                                        cursor: "pointer",
+                                        color: theme.palette.accent,
+                                        border: `1px solid ${theme.palette.accent}`,
+                                    },
+                                }}
+                            >
+                                <Link
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="Instagram"
+                                    href="#"
+                                    color="inherit"
+                                >
+                                    {" "}
+                                    <InstagramIcon />
+                                </Link>
+                            </ListItem>
+                            <ListItem
+                                sx={{
+                                    width: "50px",
+                                    height: "50px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    padding: 0,
+                                    border: `2px solid ${theme.palette.text.secondary}`,
+                                    borderRadius: "50%",
+                                    ":hover": {
+                                        cursor: "pointer",
+                                        color: theme.palette.accent,
+                                        border: `1px solid ${theme.palette.accent}`,
+                                    },
+                                }}
+                            >
+                                <Link
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="GitHub"
+                                    href="#"
+                                    color="inherit"
+                                >
+                                    <GitHubIcon />
+                                </Link>
+                            </ListItem>
+                            <ListItem
+                                sx={{
+                                    width: "50px",
+                                    height: "50px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    padding: 0,
+                                    border: `2px solid ${theme.palette.text.secondary}`,
+                                    borderRadius: "50%",
+                                    ":hover": {
+                                        cursor: "pointer",
+                                        color: theme.palette.accent,
+                                        border: `1px solid ${theme.palette.accent}`,
+                                    },
+                                }}
+                            >
+                                <Link
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="My website"
+                                    href="#"
+                                    color="inherit"
+                                >
+                                    <WebsiteIcon />
+                                </Link>
+                            </ListItem>
+                        </List>
+                        <Button
+                            sx={{
+                                width: "100%",
+                                padding: "12px 44px",
+                                borderRadius: 32,
+                                backgroundColor: theme.palette.accent,
+                                border: `2px solid ${theme.palette.accent}`,
+                                color: "black",
+                                ":hover": {
+                                    cursor: "pointer",
+                                    color: theme.palette.accent,
+                                    backgroundColor:
+                                        theme.palette.background.dark,
+                                },
+                            }}
+                            variant="text"
+                            startIcon={<MailOutlineIcon />}
+                        >
+                            HIT ME !
+                        </Button>
+                    </Container>
+                </CssBaseline>
+            </ThemeProvider>
         </>
     );
 }

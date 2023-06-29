@@ -32,27 +32,29 @@ export default function () {
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
-                    <Container
+                    <Box
                         component="aside"
-                        fixed
-                        maxWidth="xs"
+                        disablegutters="true"
+                        fixed="true"
                         sx={{
-                            position: "fixed",
+                            width: "400px",
+                            /* position: "fixed",
                             left: 0,
-                            top: "112px",
+                            top: "50%",
+                            transform: "translateY(-50%)", */
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
                             justifyContent: "space-evenly",
-                            margin: 0,
-                            padding: 7,
+                            /* margin: "0 0 0 30px", */
+                            padding: 4,
                             height: 700,
-                            border: "1px solid white",
-                            borderRadius: 7,
+                            border: `2px solid ${theme.palette.text.secondary}`,
+                            borderRadius: 5,
                             backgroundColor: theme.palette.background.dark,
                         }}
                     >
-                        <Container
+                        <Box
                             component="div"
                             sx={{
                                 width: "100%",
@@ -74,20 +76,28 @@ export default function () {
                                 <ListItemText>Web Developper</ListItemText>
                                 <ListItemText>& Photographer</ListItemText>
                             </List>
-                        </Container>
+                        </Box>
                         <Avatar
+                            component="div"
+                            variant="square"
                             src={Nicolas}
-                            sx={{ width: 240, height: 240 }}
+                            sx={{
+                                width: 240,
+                                height: 240,
+                                borderRadius: 7,
+                            }}
                         />
                         <List
+                            dense={true}
+                            disablePadding={true}
                             sx={{
                                 color: theme.palette.text.secondary,
-                                margin: 4,
+                                margin: 0,
                             }}
                         >
                             <ListItem
                                 component="h2"
-                                disablePadding="true"
+                                disablePadding={true}
                                 sx={{
                                     fontSize: 24,
                                     color: theme.palette.text.primary,
@@ -97,7 +107,7 @@ export default function () {
                             </ListItem>
                             <ListItem
                                 component="h2"
-                                disablePadding="true"
+                                disablePadding={true}
                                 sx={{
                                     fontSize: 24,
                                     marginBottom: 3,
@@ -108,21 +118,21 @@ export default function () {
                             </ListItem>
                             <ListItem
                                 component="h3"
-                                disablePadding="true"
+                                disablePadding={true}
                                 sx={{ fontSize: 16, marginBottom: 4 }}
                             >
                                 ©{currentYear} Nicolas.All right reserved
                             </ListItem>
                         </List>
                         <List
-                            dense="true"
-                            disablePadding="true"
+                            dense={true}
+                            disablePadding={true}
                             sx={{
                                 width: "100%",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "space-evenly",
-                                marginBottom: 3,
+                                marginBottom: 0,
                             }}
                         >
                             <ListItem
@@ -133,7 +143,7 @@ export default function () {
                                     alignItems: "center",
                                     justifyContent: "center",
                                     padding: 0,
-                                    border: "1px solid white",
+                                    border: `2px solid ${theme.palette.text.secondary}`,
                                     borderRadius: "50%",
                                     ":hover": {
                                         cursor: "pointer",
@@ -161,7 +171,7 @@ export default function () {
                                     alignItems: "center",
                                     justifyContent: "center",
                                     padding: 0,
-                                    border: "1px solid white",
+                                    border: `2px solid ${theme.palette.text.secondary}`,
                                     borderRadius: "50%",
                                     ":hover": {
                                         cursor: "pointer",
@@ -188,7 +198,7 @@ export default function () {
                                     alignItems: "center",
                                     justifyContent: "center",
                                     padding: 0,
-                                    border: "1px solid white",
+                                    border: `2px solid ${theme.palette.text.secondary}`,
                                     borderRadius: "50%",
                                     ":hover": {
                                         cursor: "pointer",
@@ -228,7 +238,7 @@ export default function () {
                         >
                             HIT ME !
                         </Button>
-                    </Container>
+                    </Box>
                 </CssBaseline>
             </ThemeProvider>
         </>
