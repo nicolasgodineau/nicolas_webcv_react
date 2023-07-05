@@ -3,16 +3,13 @@ import theme from "../theme/theme.js";
 import {
     CssBaseline,
     ThemeProvider,
-    Container,
     Typography,
     Box,
+    Icon,
 } from "@mui/material";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProgressIncrementer from "./ProgressIncrementer.jsx";
-import { icons } from "../../IconsImports.js";
 
 export default function Skill({ skill }) {
-    const { icon } = icons[skill.icone];
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
@@ -28,19 +25,24 @@ export default function Skill({ skill }) {
                         alignItems: "center",
                         justifyContent: "center",
                         gap: "1rem",
-                        margin: 0,
                     }}
                 >
                     {/* Affiche l'icône de compétence */}
-                    <FontAwesomeIcon
-                        icon={icon}
-                        size="5x"
-                        sx={{
-                            margin: "auto auto auto auto",
-                        }}
-                    />
+                    {skill.className && ( // Affiche uniquement l'icon si il y a une className
+                        <Icon
+                            className={skill.className}
+                            sx={{
+                                fontSize: "70px",
+                                margin: "auto",
+                            }}
+                        />
+                    )}
                     {/* Utilise le composant ProgressIncrementer pour afficher et incrémenter progressivement le pourcentage */}
-                    <ProgressIncrementer targetPercentage={skill.pourcentage} />
+                    {skill.pourcentage && (
+                        <ProgressIncrementer
+                            targetPercentage={skill.pourcentage}
+                        />
+                    )}
                     <Typography
                         component="p"
                         sx={{

@@ -5,30 +5,40 @@ import {
     ThemeProvider,
     Container,
     Typography,
+    Link,
 } from "@mui/material";
 
 import Header from "components/header.jsx"; // pour le header de la section
 import { faUser } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
-import data from "../../data.json"; // import des data
+import data from "../data.json"; // import des data
 
 export default function About() {
-    const aboutData = data.about; // Extraire la data
+    const dataSection = data.about; //Extraire la data
     return (
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
                     <Container
-                        component="section"
+                        component="article"
                         disablegutters="true"
-                        maxWidth="false"
-                        sx={{ paddingY: 9, maxWidth: "720px" }}
+                        maxWidth="sm2"
+                        sx={{
+                            paddingY: 9,
+                            [theme.breakpoints.down("tablet")]: {
+                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                paddingTop: 5,
+                                paddingBottom: 0,
+                                paddingX: 0,
+                                marginLeft: 0,
+                            },
+                        }}
                     >
                         <Header
                             component="header"
                             icon={faUser}
-                            data={aboutData.header}
+                            data={dataSection.header}
                             variant={"h1"}
-                            fontSize={"48px"}
+                            fontSize={"clamp(2rem, 6vw, 3rem)"}
                         />
                         <Typography
                             component="p"
@@ -38,9 +48,7 @@ export default function About() {
                                 color: theme.palette.text.secondary,
                             }}
                         >
-                            {
-                                "I am passionate about this new stage of my career and look forward to working with you to bring your ideas and goals to life online. Feel free to browse my portfolio to discover some of my past projects. "
-                            }
+                            {dataSection.description}
                         </Typography>
                     </Container>
                 </CssBaseline>

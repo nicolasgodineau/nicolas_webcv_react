@@ -9,6 +9,7 @@ import {
     ListItem,
     ListItemIcon,
     Box,
+    useMediaQuery,
 } from "@mui/material";
 import { faCircle } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,6 +21,7 @@ export default function Experience({ experience, lastExperienceId }) {
 
     const textWithLineBreaks = separateTextByLineBreaks(experience.description); // Appel de la fonction pour séparer le texte par sauts de ligne
 
+    const isTablet = useMediaQuery(theme.breakpoints.down("1090"));
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
@@ -27,6 +29,12 @@ export default function Experience({ experience, lastExperienceId }) {
                     component="div"
                     disablegutters="true"
                     key={experience.id}
+                    sx={{
+                        [theme.breakpoints.down("sm")]: {
+                            // Styles pour les écrans de largeur maximale 600px
+                            padding: 0,
+                        },
+                    }}
                 >
                     {/* Conteneur pour chaque expérience */}
                     <Container
@@ -61,6 +69,11 @@ export default function Experience({ experience, lastExperienceId }) {
                                 height: "100%",
                                 borderRadius: "50px",
                                 background: theme.palette.text.secondary,
+                            },
+                            [theme.breakpoints.down("sm")]: {
+                                // Styles pour les écrans de largeur maximale 600px
+                                paddingBottom: 0,
+                                paddingLeft: 3,
                             },
                         }}
                     >
@@ -103,7 +116,7 @@ export default function Experience({ experience, lastExperienceId }) {
                         <Typography
                             component="h2"
                             sx={{
-                                fontSize: "24px",
+                                fontSize: "clamp(1.2rem, 4vw, 2rem)",
                                 marginBottom: "5px",
                                 color: theme.palette.text.primary,
                             }}
@@ -114,7 +127,7 @@ export default function Experience({ experience, lastExperienceId }) {
                             {/* Concatène la première lettre en majuscule avec le reste du texte en utilisant `substring(1)`. */}
                         </Typography>
                         <Typography
-                            component="h2"
+                            component="h3"
                             sx={{
                                 fontSize: "16px",
                                 fontWeight: "bold",
@@ -131,6 +144,7 @@ export default function Experience({ experience, lastExperienceId }) {
                         {/* Affiche la description de l'expérience */}
                         <List
                             component="ul"
+                            className="listExperience"
                             dense={true}
                             sx={{ listStyle: "inside", listStyleType: "disc" }}
                         >
@@ -156,6 +170,13 @@ export default function Experience({ experience, lastExperienceId }) {
                                         <FontAwesomeIcon
                                             icon={faCircle}
                                             color={theme.palette.text.secondary}
+                                            sx={{
+                                                [theme.breakpoints.down("sm")]:
+                                                    {
+                                                        // Styles pour les écrans de largeur maximale 600px
+                                                        minWith: "24px",
+                                                    },
+                                            }}
                                         />
                                     </ListItemIcon>
                                     {line}

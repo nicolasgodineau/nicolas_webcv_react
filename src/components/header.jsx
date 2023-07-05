@@ -42,7 +42,7 @@ export default function Header({ icon, data, variant, fontSize }) {
                 <CssBaseline>
                     <Box
                         component="header"
-                        disablegutters={true}
+                        disablegutters="true"
                         sx={{ marginBottom: 1 }}
                     >
                         {/* For subtitle */}
@@ -55,6 +55,13 @@ export default function Header({ icon, data, variant, fontSize }) {
                                 border: `2px solid ${theme.palette.text.secondary}`,
                                 borderRadius: 5,
                                 marginBottom: 5,
+                                [theme.breakpoints.down("tablet")]: {
+                                    // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                    marginBottom: 2.5,
+                                    /* A définir si on garde ou pas */
+                                    /*                                     width: "100%",
+                                    justifyContent: "center", */
+                                },
                             }}
                         >
                             <FontAwesomeIcon icon={icon} />
@@ -62,7 +69,7 @@ export default function Header({ icon, data, variant, fontSize }) {
                                 component="h4"
                                 sx={{
                                     fontSize: "14px",
-                                    color: "white",
+                                    color: theme.palette.primary,
                                     textTransform: "uppercase",
                                 }}
                             >

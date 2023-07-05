@@ -13,23 +13,33 @@ import data from "../data.json"; // import des data
 import { faHouse } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 
 export default function Introduction() {
-    const introductionData = data.introduction; //Extraire la data
+    const dataSection = data.introduction; //Extraire la data
 
     return (
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
                     <Container
-                        component="section"
+                        component="article"
                         disablegutters="true"
                         maxWidth="false"
-                        sx={{ paddingY: 9, maxWidth: "720px" }}
+                        sx={{
+                            paddingY: 9,
+                            maxWidth: "720px",
+                            [theme.breakpoints.down("tablet")]: {
+                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                paddingTop: 5,
+                                paddingBottom: 0,
+                                paddingX: 0,
+                                marginLeft: 0,
+                            },
+                        }}
                     >
                         <Header
                             icon={faHouse}
-                            data={introductionData.header}
+                            data={dataSection.header}
                             variant={"h1"}
-                            fontSize={"72px"}
+                            fontSize={"clamp(2.3rem, 6vw, 4rem)"}
                         />
                         <Typography
                             component="p"
@@ -39,16 +49,15 @@ export default function Introduction() {
                                 color: theme.palette.text.secondary,
                             }}
                         >
-                            I design and code beautifully simple things and i
-                            love what i do. Just simple like that!
+                            {dataSection.description}
                         </Typography>
-                        <Link
+                        {/*                         <Link
                             underline="none"
                             aria-label="My projects"
                             sx={{ displal: "block", height: "175px" }}
                         >
                             {" My projects "}
-                        </Link>
+                        </Link> */}
                     </Container>
                 </CssBaseline>
             </ThemeProvider>
