@@ -5,15 +5,21 @@ import {
     ThemeProvider,
     Container,
     Typography,
-    Link,
 } from "@mui/material";
 
 import Header from "components/header.jsx"; // pour le header de la section
 import { faUser } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
-import data from "../data.json"; // import des data
+import { useTranslation } from "react-i18next";
 
 export default function About() {
-    const dataSection = data.about; //Extraire la data
+    const { t } = useTranslation();
+
+    const dataHeader = {
+        header: {
+            subtitle: t("about.header.subtitle"),
+            texte: t("about.header.text"),
+        },
+    };
     return (
         <>
             <ThemeProvider theme={theme}>
@@ -22,6 +28,8 @@ export default function About() {
                         component="article"
                         disablegutters="true"
                         maxWidth="sm2"
+                        data-aos="fade-up"
+                        data-aos-delay="700"
                         sx={{
                             paddingY: 9,
                             [theme.breakpoints.down("tablet")]: {
@@ -36,7 +44,7 @@ export default function About() {
                         <Header
                             component="header"
                             icon={faUser}
-                            data={dataSection.header}
+                            data={dataHeader}
                             variant={"h1"}
                             fontSize={"clamp(2rem, 6vw, 3rem)"}
                         />
@@ -48,7 +56,7 @@ export default function About() {
                                 color: theme.palette.text.secondary,
                             }}
                         >
-                            {dataSection.description}
+                            {t("about.description")}
                         </Typography>
                     </Container>
                 </CssBaseline>

@@ -9,19 +9,23 @@ import {
     ListItem,
     ListItemIcon,
     Box,
-    useMediaQuery,
 } from "@mui/material";
 import { faCircle } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export default function Experience({ experience, lastExperienceId }) {
+import { useTranslation } from "react-i18next";
+
+export default function Experience({ experience, lastExperienceId, delay }) {
+    const { t } = useTranslation();
+
+    const { id, year, title, location, subtitle, description } = experience;
+
     const separateTextByLineBreaks = (inputText) => {
         const lines = inputText.split("\n"); // Sépare le texte en lignes en utilisant le saut de ligne comme séparateur
         return lines;
     };
 
-    const textWithLineBreaks = separateTextByLineBreaks(experience.description); // Appel de la fonction pour séparer le texte par sauts de ligne
+    const textWithLineBreaks = separateTextByLineBreaks(description); // Appel de la fonction pour séparer le texte par sauts de ligne
 
-    const isTablet = useMediaQuery(theme.breakpoints.down("1090"));
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
@@ -35,6 +39,8 @@ export default function Experience({ experience, lastExperienceId }) {
                             padding: 0,
                         },
                     }}
+                    data-aos="fade-up"
+                    data-aos-delay={`${delay}`}
                 >
                     {/* Conteneur pour chaque expérience */}
                     <Container
@@ -43,8 +49,7 @@ export default function Experience({ experience, lastExperienceId }) {
                         sx={{
                             position: "relative",
                             paddingLeft: 6,
-                            paddingBottom:
-                                experience.id === lastExperienceId ? "0px" : 6,
+                            paddingBottom: id === lastExperienceId ? "0px" : 6,
                             "&::before": {
                                 content: '""',
                                 position: "absolute",
@@ -54,7 +59,7 @@ export default function Experience({ experience, lastExperienceId }) {
                                 height: "12px",
                                 borderRadius: "50px",
                                 background:
-                                    experience.id === 1
+                                    id === 1
                                         ? theme.palette.accent
                                         : theme.palette.text.secondary,
                                 zIndex: 10,
@@ -85,6 +90,8 @@ export default function Experience({ experience, lastExperienceId }) {
                                 alignItems: "center",
                                 justifyContent: "space-between",
                             }}
+                            data-aos="fade-up"
+                            data-aos-delay="100"
                         >
                             <Typography
                                 component="p"
@@ -96,8 +103,10 @@ export default function Experience({ experience, lastExperienceId }) {
                                             ? theme.palette.accent
                                             : theme.palette.text.secondary,
                                 }}
+                                data-aos="fade-left"
+                                data-aos-delay="500"
                             >
-                                {experience.annee}
+                                {year}
                             </Typography>
                             <Typography
                                 component="p"
@@ -107,8 +116,10 @@ export default function Experience({ experience, lastExperienceId }) {
                                     fontSize: "12px",
                                     color: theme.palette.text.secondary,
                                 }}
+                                data-aos="fade-left"
+                                data-aos-delay="900"
                             >
-                                {experience.lieux}
+                                {location}
                             </Typography>
                         </Box>
 
@@ -120,9 +131,10 @@ export default function Experience({ experience, lastExperienceId }) {
                                 marginBottom: "5px",
                                 color: theme.palette.text.primary,
                             }}
+                            data-aos="fade-up"
+                            data-aos-delay={`${delay}`}
                         >
-                            {experience.titre.charAt(0).toUpperCase() +
-                                experience.titre.substring(1)}
+                            {title.charAt(0).toUpperCase() + title.substring(1)}
                             {/* Récupère la première lettre de la phrase avec `charAt(0)` et la met en majuscule avec `toUpperCase()`. */}
                             {/* Concatène la première lettre en majuscule avec le reste du texte en utilisant `substring(1)`. */}
                         </Typography>
@@ -134,9 +146,11 @@ export default function Experience({ experience, lastExperienceId }) {
                                 marginBottom: "5px",
                                 color: theme.palette.text.primary,
                             }}
+                            data-aos="fade-up"
+                            data-aos-delay={`${delay}`}
                         >
-                            {experience.sousTitre.charAt(0).toUpperCase() +
-                                experience.sousTitre.substring(1)}
+                            {subtitle.charAt(0).toUpperCase() +
+                                subtitle.substring(1)}
                             {/* Récupère la première lettre de la phrase avec `charAt(0)` et la met en majuscule avec `toUpperCase()`. */}
                             {/* Concatène la première lettre en majuscule avec le reste du texte en utilisant `substring(1)`. */}
                         </Typography>
@@ -147,6 +161,8 @@ export default function Experience({ experience, lastExperienceId }) {
                             className="listExperience"
                             dense={true}
                             sx={{ listStyle: "inside", listStyleType: "disc" }}
+                            data-aos="fade-up"
+                            data-aos-delay={`${delay}`}
                         >
                             {textWithLineBreaks.map((line, index) => (
                                 <ListItem
@@ -159,6 +175,8 @@ export default function Experience({ experience, lastExperienceId }) {
                                         color: theme.palette.text.secondary,
                                         paddingLeft: 3,
                                     }}
+                                    data-aos="fade-up"
+                                    data-aos-delay={`${index * 100}`}
                                 >
                                     <ListItemIcon
                                         sx={{

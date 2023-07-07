@@ -12,15 +12,17 @@ import {
 import Header from "components/header.jsx"; // pour le header de la section
 import Skill from "../components/skills/skill.jsx"; // pour l'affichage d'un skill
 import { faShapes } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
-import data from "../data.json"; // import des data
+import { useTranslation } from "react-i18next";
 
 export default function Skills() {
-    const dataSection = data.skills; // Extraire la data
+    const { t } = useTranslation();
 
-    // Récupère les informations d'expérience depuis les données JSON
-    const connaissance = dataSection.skills.connaissance;
-    const langagesFrameworks = dataSection.skills.langagesFrameworks;
-    const logicielsOutils = dataSection.skills.logicielsOutils;
+    const dataHeader = {
+        header: {
+            subtitle: t("skills.header.subtitle"),
+            texte: t("skills.header.text"),
+        },
+    };
 
     return (
         <>
@@ -30,6 +32,7 @@ export default function Skills() {
                         component="article"
                         disablegutters="true"
                         maxWidth="false"
+                        data-aos="fade-up"
                         sx={{
                             paddingY: 9,
                             maxWidth: "720px",
@@ -45,7 +48,7 @@ export default function Skills() {
                         <Header
                             component="header"
                             icon={faShapes}
-                            data={dataSection.header}
+                            data={dataHeader}
                             variant={"h1"}
                             fontSize={"clamp(2rem, 6vw, 3rem)"}
                         />
@@ -53,12 +56,14 @@ export default function Skills() {
                             component="div"
                             disablegutters="true"
                             sx={{
+                                width: "100%",
                                 display: "flex",
                                 flexDirection: "column",
                                 alignItems: "start",
                                 justifyContent: "space-between",
                                 gap: "1rem",
                             }}
+                            data-aos="fade-left"
                         >
                             <Typography
                                 sx={{
@@ -66,19 +71,28 @@ export default function Skills() {
                                     paddingTop: "2rem",
                                 }}
                             >
-                                {connaissance.titre}
+                                {t("skills.category.connaissance.title")}
                             </Typography>
                             <Box
                                 sx={{
+                                    width: "100%",
                                     display: "flex",
                                     flexDirection: "row",
                                     alignItems: "start",
                                     justifyContent: "space-between",
                                     gap: "1rem",
                                 }}
+                                data-aos="fade-left"
+                                data-aos-delay="100"
                             >
-                                {connaissance.liste.map((skill) => (
-                                    <Skill key={skill.nom} skill={skill} />
+                                {t("skills.category.connaissance.list", {
+                                    returnObjects: true,
+                                }).map((skill, index) => (
+                                    <Skill
+                                        key={skill.name}
+                                        skill={skill}
+                                        delay={index * 150}
+                                    />
                                 ))}
                             </Box>
                         </Box>
@@ -93,24 +107,27 @@ export default function Skills() {
                             component="div"
                             disablegutters="true"
                             sx={{
+                                width: "100%",
                                 display: "flex",
                                 flexDirection: "column",
                                 alignItems: "start",
                                 justifyContent: "space-between",
                                 gap: "1rem",
                             }}
+                            data-aos="fade-left"
                         >
                             <Typography
                                 sx={{
                                     fontSize: "2rem",
                                 }}
                             >
-                                {langagesFrameworks.titre}
+                                {t("skills.category.langagesFrameworks.title")}
                             </Typography>
                             <Box
                                 component="div"
                                 disablegutters="true"
                                 sx={{
+                                    width: "100%",
                                     display: "flex",
                                     flexDirection: "row",
                                     flexWrap: "wrap",
@@ -118,9 +135,17 @@ export default function Skills() {
                                     justifyContent: "space-between",
                                     gap: "2rem",
                                 }}
+                                data-aos="fade-left"
+                                data-aos-delay="100"
                             >
-                                {langagesFrameworks.liste.map((skill) => (
-                                    <Skill key={skill.nom} skill={skill} />
+                                {t("skills.category.langagesFrameworks.list", {
+                                    returnObjects: true,
+                                }).map((skill, index) => (
+                                    <Skill
+                                        key={skill.name}
+                                        skill={skill}
+                                        delay={index * 150}
+                                    />
                                 ))}
                             </Box>
                         </Box>
@@ -135,24 +160,27 @@ export default function Skills() {
                             component="div"
                             disablegutters="true"
                             sx={{
+                                width: "100%",
                                 display: "flex",
                                 flexDirection: "row",
                                 flexWrap: "wrap",
                                 justifyContent: "space-between",
                                 gap: "2rem",
                             }}
+                            data-aos="fade-left"
                         >
                             <Typography
                                 sx={{
                                     fontSize: "2rem",
                                 }}
                             >
-                                {logicielsOutils.titre}
+                                {t("skills.category.logicielsOutils.title")}
                             </Typography>
                             <Box
                                 component="div"
                                 disablegutters="true"
                                 sx={{
+                                    width: "100%",
                                     display: "flex",
                                     flexDirection: "row",
                                     flexWrap: "wrap",
@@ -160,9 +188,17 @@ export default function Skills() {
                                     justifyContent: "space-between",
                                     gap: "2rem",
                                 }}
+                                data-aos="fade-left"
+                                data-aos-delay="100"
                             >
-                                {logicielsOutils.liste.map((skill) => (
-                                    <Skill key={skill.nom} skill={skill} />
+                                {t("skills.category.logicielsOutils.list", {
+                                    returnObjects: true,
+                                }).map((skill, index) => (
+                                    <Skill
+                                        key={skill.name}
+                                        skill={skill}
+                                        delay={index * 150}
+                                    />
                                 ))}
                             </Box>
                         </Box>

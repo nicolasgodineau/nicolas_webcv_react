@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import ProgressIncrementer from "./ProgressIncrementer.jsx";
 
-export default function Skill({ skill }) {
+export default function Skill({ skill, delay }) {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
@@ -26,6 +26,8 @@ export default function Skill({ skill }) {
                         justifyContent: "center",
                         gap: "1rem",
                     }}
+                    data-aos="fade-left"
+                    data-aos-delay={`${delay}`}
                 >
                     {/* Affiche l'icône de compétence */}
                     {skill.className && ( // Affiche uniquement l'icon si il y a une className
@@ -38,9 +40,9 @@ export default function Skill({ skill }) {
                         />
                     )}
                     {/* Utilise le composant ProgressIncrementer pour afficher et incrémenter progressivement le pourcentage */}
-                    {skill.pourcentage && (
+                    {skill.percentage && (
                         <ProgressIncrementer
-                            targetPercentage={skill.pourcentage}
+                            targetPercentage={skill.percentage}
                         />
                     )}
                     <Typography
@@ -50,7 +52,7 @@ export default function Skill({ skill }) {
                             color: theme.palette.primary,
                         }}
                     >
-                        {skill.nom}
+                        {skill.name}
                     </Typography>
                 </Box>
             </CssBaseline>

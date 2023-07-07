@@ -1,12 +1,6 @@
 import React from "react";
 import theme from "../components/theme/theme.js";
-import {
-    Box,
-    Container,
-    CssBaseline,
-    ThemeProvider,
-    Typography,
-} from "@mui/material";
+import { Box, CssBaseline, ThemeProvider, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Header({ icon, data, variant, fontSize }) {
@@ -34,7 +28,7 @@ export default function Header({ icon, data, variant, fontSize }) {
         return null; // Si aucune correspondance n'est trouvée, renvoyer null
     };
 
-    const extractedTexts = extractTextAndSurroundings(data.texte); // Appel de la fonction d'extraction
+    const extractedTexts = extractTextAndSurroundings(data.header.texte); // Appel de la fonction d'extraction
 
     return (
         <>
@@ -63,6 +57,8 @@ export default function Header({ icon, data, variant, fontSize }) {
                                     justifyContent: "center", */
                                 },
                             }}
+                            data-aos="fade-down"
+                            data-aos-delay="100"
                         >
                             <FontAwesomeIcon icon={icon} />
                             <Typography
@@ -73,7 +69,7 @@ export default function Header({ icon, data, variant, fontSize }) {
                                     textTransform: "uppercase",
                                 }}
                             >
-                                {data.subtitle}
+                                {data.header.subtitle}
                             </Typography>
                         </Box>
                         {/* Zone text header */}
@@ -81,6 +77,8 @@ export default function Header({ icon, data, variant, fontSize }) {
                             component="h1"
                             variant={variant}
                             sx={{ fontSize: { fontSize } }}
+                            data-aos="zoom-in"
+                            data-aos-delay="200"
                         >
                             {extractedTexts.beforeText}
                             <Typography

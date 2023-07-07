@@ -1,37 +1,72 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import theme from "../theme/theme";
 import { Typography } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-// Composant qui incrémente progressivement un pourcentage jusqu'à une valeur cible
 export default function ProgressIncrementer({ targetPercentage }) {
-    // État local pour stocker le pourcentage actuel
     const [percentage, setPercentage] = useState(0);
+    const elementRef = useRef(null);
 
     useEffect(() => {
-        // Vérifie si le pourcentage actuel est déjà égal au pourcentage cible
-        if (percentage === targetPercentage) return;
+        // Options de l'Intersection Observer
+        const options = {
+            root: null, // Utilise la fenêtre principale comme racine
+            rootMargin: "0px",
+            threshold: 0.5, // Seuil de déclenchement (à moitié visible)
+        };
 
-        // Démarre un intervalle pour incrémenter progressivement le pourcentage
-        const interval = setInterval(() => {
-            setPercentage((prevPercentage) => {
-                // Si le pourcentage atteint le pourcentage cible, arrête l'intervalle
-                if (prevPercentage === targetPercentage) {
-                    clearInterval(interval);
-                    return prevPercentage;
+        // Gestionnaire d'intersection pour l'Intersection Observer
+        const handleIntersection = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    startCounting(); // Démarre le décompte lorsque l'élément devient visible
+                } else {
+                    stopCounting(); // Arrête le décompte lorsque l'élément devient invisible
                 }
-                // Incrémente le pourcentage de 1
-                return prevPercentage + 1;
             });
-        }, 30); // rapidité de l'execution
+        };
 
-        // Nettoie l'intervalle lorsque le composant est démonté
+        // Fonction pour démarrer le décompte
+        const startCounting = () => {
+            const interval = setInterval(() => {
+                setPercentage((prevPercentage) => {
+                    if (prevPercentage === targetPercentage) {
+                        clearInterval(interval);
+                        return prevPercentage;
+                    }
+                    return prevPercentage + 1;
+                });
+            }, 30);
+        };
+
+        // Fonction pour réinitialiser le décompte
+        const stopCounting = () => {
+            setPercentage(0);
+        };
+
+        // Création de l'Intersection Observer avec le gestionnaire d'intersection et les options
+        const observer = new IntersectionObserver(handleIntersection, options);
+        if (elementRef.current) {
+            observer.observe(elementRef.current); // Attache l'observer à l'élément référencé
+        }
+
+        // Nettoyage de l'Intersection Observer lorsque le composant est démonté
         return () => {
-            clearInterval(interval);
+            if (elementRef.current) {
+                observer.unobserve(elementRef.current); // Détache l'observer de l'élément référencé
+            }
         };
     }, [targetPercentage]);
 
+    useEffect(() => {
+        AOS.init(); // Initialise AOS pour les animations
+    }, []);
+
     return (
-        <>
+        <div ref={elementRef} data-aos="fade-up">
+            {" "}
+            {/* Élément référencé pour l'Intersection Observer et animation AOS */}
             <Typography
                 component="p"
                 sx={{
@@ -41,6 +76,6 @@ export default function ProgressIncrementer({ targetPercentage }) {
             >
                 {percentage}%
             </Typography>
-        </>
+        </div>
     );
 }

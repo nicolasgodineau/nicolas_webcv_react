@@ -1,16 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import theme from "../components/theme/theme";
-
-import { Tooltip } from "react-tippy";
-import "react-tippy/dist/tippy.css";
-
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import WebsiteIcon from "@mui/icons-material/Language";
 import {
     CssBaseline,
-    Container,
     Box,
     Typography,
     ThemeProvider,
@@ -19,17 +14,21 @@ import {
     ListItemText,
     Avatar,
     Link,
-    IconButton,
-    Icon,
 } from "@mui/material";
 import Button from "@mui/material/Button";
 
 import Nicolas from "../images/Nicolas.webp";
-import data from "../data.json"; // import des data
+import { useTranslation } from "react-i18next";
+import LanguageSelect from "./LanguageSelect.jsx";
 
-export default function () {
-    const personalInformations = data.personalInformations; // Extraire la data
-    const currentYear = new Date().getFullYear();
+import useTopValue from "../hooks/useTopValue.js";
+
+export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
+    const { t } = useTranslation();
+
+    const topValue = useTopValue();
+
+    const email = t("personalInformations.email");
 
     return (
         <>
@@ -42,13 +41,14 @@ export default function () {
                         fixed="true"
                         sx={{
                             width: "400px",
-                            top: "72px",
+                            top: topValue,
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
                             justifyContent: "space-evenly",
+                            gap: 4,
                             padding: 4,
-                            height: 700,
+                            height: "fit-content",
                             border: `2px solid ${theme.palette.text.secondary}`,
                             borderRadius: 5,
                             backgroundColor: theme.palette.background.dark,
@@ -60,6 +60,10 @@ export default function () {
                             },
                         }}
                     >
+                        <LanguageSelect
+                            selectedLanguage={selectedLanguage}
+                            handleChangeLanguage={handleChangeLanguage}
+                        />
                         <Box
                             component="div"
                             sx={{
@@ -76,14 +80,14 @@ export default function () {
                                     color: theme.palette.text.primary,
                                 }}
                             >
-                                {personalInformations.name}
+                                {t("personalInformations.name")}
                             </Typography>
                             <List sx={{ padding: "0px" }}>
                                 <ListItemText>
-                                    {personalInformations.titleLine1}
+                                    {t("personalInformations.titleLine1")}
                                 </ListItemText>
                                 <ListItemText>
-                                    & {personalInformations.titleLine2}
+                                    & {t("personalInformations.titleLine2")}
                                 </ListItemText>
                             </List>
                         </Box>
@@ -106,26 +110,31 @@ export default function () {
                             }}
                         >
                             <ListItem
-                                component="h2"
+                                component="a"
+                                href={`mailto:${email}`}
                                 disablePadding={true}
                                 sx={{
                                     fontSize: 24,
                                     color: theme.palette.text.primary,
+                                    textDecoration: "none",
+                                    "&:hover": {
+                                        textDecoration: "underline",
+                                    },
                                 }}
                             >
-                                {personalInformations.email}
+                                {email}
                             </ListItem>
                             <ListItem
                                 component="h2"
                                 disablePadding={true}
                                 sx={{
                                     fontSize: 24,
-                                    marginBottom: 3,
                                     color: theme.palette.text.primary,
                                 }}
                             >
-                                Base in {personalInformations.city},
-                                {personalInformations.country}
+                                {t("personalInformations.baseIn")}{" "}
+                                {t("personalInformations.city")},
+                                {t("personalInformations.country")}
                             </ListItem>
                         </List>
                         {/* <List
@@ -212,7 +221,7 @@ export default function () {
                                     target="_blank"
                                     rel="noreferrer"
                                     aria-label="Instagram"
-                                    href="#"
+                                    href="https://www.instagram.com/nicolasg_travel/"
                                     color="inherit"
                                 >
                                     {" "}
@@ -240,7 +249,7 @@ export default function () {
                                     target="_blank"
                                     rel="noreferrer"
                                     aria-label="GitHub"
-                                    href="#"
+                                    href="https://github.com/nicolasgodineau"
                                     color="inherit"
                                 >
                                     <GitHubIcon />
@@ -267,7 +276,7 @@ export default function () {
                                     target="_blank"
                                     rel="noreferrer"
                                     aria-label="My website"
-                                    href="#"
+                                    href="https://www.nicolasgodineau.com"
                                     color="inherit"
                                 >
                                     <WebsiteIcon />
@@ -292,7 +301,7 @@ export default function () {
                             variant="text"
                             startIcon={<MailOutlineIcon />}
                         >
-                            HIT ME !
+                            {t("personalInformations.textCallToAction")}
                         </Button>
                     </Box>
                 </CssBaseline>

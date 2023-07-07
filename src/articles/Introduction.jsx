@@ -5,16 +5,25 @@ import {
     ThemeProvider,
     Container,
     Typography,
-    Link,
 } from "@mui/material";
 
 import Header from "components/header.jsx"; // pour le header de la section
-import data from "../data.json"; // import des data
 import { faHouse } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
+import { useTranslation } from "react-i18next";
+
+import useTopValue from "../hooks/useTopValue.js";
 
 export default function Introduction() {
-    const dataSection = data.introduction; //Extraire la data
+    const { t } = useTranslation();
 
+    const topValue = useTopValue();
+
+    const dataHeader = {
+        header: {
+            subtitle: t("introduction.header.subtitle"),
+            texte: t("introduction.header.text"),
+        },
+    };
     return (
         <>
             <ThemeProvider theme={theme}>
@@ -23,8 +32,10 @@ export default function Introduction() {
                         component="article"
                         disablegutters="true"
                         maxWidth="false"
+                        data-aos="fade-up"
                         sx={{
-                            paddingY: 9,
+                            paddingTop: topValue,
+                            paddingBottom: 9,
                             maxWidth: "720px",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
@@ -37,7 +48,7 @@ export default function Introduction() {
                     >
                         <Header
                             icon={faHouse}
-                            data={dataSection.header}
+                            data={dataHeader}
                             variant={"h1"}
                             fontSize={"clamp(2.3rem, 6vw, 4rem)"}
                         />
@@ -49,7 +60,7 @@ export default function Introduction() {
                                 color: theme.palette.text.secondary,
                             }}
                         >
-                            {dataSection.description}
+                            {t("introduction.description")}
                         </Typography>
                         {/*                         <Link
                             underline="none"

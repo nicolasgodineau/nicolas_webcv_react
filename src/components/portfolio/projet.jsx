@@ -7,8 +7,11 @@ import {
     Typography,
 } from "@mui/material";
 import Gallery from "./gallery.jsx";
+import { useTranslation } from "react-i18next";
 
-export default function Projet({ projet }) {
+export default function Projet({ projet, image }) {
+    const { title, subtitle, description } = projet;
+    const { t } = useTranslation();
     return (
         <>
             <ThemeProvider theme={theme}>
@@ -21,7 +24,7 @@ export default function Projet({ projet }) {
                             color: theme.palette.text.primary,
                         }}
                     >
-                        {projet.titre}
+                        {title}
                     </Typography>
                     <Typography
                         component="h3"
@@ -32,7 +35,7 @@ export default function Projet({ projet }) {
                             color: theme.palette.text.primary,
                         }}
                     >
-                        {projet.sousTitre}
+                        {subtitle}
                     </Typography>
                     <Typography
                         component="p"
@@ -41,9 +44,9 @@ export default function Projet({ projet }) {
                             color: theme.palette.text.secondary,
                         }}
                     >
-                        {projet.description}
+                        {description}
                     </Typography>
-                    <Gallery images={projet?.img} titre={projet?.titre} />
+                    <Gallery images={image} titre={title} />
                 </CssBaseline>
             </ThemeProvider>
         </>
