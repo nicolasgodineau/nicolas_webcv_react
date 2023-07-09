@@ -14,6 +14,7 @@ const theme = createTheme({
             accent: "#28e98c",
         },
         accent: "#28e98c",
+        danger: "#e92828c4",
     },
     breakpoints: {
         values: {

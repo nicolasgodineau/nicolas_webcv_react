@@ -39,7 +39,7 @@ export default function Gallery({ images, titre }) {
                                 }}
                             >
                                 <img
-                                    src={image.thumbnail}
+                                    src="/images/portfolio/mars/thumbnails/thumbnails_1.webp"
                                     alt={titre}
                                     loading="lazy"
                                     sx={{

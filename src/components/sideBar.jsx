@@ -14,6 +14,7 @@ import {
     ListItemText,
     Avatar,
     Link,
+    Container,
 } from "@mui/material";
 import Button from "@mui/material/Button";
 
@@ -22,13 +23,23 @@ import { useTranslation } from "react-i18next";
 import LanguageSelect from "./LanguageSelect.jsx";
 
 import useTopValue from "../hooks/useTopValue.js";
+import ContactModal from "./sidebar/ContactModal.jsx";
 
-export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
+export default function SideBar({
+    selectedLanguage,
+    handleChangeLanguage,
+    isMobileDevice,
+    AosEffect,
+    AosDelay,
+}) {
     const { t } = useTranslation();
+    const [showText, setShowText] = useState(true);
+
+    const toggleContent = () => {
+        setShowText(!showText);
+    };
 
     const topValue = useTopValue();
-
-    const email = t("personalInformations.email");
 
     return (
         <>
@@ -40,7 +51,7 @@ export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
                         disablegutters="true"
                         fixed="true"
                         sx={{
-                            width: "400px",
+                            width: "540px",
                             top: topValue,
                             display: "flex",
                             flexDirection: "column",
@@ -48,9 +59,10 @@ export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
                             justifyContent: "space-evenly",
                             gap: 4,
                             padding: 4,
-                            height: "fit-content",
                             border: `2px solid ${theme.palette.text.secondary}`,
                             borderRadius: 5,
+                            height: "fit-content",
+
                             backgroundColor: theme.palette.background.dark,
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
@@ -58,7 +70,19 @@ export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
                                 width: "auto",
                                 marginTop: "2rem",
                             },
+                            [theme.breakpoints.down("xs")]: {
+                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                padding: 0,
+                                border: "none",
+                            },
+                            [theme.breakpoints.down("320px")]: {
+                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                gap: "10px",
+                            },
                         }}
+                        data-aos={isMobileDevice ? "" : { AosEffect }}
+                        data-aos-once={isMobileDevice ? "" : "true"}
+                        data-aos-delay={isMobileDevice ? "" : { AosDelay }}
                     >
                         <LanguageSelect
                             selectedLanguage={selectedLanguage}
@@ -72,6 +96,8 @@ export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
                                 alignItems: "start",
                                 justifyContent: "space-between",
                             }}
+                            data-aos={isMobileDevice ? "" : "fade-right"}
+                            data-aos-once={isMobileDevice ? "" : "true"}
                         >
                             <Typography
                                 component="h2"
@@ -79,10 +105,19 @@ export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
                                 sx={{
                                     color: theme.palette.text.primary,
                                 }}
+                                data-aos={isMobileDevice ? "" : "fade-right"}
+                                data-aos-once={isMobileDevice ? "" : "true"}
+                                data-aos-delay="200"
                             >
                                 {t("personalInformations.name")}
                             </Typography>
-                            <List sx={{ padding: "0px" }}>
+                            <List
+                                component="ul"
+                                sx={{ padding: "0px" }}
+                                data-aos={isMobileDevice ? "" : "fade-right"}
+                                data-aos-once={isMobileDevice ? "" : "true"}
+                                data-aos-delay="500"
+                            >
                                 <ListItemText>
                                     {t("personalInformations.titleLine1")}
                                 </ListItemText>
@@ -91,25 +126,31 @@ export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
                                 </ListItemText>
                             </List>
                         </Box>
-                        <Avatar
-                            component="div"
-                            variant="square"
-                            src={Nicolas}
-                            sx={{
-                                width: 240,
-                                height: 240,
-                                borderRadius: 7,
-                            }}
-                        />
-                        <List
-                            dense={true}
-                            disablePadding={true}
-                            sx={{
-                                color: theme.palette.text.secondary,
-                                margin: 0,
-                            }}
-                        >
-                            <ListItem
+                        {showText ? (
+                            <>
+                                <Avatar
+                                    component="div"
+                                    variant="square"
+                                    src={Nicolas}
+                                    sx={{
+                                        width: 240,
+                                        height: 240,
+                                        borderRadius: 7,
+                                    }}
+                                    data-aos={
+                                        isMobileDevice ? "" : "fade-right"
+                                    }
+                                    data-aos-once={isMobileDevice ? "" : "true"}
+                                />
+                                <List
+                                    dense={true}
+                                    disablePadding={true}
+                                    sx={{
+                                        color: theme.palette.text.secondary,
+                                        margin: 0,
+                                    }}
+                                >
+                                    {/*                             <ListItem
                                 component="a"
                                 href={`mailto:${email}`}
                                 disablePadding={true}
@@ -123,187 +164,190 @@ export default function SideBar({ selectedLanguage, handleChangeLanguage }) {
                                 }}
                             >
                                 {email}
-                            </ListItem>
-                            <ListItem
-                                component="h2"
-                                disablePadding={true}
-                                sx={{
-                                    fontSize: 24,
-                                    color: theme.palette.text.primary,
-                                }}
-                            >
-                                {t("personalInformations.baseIn")}{" "}
-                                {t("personalInformations.city")},
-                                {t("personalInformations.country")}
-                            </ListItem>
-                        </List>
-                        {/* <List
-                            dense={true}
-                            disablePadding={true}
-                            sx={{
-                                width: "100%",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "space-evenly",
-                                marginBottom: 0,
-                            }}
-                        >
-                            {personalInformations.links.map((link) => (
-                                <ListItem
-                                    key={link.id}
+                            </ListItem> */}
+                                    <ListItem
+                                        component="li"
+                                        disablePadding={true}
+                                        sx={{
+                                            fontSize: 24,
+                                            color: theme.palette.text.primary,
+                                        }}
+                                        data-aos={
+                                            isMobileDevice ? "" : "fade-right"
+                                        }
+                                        data-aos-once={
+                                            isMobileDevice ? "" : "true"
+                                        }
+                                    >
+                                        {t("personalInformations.baseIn")}{" "}
+                                        {t("personalInformations.city")},
+                                        {t("personalInformations.country")}
+                                    </ListItem>
+                                </List>
+                                <List
+                                    dense={true}
+                                    disablePadding={true}
                                     sx={{
-                                        width: "50px",
-                                        height: "50px",
+                                        width: "100%",
                                         display: "flex",
                                         alignItems: "center",
-                                        justifyContent: "center",
-                                        padding: 0,
-                                        border: `2px solid ${theme.palette.text.secondary}`,
-                                        borderRadius: "50%",
+                                        justifyContent: "space-evenly",
+                                        marginBottom: 0,
+                                    }}
+                                >
+                                    <ListItem
+                                        sx={{
+                                            width: "50px",
+                                            height: "50px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            padding: 0,
+                                            border: `2px solid ${theme.palette.text.secondary}`,
+                                            borderRadius: "50%",
+                                            ":hover": {
+                                                cursor: "pointer",
+                                                color: theme.palette.accent,
+                                                border: `1px solid ${theme.palette.accent}`,
+                                            },
+                                        }}
+                                        data-aos={
+                                            isMobileDevice ? "" : "fade-right"
+                                        }
+                                        data-aos-once={
+                                            isMobileDevice ? "" : "true"
+                                        }
+                                        data-aos-delay="200"
+                                    >
+                                        <Link
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            aria-label="Instagram"
+                                            href="https://www.instagram.com/nicolasg_travel/"
+                                            color="inherit"
+                                        >
+                                            {" "}
+                                            {<InstagramIcon />}
+                                        </Link>
+                                    </ListItem>
+                                    <ListItem
+                                        sx={{
+                                            width: "50px",
+                                            height: "50px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            padding: 0,
+                                            border: `2px solid ${theme.palette.text.secondary}`,
+                                            borderRadius: "50%",
+                                            ":hover": {
+                                                cursor: "pointer",
+                                                color: theme.palette.accent,
+                                                border: `1px solid ${theme.palette.accent}`,
+                                            },
+                                        }}
+                                        data-aos={
+                                            isMobileDevice ? "" : "fade-right"
+                                        }
+                                        data-aos-once={
+                                            isMobileDevice ? "" : "true"
+                                        }
+                                        data-aos-delay="400"
+                                    >
+                                        <Link
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            aria-label="GitHub"
+                                            href="https://github.com/nicolasgodineau"
+                                            color="inherit"
+                                        >
+                                            <GitHubIcon />
+                                        </Link>
+                                    </ListItem>
+                                    <ListItem
+                                        sx={{
+                                            width: "50px",
+                                            height: "50px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            padding: 0,
+                                            border: `2px solid ${theme.palette.text.secondary}`,
+                                            borderRadius: "50%",
+                                            ":hover": {
+                                                cursor: "pointer",
+                                                color: theme.palette.accent,
+                                                border: `1px solid ${theme.palette.accent}`,
+                                            },
+                                        }}
+                                        data-aos={
+                                            isMobileDevice ? "" : "fade-right"
+                                        }
+                                        data-aos-once={
+                                            isMobileDevice ? "" : "true"
+                                        }
+                                        data-aos-delay="600"
+                                    >
+                                        <Link
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            aria-label="My website"
+                                            href="https://www.nicolasgodineau.com"
+                                            color="inherit"
+                                        >
+                                            <WebsiteIcon />
+                                        </Link>
+                                    </ListItem>
+                                </List>
+                                <Button
+                                    sx={{
+                                        width: "100%",
+                                        padding: "12px 44px",
+                                        borderRadius: 32,
+                                        backgroundColor: theme.palette.accent,
+                                        border: `2px solid ${theme.palette.accent}`,
+                                        color: "black",
                                         ":hover": {
                                             cursor: "pointer",
                                             color: theme.palette.accent,
-                                            border: `1px solid ${theme.palette.accent}`,
+                                            backgroundColor:
+                                                theme.palette.background.dark,
                                         },
                                     }}
+                                    data-aos={
+                                        isMobileDevice ? "" : "fade-right"
+                                    }
+                                    data-aos-once={isMobileDevice ? "" : "true"}
+                                    variant="text"
+                                    startIcon={<MailOutlineIcon />}
+                                    onClick={toggleContent}
                                 >
-                                    <Link
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        aria-label="Instagram"
-                                        href="#"
-                                        color="inherit"
-                                    >
-                                        {" "}
-                                        <Icon
-                                            className={link.className}
-                                            sx={{
-                                                ":hover": {
-                                                    cursor: "pointer",
-                                                    color: theme.palette.accent,
-                                                    border: `1px solid ${theme.palette.accent}`,
-                                                },
-                                            }}
-                                        />
-                                    </Link>
-                                </ListItem>
-                            ))}
-                        </List> */}
-                        <List
-                            dense={true}
-                            disablePadding={true}
-                            sx={{
-                                width: "100%",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "space-evenly",
-                                marginBottom: 0,
-                            }}
-                        >
-                            <ListItem
-                                sx={{
-                                    width: "50px",
-                                    height: "50px",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    padding: 0,
-                                    border: `2px solid ${theme.palette.text.secondary}`,
-                                    borderRadius: "50%",
-                                    ":hover": {
-                                        cursor: "pointer",
-                                        color: theme.palette.accent,
-                                        border: `1px solid ${theme.palette.accent}`,
-                                    },
-                                }}
-                            >
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    aria-label="Instagram"
-                                    href="https://www.instagram.com/nicolasg_travel/"
-                                    color="inherit"
-                                >
-                                    {" "}
-                                    <InstagramIcon />
-                                </Link>
-                            </ListItem>
-                            <ListItem
-                                sx={{
-                                    width: "50px",
-                                    height: "50px",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    padding: 0,
-                                    border: `2px solid ${theme.palette.text.secondary}`,
-                                    borderRadius: "50%",
-                                    ":hover": {
-                                        cursor: "pointer",
-                                        color: theme.palette.accent,
-                                        border: `1px solid ${theme.palette.accent}`,
-                                    },
-                                }}
-                            >
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    aria-label="GitHub"
-                                    href="https://github.com/nicolasgodineau"
-                                    color="inherit"
-                                >
-                                    <GitHubIcon />
-                                </Link>
-                            </ListItem>
-                            <ListItem
-                                sx={{
-                                    width: "50px",
-                                    height: "50px",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    padding: 0,
-                                    border: `2px solid ${theme.palette.text.secondary}`,
-                                    borderRadius: "50%",
-                                    ":hover": {
-                                        cursor: "pointer",
-                                        color: theme.palette.accent,
-                                        border: `1px solid ${theme.palette.accent}`,
-                                    },
-                                }}
-                            >
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    aria-label="My website"
-                                    href="https://www.nicolasgodineau.com"
-                                    color="inherit"
-                                >
-                                    <WebsiteIcon />
-                                </Link>
-                            </ListItem>
-                        </List>
-                        <Button
-                            sx={{
-                                width: "100%",
-                                padding: "12px 44px",
-                                borderRadius: 32,
-                                backgroundColor: theme.palette.accent,
-                                border: `2px solid ${theme.palette.accent}`,
-                                color: "black",
-                                ":hover": {
-                                    cursor: "pointer",
-                                    color: theme.palette.accent,
-                                    backgroundColor:
-                                        theme.palette.background.dark,
-                                },
-                            }}
-                            variant="text"
-                            startIcon={<MailOutlineIcon />}
-                        >
-                            {t("personalInformations.textCallToAction")}
-                        </Button>
+                                    {t("personalInformations.textCallToAction")}
+                                </Button>
+                            </>
+                        ) : (
+                            <>
+                                <ContactModal
+                                    toggleContent={toggleContent}
+                                    isMobileDevice={isMobileDevice}
+                                />
+                            </>
+                        )}
                     </Box>
+                    {/*                     <Box
+                        data-aos="fade-right"
+                        data-aos-once="true"
+                        sx={{
+                            margin: "0 auto",
+                            color: theme.palette.accent,
+                            display: "none",
+                            [theme.breakpoints.down("tablet")]: {
+                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                display: "block",
+                            },
+                        }}
+                        className="arrow"
+                    ></Box> */}
                 </CssBaseline>
             </ThemeProvider>
         </>

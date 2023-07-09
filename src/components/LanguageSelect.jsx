@@ -3,11 +3,12 @@ import { useTranslation } from "react-i18next";
 import {
     CssBaseline,
     ThemeProvider,
-    Box,
-    Select,
+    IconButton,
+    Menu,
     MenuItem,
-    FormControl,
+    Box,
 } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import theme from "../components/theme/theme";
 
 import FR from "../images/icons/FR.png";
@@ -16,11 +17,20 @@ import EN from "../images/icons/EN.png";
 export default function LanguageSelect() {
     const { i18n } = useTranslation();
     const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+    const [anchorEl, setAnchorEl] = useState(null);
 
-    const handleChangeLanguage = (event) => {
-        const language = event.target.value;
+    const handleChangeLanguage = (language) => {
         setSelectedLanguage(language);
         i18n.changeLanguage(language);
+        handleClose();
+    };
+
+    const handleMenu = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
     };
 
     return (
@@ -34,95 +44,98 @@ export default function LanguageSelect() {
                     left="0px"
                     display="inline-flex"
                     alignItems="center"
-                    sx={{
-                        [theme.breakpoints.down("tablet")]: {
-                            // Styles pour les écrans de largeur maximale "tablet" (1090px)
-                            top: 0,
-                            left: "32px",
-                        },
-                    }}
                 >
-                    <FormControl>
-                        <Select
-                            value={selectedLanguage}
-                            onChange={handleChangeLanguage}
-                            variant="standard"
-                            renderValue={(selected) => (
-                                <Box
-                                    sx={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                    }}
-                                >
-                                    {selected === "en" ? (
-                                        <img
-                                            src={EN}
-                                            alt="English Flag"
-                                            style={{
-                                                marginRight: "8px",
-                                                width: "20px",
-                                                height: "20px",
-                                            }}
-                                        />
-                                    ) : (
-                                        <img
-                                            src={FR}
-                                            alt="French Flag"
-                                            style={{
-                                                marginRight: "8px",
-                                                width: "20px",
-                                                height: "20px",
-                                            }}
-                                        />
-                                    )}
-                                </Box>
-                            )}
-                            MenuProps={{
-                                PaperProps: {
-                                    elevation: 0, // Niveau d'élévation du Paper (0 pour pas d'ombre)
-                                    sx: {
-                                        borderRadius: "8px", // Bordure arrondie du Paper
-                                        marginTop: "8px", // Marge supérieure
-                                        backgroundColor:
-                                            theme.palette.background.dark,
-                                    },
-                                },
-                                MenuListProps: {
-                                    sx: {
-                                        "& .Mui-selected": {
-                                            backgroundColor:
-                                                theme.palette.text.accent, // Couleur de fond pour l'élément sélectionné
-                                        },
-                                    },
-                                },
+                    <IconButton
+                        size="small"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        onClick={handleMenu}
+                        color="inherit"
+                    >
+                        <img
+                            src={selectedLanguage === "en" ? EN : FR}
+                            alt={
+                                selectedLanguage === "en"
+                                    ? "English Flag"
+                                    : "French Flag"
+                            }
+                            style={{
+                                width: "20px",
+                                height: "20px",
                             }}
+                        />
+                    </IconButton>
+                    <Menu
+                        id="menu-appbar"
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                        PaperProps={{
+                            elevation: 0,
+                            sx: {
+                                borderRadius: "10px",
+
+                                backgroundColor: theme.palette.background.dark,
+                                overflow: "visible",
+                                "& .MuiAvatar-root": {
+                                    width: 32,
+                                    height: 32,
+                                    ml: -0.5,
+                                    mr: 1,
+                                },
+                            },
+                        }}
+                        transformOrigin={{
+                            horizontal: "right",
+                            vertical: "top",
+                        }}
+                        anchorOrigin={{
+                            horizontal: "right",
+                            vertical: "bottom",
+                        }}
+                        MenuListProps={{
+                            style: {
+                                "& .Mui-selected": {
+                                    backgroundColor:
+                                        theme.palette.background.dark,
+                                },
+                            },
+                        }}
+                    >
+                        <MenuItem
+                            value="en"
+                            selected={selectedLanguage === "en"}
+                            onClick={() => handleChangeLanguage("en")}
                         >
-                            <MenuItem value="en">
-                                <img
-                                    src={EN}
-                                    alt="English Flag"
-                                    style={{
-                                        marginRight: "8px",
-                                        width: "20px",
-                                        height: "20px",
-                                    }}
-                                />
-                                English
-                            </MenuItem>
-                            <MenuItem value="fr">
-                                <img
-                                    src={FR}
-                                    alt="French Flag"
-                                    style={{
-                                        marginRight: "8px",
-                                        width: "20px",
-                                        height: "20px",
-                                    }}
-                                />
-                                Français
-                            </MenuItem>
-                        </Select>
-                    </FormControl>
+                            <img
+                                src={EN}
+                                alt="English Flag"
+                                style={{
+                                    marginRight: "8px",
+                                    width: "20px",
+                                    height: "20px",
+                                }}
+                            />
+                            English
+                        </MenuItem>
+                        <MenuItem
+                            value="fr"
+                            selected={selectedLanguage === "fr"}
+                            onClick={() => handleChangeLanguage("fr")}
+                        >
+                            <img
+                                src={FR}
+                                alt="French Flag"
+                                style={{
+                                    marginRight: "8px",
+                                    width: "20px",
+                                    height: "20px",
+                                }}
+                            />
+                            Français
+                        </MenuItem>
+                    </Menu>
                 </Box>
             </ThemeProvider>
         </>

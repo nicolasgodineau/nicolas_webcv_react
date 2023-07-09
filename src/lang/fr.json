@@ -28,7 +28,9 @@
                 "className": "ri-global-line"
             }
         ],
-        "textCallToAction": "engagez moi !"
+        "textCallToAction": "engagez moi !",
+        "fromName": "Prénom & nom",
+        "send": "Envoyer"
     },
     "introduction": {
         "header": {
@@ -159,11 +161,6 @@
                         "name": "Figma",
                         "percentage": 60,
                         "className": "devicon-figma-plain"
-                    },
-                    {
-                        "name": "Adobe Creative Suite",
-                        "percentage": 60,
-                        "className": "react"
                     }
                 ]
             }

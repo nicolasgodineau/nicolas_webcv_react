@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 
 import useTopValue from "../hooks/useTopValue.js";
 
-export default function Introduction() {
+export default function Introduction({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
 
     const topValue = useTopValue();
@@ -32,11 +32,13 @@ export default function Introduction() {
                         component="article"
                         disablegutters="true"
                         maxWidth="false"
-                        data-aos="fade-up"
+                        data-aos={AosEffect}
+                        data-aos-delay={AosDelay}
                         sx={{
                             paddingTop: topValue,
                             paddingBottom: 9,
                             maxWidth: "720px",
+                            overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
                                 paddingTop: 5,

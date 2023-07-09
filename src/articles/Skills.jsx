@@ -7,6 +7,8 @@ import {
     Typography,
     Box,
     Divider,
+    Item,
+    Grid,
 } from "@mui/material";
 
 import Header from "components/header.jsx"; // pour le header de la section
@@ -14,7 +16,7 @@ import Skill from "../components/skills/skill.jsx"; // pour l'affichage d'un ski
 import { faShapes } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { useTranslation } from "react-i18next";
 
-export default function Skills() {
+export default function Skills({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
 
     const dataHeader = {
@@ -32,10 +34,12 @@ export default function Skills() {
                         component="article"
                         disablegutters="true"
                         maxWidth="false"
-                        data-aos="fade-up"
+                        data-aos={AosEffect}
+                        data-aos-delay={AosDelay}
                         sx={{
                             paddingY: 9,
                             maxWidth: "720px",
+                            overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
                                 paddingTop: 5,
@@ -73,7 +77,7 @@ export default function Skills() {
                             >
                                 {t("skills.category.connaissance.title")}
                             </Typography>
-                            <Box
+                            <Grid
                                 sx={{
                                     width: "100%",
                                     display: "flex",
@@ -81,6 +85,11 @@ export default function Skills() {
                                     alignItems: "start",
                                     justifyContent: "space-between",
                                     gap: "1rem",
+                                    flexWrap: "wrap",
+                                    [theme.breakpoints.down("sm")]: {
+                                        // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                        flexDirection: "column",
+                                    },
                                 }}
                                 data-aos="fade-left"
                                 data-aos-delay="100"
@@ -94,7 +103,7 @@ export default function Skills() {
                                         delay={index * 150}
                                     />
                                 ))}
-                            </Box>
+                            </Grid>
                         </Box>
                         <Divider
                             variant="middle"
@@ -134,6 +143,12 @@ export default function Skills() {
                                     alignItems: "center",
                                     justifyContent: "space-between",
                                     gap: "2rem",
+                                    flexWrap: "wrap",
+                                    overflow: "hidden",
+                                    [theme.breakpoints.down("sm")]: {
+                                        // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                        justifyContent: "center",
+                                    },
                                 }}
                                 data-aos="fade-left"
                                 data-aos-delay="100"
@@ -184,9 +199,16 @@ export default function Skills() {
                                     display: "flex",
                                     flexDirection: "row",
                                     flexWrap: "wrap",
-                                    alignItems: "start",
+                                    alignItems: "center",
                                     justifyContent: "space-between",
+
                                     gap: "2rem",
+                                    flexWrap: "wrap",
+                                    overflow: "hidden",
+                                    [theme.breakpoints.down("sm")]: {
+                                        // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                                        justifyContent: "center",
+                                    },
                                 }}
                                 data-aos="fade-left"
                                 data-aos-delay="100"

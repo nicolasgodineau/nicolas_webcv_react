@@ -13,7 +13,7 @@
                 "id": "link1",
                 "name": "instagram",
                 "url": "www",
-                "className": "devicon-react-original"
+                "className": "FaBeer"
             },
             {
                 "id": "link2",
@@ -28,7 +28,9 @@
                 "className": "ri-global-line"
             }
         ],
-        "textCallToAction": "hire me !"
+        "textCallToAction": "hire me !",
+        "fromName": "Firstname & name",
+        "send": "Send"
     },
     "introduction": {
         "header": {
@@ -159,11 +161,6 @@
                         "name": "Figma",
                         "percentage": 60,
                         "className": "devicon-figma-plain"
-                    },
-                    {
-                        "name": "Adobe Creative Suite",
-                        "percentage": 60,
-                        "className": "react"
                     }
                 ]
             }

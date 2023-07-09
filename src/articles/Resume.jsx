@@ -7,7 +7,7 @@ import Experience from "../components/resume/Experience.jsx"; // pour l'affichag
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { useTranslation } from "react-i18next";
 
-export default function Resume() {
+export default function Resume({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
 
     const dataHeader = {
@@ -30,10 +30,12 @@ export default function Resume() {
                         component="article"
                         disablegutters="true"
                         maxWidth="false"
-                        data-aos="fade-up"
+                        data-aos={AosEffect}
+                        data-aos-delay={AosDelay}
                         sx={{
                             paddingY: 9,
                             maxWidth: "720px",
+                            overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
                                 paddingTop: 5,

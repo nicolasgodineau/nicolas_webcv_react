@@ -6,6 +6,7 @@ import {
     Typography,
     Box,
     Icon,
+    Grid,
 } from "@mui/material";
 import ProgressIncrementer from "./ProgressIncrementer.jsx";
 
@@ -13,7 +14,9 @@ export default function Skill({ skill, delay }) {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
-                <Box
+                <Grid
+                    item
+                    xs={2}
                     component="div"
                     disablegutters="true"
                     key={skill.id}
@@ -25,6 +28,7 @@ export default function Skill({ skill, delay }) {
                         alignItems: "center",
                         justifyContent: "center",
                         gap: "1rem",
+                        minWidth: "80px",
                     }}
                     data-aos="fade-left"
                     data-aos-delay={`${delay}`}
@@ -54,7 +58,7 @@ export default function Skill({ skill, delay }) {
                     >
                         {skill.name}
                     </Typography>
-                </Box>
+                </Grid>
             </CssBaseline>
         </ThemeProvider>
     );

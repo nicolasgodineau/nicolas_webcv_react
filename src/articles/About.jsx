@@ -11,7 +11,7 @@ import Header from "components/header.jsx"; // pour le header de la section
 import { faUser } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { useTranslation } from "react-i18next";
 
-export default function About() {
+export default function About({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
 
     const dataHeader = {
@@ -28,10 +28,11 @@ export default function About() {
                         component="article"
                         disablegutters="true"
                         maxWidth="sm2"
-                        data-aos="fade-up"
-                        data-aos-delay="700"
+                        data-aos={AosEffect}
+                        data-aos-delay={AosDelay}
                         sx={{
                             paddingY: 9,
+                            overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
                                 paddingTop: 5,

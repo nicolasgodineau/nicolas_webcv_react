@@ -117,7 +117,7 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                                     color: theme.palette.text.secondary,
                                 }}
                                 data-aos="fade-left"
-                                data-aos-delay="900"
+                                data-aos-delay="700"
                             >
                                 {location}
                             </Typography>

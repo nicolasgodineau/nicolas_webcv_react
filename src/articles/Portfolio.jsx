@@ -8,7 +8,7 @@ import data from "../lang/en.json"; // import des data du JSON anglais
 import Projet from "components/portfolio/projet.jsx";
 import { useTranslation } from "react-i18next";
 
-export default function Portfolio() {
+export default function Portfolio({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
 
     const dataHeader = {
@@ -19,7 +19,7 @@ export default function Portfolio() {
     };
 
     const dataSection = data.portfolio; // Extraire la data
-    console.log("dataSection:", dataSection?.projet.mars.img);
+
     return (
         <>
             <ThemeProvider theme={theme}>
@@ -28,10 +28,12 @@ export default function Portfolio() {
                         component="article"
                         disablegutters="true"
                         maxWidth="false"
-                        data-aos="fade-up"
+                        data-aos={AosEffect}
+                        data-aos-delay={AosDelay}
                         sx={{
                             paddingY: 9,
                             maxWidth: "720px",
+                            overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
                                 paddingTop: 5,
