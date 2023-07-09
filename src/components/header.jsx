@@ -67,6 +67,7 @@ export default function Header({ icon, data, variant, fontSize }) {
                                     fontSize: "14px",
                                     color: theme.palette.primary,
                                     textTransform: "uppercase",
+                                    fontFamily: "Lato, sans-serif",
                                 }}
                             >
                                 {data.header.subtitle}
@@ -76,7 +77,11 @@ export default function Header({ icon, data, variant, fontSize }) {
                         <Typography
                             component="h1"
                             variant={variant}
-                            sx={{ fontSize: { fontSize } }}
+                            sx={{
+                                fontSize: { fontSize },
+                                fontFamily: "Poiret One, cursive",
+                                fontWeight: "bold",
+                            }}
                             data-aos="zoom-in"
                             data-aos-delay="200"
                         >

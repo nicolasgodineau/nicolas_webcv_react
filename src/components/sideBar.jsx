@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import theme from "../components/theme/theme";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -14,7 +14,6 @@ import {
     ListItemText,
     Avatar,
     Link,
-    Container,
 } from "@mui/material";
 import Button from "@mui/material/Button";
 
@@ -38,7 +37,6 @@ export default function SideBar({
     const toggleContent = () => {
         setShowText(!showText);
     };
-
     const topValue = useTopValue();
 
     return (
@@ -79,8 +77,10 @@ export default function SideBar({
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
                                 gap: "10px",
                             },
+                            fontFamily: "Poiret One, cursive",
+                            fontWeight: "bold",
                         }}
-                        data-aos={isMobileDevice ? "" : { AosEffect }}
+                        data-aos={isMobileDevice ? undefined : AosEffect}
                         data-aos-once={isMobileDevice ? "" : "true"}
                         data-aos-delay={isMobileDevice ? "" : { AosDelay }}
                     >
@@ -96,26 +96,38 @@ export default function SideBar({
                                 alignItems: "start",
                                 justifyContent: "space-between",
                             }}
-                            data-aos={isMobileDevice ? "" : "fade-right"}
-                            data-aos-once={isMobileDevice ? "" : "true"}
+                            data-aos={isMobileDevice ? undefined : "fade-right"}
+                            data-aos-once={isMobileDevice ? undefined : "true"}
                         >
                             <Typography
                                 component="h2"
                                 variant="h4"
                                 sx={{
                                     color: theme.palette.text.primary,
+                                    fontFamily: "Poiret One, cursive",
+                                    fontWeight: "bold",
                                 }}
-                                data-aos={isMobileDevice ? "" : "fade-right"}
-                                data-aos-once={isMobileDevice ? "" : "true"}
+                                data-aos={
+                                    isMobileDevice ? undefined : "fade-right"
+                                }
+                                data-aos-once={
+                                    isMobileDevice ? undefined : "true"
+                                }
                                 data-aos-delay="200"
                             >
                                 {t("personalInformations.name")}
                             </Typography>
                             <List
                                 component="ul"
-                                sx={{ padding: "0px" }}
-                                data-aos={isMobileDevice ? "" : "fade-right"}
-                                data-aos-once={isMobileDevice ? "" : "true"}
+                                sx={{
+                                    padding: "0px",
+                                }}
+                                data-aos={
+                                    isMobileDevice ? undefined : "fade-right"
+                                }
+                                data-aos-once={
+                                    isMobileDevice ? undefined : "true"
+                                }
                                 data-aos-delay="500"
                             >
                                 <ListItemText>
@@ -138,9 +150,13 @@ export default function SideBar({
                                         borderRadius: 7,
                                     }}
                                     data-aos={
-                                        isMobileDevice ? "" : "fade-right"
+                                        isMobileDevice
+                                            ? undefined
+                                            : "fade-right"
                                     }
-                                    data-aos-once={isMobileDevice ? "" : "true"}
+                                    data-aos-once={
+                                        isMobileDevice ? undefined : "true"
+                                    }
                                 />
                                 <List
                                     dense={true}
@@ -171,12 +187,16 @@ export default function SideBar({
                                         sx={{
                                             fontSize: 24,
                                             color: theme.palette.text.primary,
+                                            fontFamily: "Poiret One, cursive",
+                                            fontWeight: "bold",
                                         }}
                                         data-aos={
-                                            isMobileDevice ? "" : "fade-right"
+                                            isMobileDevice
+                                                ? undefined
+                                                : "fade-right"
                                         }
                                         data-aos-once={
-                                            isMobileDevice ? "" : "true"
+                                            isMobileDevice ? undefined : "true"
                                         }
                                     >
                                         {t("personalInformations.baseIn")}{" "}
@@ -212,10 +232,12 @@ export default function SideBar({
                                             },
                                         }}
                                         data-aos={
-                                            isMobileDevice ? "" : "fade-right"
+                                            isMobileDevice
+                                                ? undefined
+                                                : "fade-right"
                                         }
                                         data-aos-once={
-                                            isMobileDevice ? "" : "true"
+                                            isMobileDevice ? undefined : "true"
                                         }
                                         data-aos-delay="200"
                                     >
@@ -247,10 +269,12 @@ export default function SideBar({
                                             },
                                         }}
                                         data-aos={
-                                            isMobileDevice ? "" : "fade-right"
+                                            isMobileDevice
+                                                ? undefined
+                                                : "fade-right"
                                         }
                                         data-aos-once={
-                                            isMobileDevice ? "" : "true"
+                                            isMobileDevice ? undefined : "true"
                                         }
                                         data-aos-delay="400"
                                     >
@@ -281,10 +305,12 @@ export default function SideBar({
                                             },
                                         }}
                                         data-aos={
-                                            isMobileDevice ? "" : "fade-right"
+                                            isMobileDevice
+                                                ? undefined
+                                                : "fade-right"
                                         }
                                         data-aos-once={
-                                            isMobileDevice ? "" : "true"
+                                            isMobileDevice ? undefined : "true"
                                         }
                                         data-aos-delay="600"
                                     >
@@ -315,9 +341,13 @@ export default function SideBar({
                                         },
                                     }}
                                     data-aos={
-                                        isMobileDevice ? "" : "fade-right"
+                                        isMobileDevice
+                                            ? undefined
+                                            : "fade-right"
                                     }
-                                    data-aos-once={isMobileDevice ? "" : "true"}
+                                    data-aos-once={
+                                        isMobileDevice ? undefined : "true"
+                                    }
                                     variant="text"
                                     startIcon={<MailOutlineIcon />}
                                     onClick={toggleContent}

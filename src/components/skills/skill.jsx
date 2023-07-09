@@ -53,7 +53,7 @@ export default function Skill({ skill, delay }) {
                         component="p"
                         sx={{
                             fontSize: "1rem",
-                            color: theme.palette.primary,
+                            color: theme.palette.text.primary,
                         }}
                     >
                         {skill.name}

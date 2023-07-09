@@ -21,7 +21,6 @@ export default function App() {
 
     // Pour la désactivation des annimations au format tablette
     const isMobileDevice = useMediaQuery(theme.breakpoints.down("tablet"));
-    console.log("isMobileDevice:", isMobileDevice);
 
     useEffect(() => {
         AOS.init({
@@ -67,7 +66,7 @@ export default function App() {
                     <SideBar
                         AosEffect="fade-up"
                         AosDelay="0"
-                        isMobile={isMobileDevice}
+                        isMobileDevice={isMobileDevice}
                         selectedLanguage={selectedLanguage}
                         handleChangeLanguage={handleChangeLanguage}
                     />

@@ -73,6 +73,9 @@ export default function Skills({ AosEffect, AosDelay }) {
                                 sx={{
                                     fontSize: "2rem",
                                     paddingTop: "2rem",
+                                    color: theme.palette.text.primary,
+                                    fontFamily: "Lato, sans-serif",
+                                    fontWeight: "light",
                                 }}
                             >
                                 {t("skills.category.connaissance.title")}
@@ -128,6 +131,9 @@ export default function Skills({ AosEffect, AosDelay }) {
                             <Typography
                                 sx={{
                                     fontSize: "2rem",
+                                    color: theme.palette.text.primary,
+                                    fontFamily: "Lato, sans-serif",
+                                    fontWeight: "light",
                                 }}
                             >
                                 {t("skills.category.langagesFrameworks.title")}
@@ -187,6 +193,9 @@ export default function Skills({ AosEffect, AosDelay }) {
                             <Typography
                                 sx={{
                                     fontSize: "2rem",
+                                    color: theme.palette.text.primary,
+                                    fontFamily: "Lato, sans-serif",
+                                    fontWeight: "light",
                                 }}
                             >
                                 {t("skills.category.logicielsOutils.title")}

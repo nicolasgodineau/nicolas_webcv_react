@@ -1,6 +1,10 @@
 import { createTheme } from "@mui/material";
 
 const theme = createTheme({
+    typography: {
+        fontFamily: "Lato, sans-serif", // Police par défaut
+        fontWeightRegular: 300,
+    },
     spacing: 8,
     palette: {
         background: {

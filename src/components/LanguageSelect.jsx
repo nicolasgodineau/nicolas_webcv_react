@@ -8,7 +8,6 @@ import {
     MenuItem,
     Box,
 } from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import theme from "../components/theme/theme";
 
 import FR from "../images/icons/FR.png";

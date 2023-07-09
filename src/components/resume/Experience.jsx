@@ -101,7 +101,7 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                                     color:
                                         experience.id === 1
                                             ? theme.palette.accent
-                                            : theme.palette.text.secondary,
+                                            : theme.palette.text.primary,
                                 }}
                                 data-aos="fade-left"
                                 data-aos-delay="500"
@@ -142,7 +142,7 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                             component="h3"
                             sx={{
                                 fontSize: "16px",
-                                fontWeight: "bold",
+                                fontWeight: "regular",
                                 marginBottom: "5px",
                                 color: theme.palette.text.primary,
                             }}

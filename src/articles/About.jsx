@@ -55,6 +55,7 @@ export default function About({ AosEffect, AosDelay }) {
                                 maxWidth: "480px",
                                 marginBottom: "30px",
                                 color: theme.palette.text.secondary,
+                                fontFamily: "Lato, sans-serif",
                             }}
                         >
                             {t("about.description")}
