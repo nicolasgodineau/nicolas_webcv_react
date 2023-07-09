@@ -43,6 +43,13 @@ export default function LanguageSelect() {
                     left="0px"
                     display="inline-flex"
                     alignItems="center"
+                    sx={{
+                        [theme.breakpoints.down("tablet")]: {
+                            // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                            top: "5px",
+                            left: "30px",
+                        },
+                    }}
                 >
                     <IconButton
                         size="small"
