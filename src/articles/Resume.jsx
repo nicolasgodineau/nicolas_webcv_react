@@ -1,8 +1,8 @@
 import React from "react";
 import theme from "../components/theme/theme";
-import { CssBaseline, ThemeProvider, Container } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
-import Header from "components/header.jsx"; // pour le header de la section
+import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import Experience from "../components/resume/Experience.jsx"; // pour l'affichage d'une experience
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { useTranslation } from "react-i18next";
@@ -26,31 +26,12 @@ export default function Resume({ AosEffect, AosDelay }) {
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
-                    <Container
-                        component="article"
-                        disablegutters="true"
-                        maxWidth="sm2"
-                        data-aos={AosEffect}
-                        data-aos-delay={AosDelay}
-                        sx={{
-                            paddingY: 9,
-                            overflow: "hidden",
-                            [theme.breakpoints.down("tablet")]: {
-                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
-                                paddingTop: 5,
-                                paddingBottom: 0,
-                                paddingX: 0,
-                                marginLeft: 0,
-                            },
-                        }}
+                        icon={faBriefcase}
+                        data={dataHeader}
+                        AosEffect={AosEffect}
+                        AosDelay={AosDelay}
+
                     >
-                        <Header
-                            component="header"
-                            icon={faBriefcase}
-                            data={dataHeader}
-                            variant={"h1"}
-                            fontSize={"clamp(2rem, 6vw, 3rem)"}
-                        />
                         {Object.values(experiences).map((experience, index) => (
                             <Experience
                                 key={experience.id}
@@ -76,7 +57,7 @@ export default function Resume({ AosEffect, AosDelay }) {
                                 delay={index * 150}
                             />
                         ))}
-                    </Container>
+                    </CustomArticleContainer>
                 </CssBaseline>
             </ThemeProvider>
         </>
