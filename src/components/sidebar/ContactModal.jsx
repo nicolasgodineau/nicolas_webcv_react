@@ -61,7 +61,7 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
                     <Box
                         open={open}
                         onClose={() => setOpen(false)}
-                        sx={{ height: "390px", width: "100%" }}
+                        sx={{ height: "475px", width: "281px" }}
                     >
                         <FormControl
                             onSubmit={handleSubmit}
