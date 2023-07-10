@@ -34,10 +34,10 @@ export default function SideBar({
     AosDelay,
 }) {
     const { t } = useTranslation();
-    const [showText, setShowText] = useState(true);
+    const [showContact, setShowText] = useState(true);
 
     const toggleContent = () => {
-        setShowText(!showText);
+        setShowText(!showContact);
     };
     const topValue = useTopValue();
 
@@ -49,6 +49,7 @@ export default function SideBar({
             <ThemeProvider theme={theme}>
                 <CssBaseline>
                     <Container
+                        component="aside"
                         disableGutters={isTablet} // Désactive les marges si c'est en mode tablette
                         sx={{
                             width: "max-content",
@@ -62,8 +63,8 @@ export default function SideBar({
                         }}
                     >
                         <Box
+                            component="div"
                             position="sticky"
-                            component="aside"
                             disablegutters="true"
                             fixed="true"
                             sx={{
@@ -163,7 +164,7 @@ export default function SideBar({
                                     </ListItemText>
                                 </List>
                             </Box>
-                            {showText ? (
+                            {showContact ? (
                                 <>
                                     <Avatar
                                         component="div"
@@ -191,21 +192,6 @@ export default function SideBar({
                                             margin: 0,
                                         }}
                                     >
-                                        {/*                             <ListItem
-                                component="a"
-                                href={`mailto:${email}`}
-                                disablePadding={true}
-                                sx={{
-                                    fontSize: 24,
-                                    color: theme.palette.text.primary,
-                                    textDecoration: "none",
-                                    "&:hover": {
-                                        textDecoration: "underline",
-                                    },
-                                }}
-                            >
-                                {email}
-                            </ListItem> */}
                                         <ListItem
                                             component="li"
                                             disablePadding={true}

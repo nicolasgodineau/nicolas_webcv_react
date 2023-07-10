@@ -35,7 +35,7 @@
     "introduction": {
         "header": {
             "subtitle": "introduction",
-            "text": "Say Hi from **Nicolas**, Web Developer and Photographer."
+            "text": "Say Hi to **Nicolas**, Web Developer and Photographer."
         },
         "description": "I design and code beautifully simple things and i love what i do. Just simple like that!"
     },
@@ -171,142 +171,49 @@
             "subtitle": "portfolio",
             "text": "Featured **Projects**"
         },
-        "projet": {
+        "projets": {
             "mars": {
                 "title": "Mars Project",
                 "subtitle": "Create a statistical website with Laravel.",
                 "description": "The project must have at least 4 routes pointed to the controller.\nHave a form and use the POST method.\nProcess the received data and display it on a page.\nWork with a 'Master' file and use 'blade' for views.",
-                "img": [
-                    {
-                        "thumbnail": "/images/portfolio/mars/thumbnails/thumbnails_1.webp",
-                        "img": "/images/portfolio/mars/img_1.webp"
-                    },
-                    {
-                        "thumbnail": "/images/portfolio/mars/thumbnails/thumbnails_2.webp",
-                        "img": "/images/portfolio/mars/img_2.webp"
-                    },
-                    {
-                        "thumbnail": "/images/portfolio/mars/thumbnails/thumbnails_3.webp",
-                        "img": "/images/portfolio/mars/img_3.webp"
-                    }
-                ]
+                "img": 3,
+                "textAlt": "Projet house on Mars"
             },
             "faceMaisonneuve": {
                 "title": "FaceMaisonneuve Project",
                 "subtitle": "Create a student discussion website.",
                 "description": "Generate 15 cities, 100 students, and 10 articles using Faker Factory.\nImplement methods to display, create, modify, and delete a student and/or article.\nCreate a login page with encrypted password.\nSet up a multilingual system.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_5.webp"
-                    }
-                ]
+                "img": 5,
+                "textAlt": "Projet house on Mars"
             },
             "meteo": {
                 "title": "Weather Project",
                 "subtitle": "Create a single page application with REST",
                 "description": "Create a nodeJS server.\nRetrieve data from an API of our choice.\nUpdate the JSON file when the server is launched.\nCreate pages to display different information returned by the API.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_5.webp"
-                    }
-                ]
+                "img": 0,
+                "textAlt": "Projet house on Mars"
             },
             "stampee": {
                 "title": "Stampee Project",
                 "subtitle": "Create a multi-page auction site.",
                 "description": "Create visual identity, HTML and CSS pages, and a database.\nThe project should be MVC-based but without a framework.\nAbility to create an account, modify it, create an ad, and bid on sales.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Project1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Project1_5.webp"
-                    }
-                ]
+                "img": 4,
+                "textAlt": "Projet house on Mars"
             },
             "noemie": {
                 "title": "Professional Makeup Artist Website",
                 "subtitle": "Created with WordPress.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Project1_1.webp",
-                        "img": "/portfolio/noemie/Project1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Project1_2.webp",
-                        "img": "/portfolio/noemie/Project1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Project1_3.webp",
-                        "img": "/portfolio/noemie/Project1_3.webp"
-                    }
-                ]
+                "description": "",
+
+                "img": 3,
+                "textAlt": "Projet house on Mars"
             },
             "photographie": {
                 "title": "Personal Photography Website",
                 "subtitle": "Created with VueJs and TailwindCss",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Project1_1.webp",
-                        "img": "/portfolio/photographie/Project1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Project1_2.webp",
-                        "img": "/portfolio/photographie/Project1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Project1_3.webp",
-                        "img": "/portfolio/photographie/Project1_3.webp"
-                    }
-                ]
+                "description": "",
+                "img": 3,
+                "textAlt": "Projet house on Mars"
             }
         }
     }

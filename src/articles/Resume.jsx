@@ -26,11 +26,11 @@ export default function Resume({ AosEffect, AosDelay }) {
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
-                    <CustomArticleContainer
                         icon={faBriefcase}
                         data={dataHeader}
                         AosEffect={AosEffect}
                         AosDelay={AosDelay}
+
                     >
                         {Object.values(experiences).map((experience, index) => (
                             <Experience

@@ -1,12 +1,14 @@
 import React from "react";
 import theme from "../components/theme/theme";
+
 import { CssBaseline, ThemeProvider, Divider } from "@mui/material";
+
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import { faGripVertical } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import data from "../lang/en.json"; // import des data du JSON anglais
-import Projet from "components/portfolio/projet.jsx";
 import { useTranslation } from "react-i18next";
+import Gallery from "components/portfolio/gallery.jsx";
 
 export default function Portfolio({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
@@ -24,6 +26,7 @@ export default function Portfolio({ AosEffect, AosDelay }) {
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
+
                     <CustomArticleContainer
                         icon={faGripVertical}
                         data={dataHeader}
@@ -74,6 +77,7 @@ export default function Portfolio({ AosEffect, AosDelay }) {
                             }}
                         /> */}
                     </CustomArticleContainer>
+
                 </CssBaseline>
             </ThemeProvider>
         </>

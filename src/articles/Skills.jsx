@@ -33,6 +33,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                         data={dataHeader}
                         AosEffect={AosEffect}
                         AosDelay={AosDelay}
+
                     >
                         <Box
                             component="div"

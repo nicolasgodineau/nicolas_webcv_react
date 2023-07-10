@@ -24,6 +24,7 @@ export default function Introduction({ AosEffect, AosDelay }) {
                         data={dataHeader}
                         AosEffect={AosEffect}
                         AosDelay={AosDelay}
+
                     >
                         <Typography
                             component="p"
@@ -35,7 +36,9 @@ export default function Introduction({ AosEffect, AosDelay }) {
                         >
                             {t("introduction.description")}
                         </Typography>
+
                     </CustomArticleContainer>
+
                 </CssBaseline>
             </ThemeProvider>
         </>

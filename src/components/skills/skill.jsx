@@ -14,9 +14,7 @@ export default function Skill({ skill, delay }) {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
-                <Grid
-                    item
-                    xs={2}
+                <Box
                     component="div"
                     disablegutters="true"
                     key={skill.id}
@@ -58,7 +56,7 @@ export default function Skill({ skill, delay }) {
                     >
                         {skill.name}
                     </Typography>
-                </Grid>
+                </Box>
             </CssBaseline>
         </ThemeProvider>
     );

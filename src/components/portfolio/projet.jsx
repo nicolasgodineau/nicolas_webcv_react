@@ -9,8 +9,11 @@ import {
 import Gallery from "./gallery.jsx";
 import { useTranslation } from "react-i18next";
 
-export default function Projet({ projet, image }) {
+export default function Projet({ projet, images }) {
+    console.log("projet:", projet);
+
     const { title, subtitle, description } = projet;
+    console.log("projet:", projet);
     const { t } = useTranslation();
     return (
         <>
@@ -46,7 +49,11 @@ export default function Projet({ projet, image }) {
                     >
                         {description}
                     </Typography>
-                    <Gallery images={image} titre={title} />
+                    <Gallery
+                        images={images}
+                        titre={title}
+                        dossier={projet.dossier}
+                    />
                 </CssBaseline>
             </ThemeProvider>
         </>
