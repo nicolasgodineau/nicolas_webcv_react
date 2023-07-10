@@ -73,6 +73,7 @@ export default function App() {
                     <Container
                         component="section"
                         sx={{
+                            flexGrow: "1",
                             overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)

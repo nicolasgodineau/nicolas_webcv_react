@@ -37,7 +37,9 @@ export default function Introduction({ AosEffect, AosDelay }) {
                         sx={{
                             paddingTop: topValue,
                             paddingBottom: 9,
-                            maxWidth: "720px",
+                            maxWidth: theme.breakpoints.down("tablet")
+                                ? "calc(100% - 10%)"
+                                : "720px",
                             overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
