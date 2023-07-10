@@ -3,15 +3,13 @@ import theme from "../components/theme/theme";
 import {
     CssBaseline,
     ThemeProvider,
-    Container,
     Typography,
     Box,
     Divider,
-    Item,
     Grid,
 } from "@mui/material";
 
-import Header from "components/header.jsx"; // pour le header de la section
+import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import Skill from "../components/skills/skill.jsx"; // pour l'affichage d'un skill
 import { faShapes } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { useTranslation } from "react-i18next";
@@ -30,32 +28,12 @@ export default function Skills({ AosEffect, AosDelay }) {
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
-                    <Container
-                        component="article"
-                        disablegutters="true"
-                        maxWidth="false"
-                        data-aos={AosEffect}
-                        data-aos-delay={AosDelay}
-                        sx={{
-                            paddingY: 9,
-                            maxWidth: "720px",
-                            overflow: "hidden",
-                            [theme.breakpoints.down("tablet")]: {
-                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
-                                paddingTop: 5,
-                                paddingBottom: 0,
-                                paddingX: 0,
-                                marginLeft: 0,
-                            },
-                        }}
+                    <CustomArticleContainer
+                        icon={faShapes}
+                        data={dataHeader}
+                        AosEffect={AosEffect}
+                        AosDelay={AosDelay}
                     >
-                        <Header
-                            component="header"
-                            icon={faShapes}
-                            data={dataHeader}
-                            variant={"h1"}
-                            fontSize={"clamp(2rem, 6vw, 3rem)"}
-                        />
                         <Box
                             component="div"
                             disablegutters="true"
@@ -233,7 +211,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                                 ))}
                             </Box>
                         </Box>
-                    </Container>
+                    </CustomArticleContainer>
                 </CssBaseline>
             </ThemeProvider>
         </>

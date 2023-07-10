@@ -1,8 +1,8 @@
 import React from "react";
 import theme from "../components/theme/theme";
-import { CssBaseline, ThemeProvider, Container, Divider } from "@mui/material";
+import { CssBaseline, ThemeProvider, Divider } from "@mui/material";
 
-import Header from "components/header.jsx"; // pour le header de la section
+import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import { faGripVertical } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import data from "../lang/en.json"; // import des data du JSON anglais
 import Projet from "components/portfolio/projet.jsx";
@@ -24,32 +24,12 @@ export default function Portfolio({ AosEffect, AosDelay }) {
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
-                    <Container
-                        component="article"
-                        disablegutters="true"
-                        maxWidth="false"
-                        data-aos={AosEffect}
-                        data-aos-delay={AosDelay}
-                        sx={{
-                            paddingY: 9,
-                            maxWidth: "720px",
-                            overflow: "hidden",
-                            [theme.breakpoints.down("tablet")]: {
-                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
-                                paddingTop: 5,
-                                paddingBottom: 0,
-                                paddingX: 0,
-                                marginLeft: 0,
-                            },
-                        }}
+                    <CustomArticleContainer
+                        icon={faGripVertical}
+                        data={dataHeader}
+                        AosEffect={AosEffect}
+                        AosDelay={AosDelay}
                     >
-                        <Header
-                            component="header"
-                            icon={faGripVertical}
-                            data={dataHeader}
-                            variant={"h1"}
-                            fontSize={"clamp(2rem, 6vw, 3rem)"}
-                        />
                         <Projet
                             projet={{
                                 title: t("portfolio.projet.mars.title"),
@@ -93,7 +73,7 @@ export default function Portfolio({ AosEffect, AosDelay }) {
                                 backgroundColor: theme.palette.text.secondary,
                             }}
                         /> */}
-                    </Container>
+                    </CustomArticleContainer>
                 </CssBaseline>
             </ThemeProvider>
         </>
