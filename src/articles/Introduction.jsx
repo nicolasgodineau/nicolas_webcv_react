@@ -1,10 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import theme from "../components/theme/theme";
 import { CssBaseline, ThemeProvider, Typography } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import { faHouse } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
-import { useTranslation } from "react-i18next";
 
 export default function Introduction({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
@@ -24,7 +24,6 @@ export default function Introduction({ AosEffect, AosDelay }) {
                         data={dataHeader}
                         AosEffect={AosEffect}
                         AosDelay={AosDelay}
-
                     >
                         <Typography
                             component="p"
@@ -36,9 +35,7 @@ export default function Introduction({ AosEffect, AosDelay }) {
                         >
                             {t("introduction.description")}
                         </Typography>
-
                     </CustomArticleContainer>
-
                 </CssBaseline>
             </ThemeProvider>
         </>

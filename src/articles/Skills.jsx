@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import theme from "../components/theme/theme";
 import {
     CssBaseline,
@@ -10,9 +11,8 @@ import {
 } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
-import Skill from "../components/skills/skill.jsx"; // pour l'affichage d'un skill
+import Skill from "../components/skills/Skill.jsx"; // pour l'affichage d'un skill
 import { faShapes } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
-import { useTranslation } from "react-i18next";
 
 export default function Skills({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
@@ -33,7 +33,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                         data={dataHeader}
                         AosEffect={AosEffect}
                         AosDelay={AosDelay}
-
                     >
                         <Box
                             component="div"

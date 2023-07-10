@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "../components/theme/theme.js";
+import theme from "./theme/theme.js";
 import { Box, CssBaseline, ThemeProvider, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

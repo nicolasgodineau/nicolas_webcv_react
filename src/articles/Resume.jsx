@@ -1,11 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import theme from "../components/theme/theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import Experience from "../components/resume/Experience.jsx"; // pour l'affichage d'une experience
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
-import { useTranslation } from "react-i18next";
 
 export default function Resume({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
@@ -26,11 +26,11 @@ export default function Resume({ AosEffect, AosDelay }) {
         <>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
+                    <CustomArticleContainer
                         icon={faBriefcase}
                         data={dataHeader}
                         AosEffect={AosEffect}
                         AosDelay={AosDelay}
-
                     >
                         {Object.values(experiences).map((experience, index) => (
                             <Experience

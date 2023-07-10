@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import theme from "../theme/theme";
 import {
     Button,
@@ -11,7 +12,6 @@ import {
 } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CloseIcon from "@mui/icons-material/Close";
-import { useTranslation } from "react-i18next";
 
 const ContactModal = ({ toggleContent, isMobileDevice }) => {
     const { t } = useTranslation();

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import theme from "../components/theme/theme";
+import { useTranslation } from "react-i18next";
+import theme from "./theme/theme";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -20,7 +21,6 @@ import {
 import Button from "@mui/material/Button";
 
 import Nicolas from "../images/Nicolas.webp";
-import { useTranslation } from "react-i18next";
 import LanguageSelect from "./LanguageSelect.jsx";
 
 import useTopValue from "../hooks/useTopValue.js";

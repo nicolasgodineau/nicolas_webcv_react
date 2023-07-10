@@ -1,10 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import theme from "../components/theme/theme";
 import { CssBaseline, ThemeProvider, Typography } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import { faUser } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
-import { useTranslation } from "react-i18next";
 
 export default function About({ AosEffect, AosDelay }) {
     const { t } = useTranslation();

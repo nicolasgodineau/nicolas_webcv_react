@@ -2,7 +2,7 @@ import React from "react";
 import theme from "../components/theme/theme";
 import { CssBaseline, ThemeProvider, Container } from "@mui/material";
 
-import Header from "components/header.jsx"; // pour le header de la section
+import Header from "components/Header.jsx"; // pour le header de la section
 
 export default function CustomArticleContainer({
     icon,

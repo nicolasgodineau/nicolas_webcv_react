@@ -7,7 +7,7 @@ import {
     Typography,
 } from "@mui/material";
 
-import Header from "components/header.jsx"; // pour le header de la section
+import Header from "components/Header.jsx"; // pour le header de la section
 import { faUser } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import data from "../data.json"; // import des data
 

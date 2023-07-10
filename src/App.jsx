@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import {
     Container,
@@ -7,14 +8,12 @@ import {
     useMediaQuery,
 } from "@mui/material";
 import theme from "../src/components/theme/theme.js";
-import SideBar from "./components/sideBar.jsx";
+import SideBar from "./components/SideBar.jsx";
 import Introduction from "articles/Introduction.jsx";
 import About from "articles/About.jsx";
 import Resume from "articles/Resume.jsx";
 import Skills from "articles/Skills.jsx";
 import Portfolio from "articles/Portfolio.jsx";
-
-import { useTranslation } from "react-i18next";
 
 export default function App() {
     const { i18n } = useTranslation();

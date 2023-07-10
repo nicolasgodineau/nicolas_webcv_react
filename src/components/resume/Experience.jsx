@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import theme from "../theme/theme.js";
 import {
     CssBaseline,
@@ -12,7 +13,6 @@ import {
 } from "@mui/material";
 import { faCircle } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useTranslation } from "react-i18next";
 
 export default function Experience({ experience, lastExperienceId, delay }) {
     const { t } = useTranslation();
