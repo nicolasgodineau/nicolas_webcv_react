@@ -7,7 +7,6 @@ import {
     Typography,
     Box,
     Divider,
-    Item,
     Grid,
 } from "@mui/material";
 
@@ -33,12 +32,11 @@ export default function Skills({ AosEffect, AosDelay }) {
                     <Container
                         component="article"
                         disablegutters="true"
-                        maxWidth="false"
+                        maxWidth="sm2"
                         data-aos={AosEffect}
                         data-aos-delay={AosDelay}
                         sx={{
                             paddingY: 9,
-                            maxWidth: "720px",
                             overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)

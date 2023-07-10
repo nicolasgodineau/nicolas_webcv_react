@@ -31,15 +31,12 @@ export default function Introduction({ AosEffect, AosDelay }) {
                     <Container
                         component="article"
                         disablegutters="true"
-                        maxWidth="false"
+                        maxWidth="sm2"
                         data-aos={AosEffect}
                         data-aos-delay={AosDelay}
                         sx={{
                             paddingTop: topValue,
                             paddingBottom: 9,
-                            maxWidth: theme.breakpoints.down("tablet")
-                                ? "calc(100% - 10%)"
-                                : "720px",
                             overflow: "hidden",
                             [theme.breakpoints.down("tablet")]: {
                                 // Styles pour les écrans de largeur maximale "tablet" (1090px)
@@ -66,13 +63,6 @@ export default function Introduction({ AosEffect, AosDelay }) {
                         >
                             {t("introduction.description")}
                         </Typography>
-                        {/*                         <Link
-                            underline="none"
-                            aria-label="My projects"
-                            sx={{ displal: "block", height: "175px" }}
-                        >
-                            {" My projects "}
-                        </Link> */}
                     </Container>
                 </CssBaseline>
             </ThemeProvider>
