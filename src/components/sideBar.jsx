@@ -1,15 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import theme from "./theme/theme";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import WebsiteIcon from "@mui/icons-material/Language";
+
 import {
-    CssBaseline,
     Box,
     Typography,
-    ThemeProvider,
     List,
     ListItem,
     ListItemText,
@@ -18,13 +13,15 @@ import {
     Container,
     useMediaQuery,
 } from "@mui/material";
-import Button from "@mui/material/Button";
 
+import Button from "@mui/material/Button";
 import Nicolas from "../images/Nicolas.webp";
 import LanguageSelect from "./LanguageSelect.jsx";
-
-import useTopValue from "../hooks/useTopValue.js";
 import ContactModal from "./sidebar/ContactModal.jsx";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import WebsiteIcon from "@mui/icons-material/Language";
 
 export default function SideBar({
     selectedLanguage,
@@ -36,7 +33,6 @@ export default function SideBar({
     const { t } = useTranslation();
     const [showContact, setShowText] = useState(true);
     const isTablet = useMediaQuery((theme) => theme.breakpoints.down("tablet"));
-    const topValue = useTopValue();
 
     const toggleContent = () => {
         setShowText(!showContact);
@@ -86,13 +82,14 @@ export default function SideBar({
                 fixed="true"
                 sx={{
                     width: "max-content",
-                    top: topValue,
+                    top: "72px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "space-evenly",
                     gap: 4,
                     padding: 4,
+
                     border: `2px solid ${theme.palette.text.secondary}`,
                     borderRadius: 5,
                     height: "fit-content",

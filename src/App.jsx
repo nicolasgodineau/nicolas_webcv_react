@@ -55,6 +55,7 @@ export default function App() {
                     maxWidth="lg"
                     sx={{
                         display: "flex",
+                        disableScrolling: "true",
                         backgroundColor: theme.palette.background.dark,
                         [theme.breakpoints.down("tablet")]: {
                             // Styles pour les écrans de largeur maximale "tablet" (1090px)

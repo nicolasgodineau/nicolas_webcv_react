@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "./theme/theme.js";
-import { Box, CssBaseline, ThemeProvider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Header({ icon, data, variant, fontSize }) {
@@ -31,76 +31,63 @@ export default function Header({ icon, data, variant, fontSize }) {
     const extractedTexts = extractTextAndSurroundings(data.header.texte); // Appel de la fonction d'extraction
 
     return (
-        <>
-            <ThemeProvider theme={theme}>
-                <CssBaseline>
-                    <Box
-                        component="header"
-                        disablegutters="true"
-                        sx={{ marginBottom: 1 }}
-                    >
-                        {/* For subtitle */}
-                        <Box
-                            sx={{
-                                height: "min-content",
-                                display: "inline-flex",
-                                gap: 1,
-                                padding: "9px 20px",
-                                border: `2px solid ${theme.palette.text.secondary}`,
-                                borderRadius: 5,
-                                marginBottom: 5,
-                                [theme.breakpoints.down("tablet")]: {
-                                    // Styles pour les écrans de largeur maximale "tablet" (1090px)
-                                    marginBottom: 2.5,
-                                    /* A définir si on garde ou pas */
-                                    /*                                     width: "100%",
-                                    justifyContent: "center", */
-                                },
-                            }}
-                            data-aos="fade-down"
-                            data-aos-delay="100"
-                        >
-                            <FontAwesomeIcon icon={icon} />
-                            <Typography
-                                component="h4"
-                                sx={{
-                                    fontSize: "14px",
-                                    color: theme.palette.primary,
-                                    textTransform: "uppercase",
-                                    fontFamily: "Lato, sans-serif",
-                                }}
-                            >
-                                {data.header.subtitle}
-                            </Typography>
-                        </Box>
-                        {/* Zone text header */}
-                        <Typography
-                            component="h1"
-                            variant={variant}
-                            sx={{
-                                fontSize: { fontSize },
-                                fontFamily: "Poiret One, cursive",
-                                fontWeight: "bold",
-                            }}
-                            data-aos="zoom-in"
-                            data-aos-delay="200"
-                        >
-                            {extractedTexts.beforeText}
-                            <Typography
-                                component="span"
-                                variant={variant}
-                                sx={{
-                                    fontSize: { fontSize },
-                                    color: theme.palette.accent,
-                                }}
-                            >
-                                {extractedTexts.extractedText}
-                            </Typography>
-                            {extractedTexts.afterText}
-                        </Typography>
-                    </Box>
-                </CssBaseline>
-            </ThemeProvider>
-        </>
+        <Box component="header" disablegutters="true" sx={{ marginBottom: 1 }}>
+            {/* For subtitle */}
+            <Box
+                sx={{
+                    height: "min-content",
+                    display: "inline-flex",
+                    gap: 1,
+                    padding: "9px 20px",
+                    border: `2px solid ${theme.palette.text.secondary}`,
+                    borderRadius: 5,
+                    marginBottom: 5,
+                    [theme.breakpoints.down("tablet")]: {
+                        // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                        marginBottom: 2.5,
+                    },
+                }}
+                data-aos="fade-down"
+                data-aos-delay="100"
+            >
+                <FontAwesomeIcon icon={icon} />
+                <Typography
+                    component="h4"
+                    sx={{
+                        fontSize: "14px",
+                        color: theme.palette.primary,
+                        textTransform: "uppercase",
+                        fontFamily: "Lato, sans-serif",
+                    }}
+                >
+                    {data.header.subtitle}
+                </Typography>
+            </Box>
+            {/* Zone text header */}
+            <Typography
+                component="h1"
+                variant={variant}
+                sx={{
+                    fontSize: { fontSize },
+                    fontFamily: "Poiret One, cursive",
+                    fontWeight: "bold",
+                }}
+                data-aos="zoom-in"
+                data-aos-delay="200"
+            >
+                {extractedTexts.beforeText}
+                <Typography
+                    component="span"
+                    variant={variant}
+                    sx={{
+                        fontSize: { fontSize },
+                        color: theme.palette.accent,
+                    }}
+                >
+                    {extractedTexts.extractedText}
+                </Typography>
+                {extractedTexts.afterText}
+            </Typography>
+        </Box>
     );
 }

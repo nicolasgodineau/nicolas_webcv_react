@@ -1,7 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import theme from "../components/theme/theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import Experience from "../components/resume/Experience.jsx"; // pour l'affichage d'une experience
@@ -23,43 +21,33 @@ export default function Resume({ AosEffect, AosDelay }) {
     const lastExperienceId = Object.keys(experiences).length;
 
     return (
-        <>
-            <ThemeProvider theme={theme}>
-                <CssBaseline>
-                    <CustomArticleContainer
-                        icon={faBriefcase}
-                        data={dataHeader}
-                        AosEffect={AosEffect}
-                        AosDelay={AosDelay}
-                    >
-                        {Object.values(experiences).map((experience, index) => (
-                            <Experience
-                                key={experience.id}
-                                experience={{
-                                    id: experience.id,
-                                    year: t(
-                                        `resume.experiences.${experience.id}.year`
-                                    ),
-                                    title: t(
-                                        `resume.experiences.${experience.id}.title`
-                                    ),
-                                    location: t(
-                                        `resume.experiences.${experience.id}.location`
-                                    ),
-                                    subtitle: t(
-                                        `resume.experiences.${experience.id}.subtitle`
-                                    ),
-                                    description: t(
-                                        `resume.experiences.${experience.id}.description`
-                                    ),
-                                }}
-                                lastExperienceId={lastExperienceId}
-                                delay={index * 150}
-                            />
-                        ))}
-                    </CustomArticleContainer>
-                </CssBaseline>
-            </ThemeProvider>
-        </>
+        <CustomArticleContainer
+            icon={faBriefcase}
+            data={dataHeader}
+            AosEffect={AosEffect}
+            AosDelay={AosDelay}
+        >
+            {Object.values(experiences).map((experience, index) => (
+                <Experience
+                    key={experience.id}
+                    experience={{
+                        id: experience.id,
+                        year: t(`resume.experiences.${experience.id}.year`),
+                        title: t(`resume.experiences.${experience.id}.title`),
+                        location: t(
+                            `resume.experiences.${experience.id}.location`
+                        ),
+                        subtitle: t(
+                            `resume.experiences.${experience.id}.subtitle`
+                        ),
+                        description: t(
+                            `resume.experiences.${experience.id}.description`
+                        ),
+                    }}
+                    lastExperienceId={lastExperienceId}
+                    delay={index * 150}
+                />
+            ))}
+        </CustomArticleContainer>
     );
 }

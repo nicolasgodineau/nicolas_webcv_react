@@ -46,14 +46,15 @@ export default function ProgressIncrementer({ targetPercentage }) {
         };
 
         // Création de l'Intersection Observer avec le gestionnaire d'intersection et les options
-        const observer = new IntersectionObserver(handleIntersection, options);
+        let observer;
         if (elementRef.current) {
+            observer = new IntersectionObserver(handleIntersection, options);
             observer.observe(elementRef.current); // Attache l'observer à l'élément référencé
         }
 
         // Nettoyage de l'Intersection Observer lorsque le composant est démonté
         return () => {
-            if (elementRef.current) {
+            if (observer && elementRef.current) {
                 observer.unobserve(elementRef.current); // Détache l'observer de l'élément référencé
             }
         };
