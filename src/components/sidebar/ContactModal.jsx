@@ -13,7 +13,8 @@ import {
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CloseIcon from "@mui/icons-material/Close";
 
-const ContactModal = ({ toggleContent, isMobileDevice }) => {
+const ContactModal = ({ toggleContent, isMobileDevice, dimensions }) => {
+    console.log("dimensions:", dimensions);
     const { t } = useTranslation();
     const handleClick = () => {
         toggleContent();
@@ -33,6 +34,9 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
             [e.target.name]: e.target.value,
         }));
     };
+    /* 
+    const width = targetElementRef;
+    console.log("width:", width); */
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -61,7 +65,10 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
                     <Box
                         open={open}
                         onClose={() => setOpen(false)}
-                        sx={{ height: "475px", width: "281px" }}
+                        sx={{
+                            width: dimensions.width,
+                            height: dimensions.height,
+                        }}
                     >
                         <FormControl
                             onSubmit={handleSubmit}
@@ -71,6 +78,8 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
                                 flexDirection: "column",
                                 justifyContent: "space-between",
                             }}
+                            data-aos={isMobileDevice ? undefined : "fade-right"}
+                            data-aos-once={isMobileDevice ? undefined : "true"}
                         >
                             <TextField
                                 variant="standard"
@@ -79,6 +88,13 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
                                 value={formData.nom}
                                 onChange={handleChange}
                                 required
+                                data-aos={
+                                    isMobileDevice ? undefined : "fade-right"
+                                }
+                                data-aos-delay="200"
+                                data-aos-once={
+                                    isMobileDevice ? undefined : "true"
+                                }
                             />
                             <TextField
                                 variant="standard"
@@ -88,6 +104,13 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
+                                data-aos={
+                                    isMobileDevice ? undefined : "fade-right"
+                                }
+                                data-aos-delay="400"
+                                data-aos-once={
+                                    isMobileDevice ? undefined : "true"
+                                }
                             />
                             <TextField
                                 variant="standard"
@@ -98,6 +121,13 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
                                 value={formData.texte}
                                 onChange={handleChange}
                                 required
+                                data-aos={
+                                    isMobileDevice ? undefined : "fade-right"
+                                }
+                                data-aos-delay="600"
+                                data-aos-once={
+                                    isMobileDevice ? undefined : "true"
+                                }
                             />
                             <Button
                                 type="submit"
@@ -115,8 +145,12 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
                                             theme.palette.background.dark,
                                     },
                                 }}
-                                data-aos={isMobileDevice ? "" : "flip-right"}
-                                data-aos-once={isMobileDevice ? "" : "true"}
+                                data-aos={
+                                    isMobileDevice ? undefined : "fade-right"
+                                }
+                                data-aos-once={
+                                    isMobileDevice ? undefined : "true"
+                                }
                                 variant="text"
                                 startIcon={<MailOutlineIcon />}
                             >
@@ -138,8 +172,12 @@ const ContactModal = ({ toggleContent, isMobileDevice }) => {
                                     },
                                 }}
                                 onClick={handleClick}
-                                data-aos={isMobileDevice ? "" : "flip-right"}
-                                data-aos-once={isMobileDevice ? "" : "true"}
+                                data-aos={
+                                    isMobileDevice ? undefined : "fade-right"
+                                }
+                                data-aos-once={
+                                    isMobileDevice ? undefined : "true"
+                                }
                                 variant="text"
                             >
                                 <CloseIcon />
