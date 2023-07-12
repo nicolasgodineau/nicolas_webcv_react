@@ -10,22 +10,24 @@
         "country": " Canada",
         "links": [
             {
-                "id": "link1",
                 "name": "instagram",
-                "url": "www",
-                "className": "devicon-react-original"
+                "url": "https://www.instagram.com/nicolasg_portraits/",
+                "icon": "instagram"
             },
             {
-                "id": "link2",
                 "name": "Github",
-                "url": "www",
-                "className": "devicon-react-original"
+                "url": "https://github.com/nicolasgodineau",
+                "icon": "github"
             },
             {
-                "id": "link3",
                 "name": "Website",
-                "url": "www",
-                "className": "ri-global-line"
+                "url": "www.nicolasgodineau.com",
+                "icon": "globe"
+            },
+            {
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/in/nicolasgodineau/",
+                "icon": "linkedin"
             }
         ],
         "textCallToAction": "engagez moi !",

@@ -138,7 +138,7 @@ export default function Gallery({ projet, dossier }) {
                     <Typography
                         component="h4"
                         sx={{
-                            fontSize: "clamp(2rem, 6vw, 3rem)",
+                            fontSize: "clamp(1.2rem, 6vw, 3rem)",
                             color: theme.palette.primary,
                             textTransform: "uppercase",
                         }}

@@ -19,9 +19,8 @@ import Nicolas from "../images/Nicolas.webp";
 import LanguageSelect from "./LanguageSelect.jsx";
 import ContactModal from "./sidebar/ContactModal.jsx";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import WebsiteIcon from "@mui/icons-material/Language";
+
+import Data from "../lang/en.json";
 
 export default function SideBar({
     selectedLanguage,
@@ -33,6 +32,8 @@ export default function SideBar({
     const { t } = useTranslation();
     const [showContact, setShowText] = useState(true);
     const isTablet = useMediaQuery((theme) => theme.breakpoints.down("tablet"));
+
+    const links = Data.personalInformations.links;
 
     const toggleContent = () => {
         setShowText(!showContact);
@@ -216,109 +217,52 @@ export default function SideBar({
                                 marginBottom: 0,
                             }}
                         >
-                            <ListItem
-                                sx={{
-                                    width: "50px",
-                                    height: "50px",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    padding: 0,
-                                    border: `2px solid ${theme.palette.text.secondary}`,
-                                    borderRadius: "50%",
-                                    ":hover": {
-                                        cursor: "pointer",
-                                        color: theme.palette.accent,
-                                        border: `1px solid ${theme.palette.accent}`,
-                                    },
-                                }}
-                                data-aos={
-                                    isMobileDevice ? undefined : "fade-right"
-                                }
-                                data-aos-once={
-                                    isMobileDevice ? undefined : "true"
-                                }
-                                data-aos-delay="200"
-                            >
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    aria-label="Instagram"
-                                    href="https://www.instagram.com/nicolasg_travel/"
-                                    color="inherit"
+                            {links.map((link) => (
+                                <ListItem
+                                    key={link.id}
+                                    sx={{
+                                        width: "50px",
+                                        height: "50px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        padding: 0,
+                                        border: `2px solid ${theme.palette.text.secondary}`,
+                                        borderRadius: "50%",
+                                        ":hover": {
+                                            cursor: "pointer",
+                                            color: theme.palette.accent,
+                                            border: `2px solid ${theme.palette.accent}`,
+                                        },
+                                    }}
+                                    data-aos={
+                                        isMobileDevice
+                                            ? undefined
+                                            : "fade-right"
+                                    }
+                                    data-aos-once={
+                                        isMobileDevice ? undefined : "true"
+                                    }
+                                    data-aos-delay="600"
                                 >
-                                    {" "}
-                                    {<InstagramIcon />}
-                                </Link>
-                            </ListItem>
-                            <ListItem
-                                sx={{
-                                    width: "50px",
-                                    height: "50px",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    padding: 0,
-                                    border: `2px solid ${theme.palette.text.secondary}`,
-                                    borderRadius: "50%",
-                                    ":hover": {
-                                        cursor: "pointer",
-                                        color: theme.palette.accent,
-                                        border: `1px solid ${theme.palette.accent}`,
-                                    },
-                                }}
-                                data-aos={
-                                    isMobileDevice ? undefined : "fade-right"
-                                }
-                                data-aos-once={
-                                    isMobileDevice ? undefined : "true"
-                                }
-                                data-aos-delay="400"
-                            >
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    aria-label="GitHub"
-                                    href="https://github.com/nicolasgodineau"
-                                    color="inherit"
-                                >
-                                    <GitHubIcon />
-                                </Link>
-                            </ListItem>
-                            <ListItem
-                                sx={{
-                                    width: "50px",
-                                    height: "50px",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    padding: 0,
-                                    border: `2px solid ${theme.palette.text.secondary}`,
-                                    borderRadius: "50%",
-                                    ":hover": {
-                                        cursor: "pointer",
-                                        color: theme.palette.accent,
-                                        border: `1px solid ${theme.palette.accent}`,
-                                    },
-                                }}
-                                data-aos={
-                                    isMobileDevice ? undefined : "fade-right"
-                                }
-                                data-aos-once={
-                                    isMobileDevice ? undefined : "true"
-                                }
-                                data-aos-delay="600"
-                            >
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    aria-label="My website"
-                                    href="https://www.nicolasgodineau.com"
-                                    color="inherit"
-                                >
-                                    <WebsiteIcon />
-                                </Link>
-                            </ListItem>
+                                    <Link
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        aria-label={link.name}
+                                        href={link.url}
+                                        color="inherit"
+                                    >
+                                        <Avatar
+                                            color="inherit"
+                                            sx={{
+                                                width: 30,
+                                                height: 30,
+                                            }}
+                                            src={require(`../images/icons/Svg/${link.icon}.svg`)}
+                                        />
+                                    </Link>
+                                </ListItem>
+                            ))}
                         </List>
                         <Button
                             sx={{
