@@ -181,6 +181,8 @@ export default function SideBar({
                             component="div"
                             variant="square"
                             src={Nicolas}
+                            alt="Nicolas"
+                            aria-label="Nicolas"
                             sx={{
                                 width: 240,
                                 height: 240,
@@ -254,6 +256,7 @@ export default function SideBar({
                                     >
                                         <Avatar
                                             color="inherit"
+                                            aria-label={link.name}
                                             sx={{
                                                 width: 30,
                                                 height: 30,

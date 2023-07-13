@@ -42,7 +42,7 @@ export default function LanguageSelect() {
         >
             <IconButton
                 size="small"
-                aria-label="account of current user"
+                aria-label="change language"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleMenu}
@@ -104,6 +104,7 @@ export default function LanguageSelect() {
                 >
                     <img
                         src={EN}
+                        aria-label="english langue"
                         alt="English Flag"
                         style={{
                             marginRight: "8px",
@@ -120,6 +121,7 @@ export default function LanguageSelect() {
                 >
                     <img
                         src={FR}
+                        aria-label="french langue"
                         alt="French Flag"
                         style={{
                             marginRight: "8px",
