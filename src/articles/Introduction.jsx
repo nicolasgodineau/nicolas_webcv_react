@@ -6,7 +6,7 @@ import { Typography } from "@mui/material";
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import { faHouse } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 
-export default function Introduction({ AosEffect, AosDelay }) {
+export default function Introduction() {
     const { t } = useTranslation();
 
     const dataHeader = {
@@ -16,12 +16,7 @@ export default function Introduction({ AosEffect, AosDelay }) {
         },
     };
     return (
-        <CustomArticleContainer
-            icon={faHouse}
-            data={dataHeader}
-            AosEffect={AosEffect}
-            AosDelay={AosDelay}
-        >
+        <CustomArticleContainer icon={faHouse} data={dataHeader}>
             <Typography
                 component="p"
                 sx={{

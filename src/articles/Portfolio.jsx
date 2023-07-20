@@ -4,12 +4,12 @@ import theme from "../components/theme/theme";
 
 import { Divider, Typography, Box } from "@mui/material";
 
-import CustomArticleContainer from "components/CustomArticleContainer.jsx";
+import CustomArticleContainer from "../components/CustomArticleContainer";
 import { faGripVertical } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import data from "../lang/en.json"; // import des data du JSON anglais
-import Gallery from "components/portfolio/Gallery.jsx";
+import Gallery from "../components/portfolio/gallery.jsx";
 
-export default function Portfolio({ AosEffect, AosDelay }) {
+export default function Portfolio() {
     const { t } = useTranslation();
 
     const dataHeader = {
@@ -22,12 +22,7 @@ export default function Portfolio({ AosEffect, AosDelay }) {
     const dataSection = data.portfolio; // Extraire la data
 
     return (
-        <CustomArticleContainer
-            icon={faGripVertical}
-            data={dataHeader}
-            AosEffect={AosEffect}
-            AosDelay={AosDelay}
-        >
+        <CustomArticleContainer icon={faGripVertical} data={dataHeader}>
             {Object.entries(dataSection?.projets).map(
                 ([projetKey, projet], index) => {
                     const titleKey = `portfolio.projets.${projetKey}.title`;
@@ -38,7 +33,6 @@ export default function Portfolio({ AosEffect, AosDelay }) {
                         <Box
                             component="article"
                             key={projetKey}
-                            data-aos="fade-left"
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",

@@ -2,42 +2,40 @@
     "personalInformations": {
         "titleLine1": "Développeur Web",
         "titleLine2": "Photographe",
-        "name": "Nicolas",
-        "lastName": "Godineau",
-        "email": "hello@nicolasgodineau.com",
+        "name": "Jhon",
+        "lastName": "Doe",
+        "email": "#",
         "baseIn": "Situé à",
         "city": "Montréal",
         "country": " Canada",
         "links": [
             {
                 "name": "instagram",
-                "url": "https://www.instagram.com/nicolasg_portraits/",
+                "url": "#",
                 "icon": "instagram"
             },
             {
                 "name": "Github",
-                "url": "https://github.com/nicolasgodineau",
+                "url": "#",
                 "icon": "github"
             },
             {
                 "name": "Website",
-                "url": "www.nicolasgodineau.com",
+                "url": "#",
                 "icon": "globe"
             },
             {
                 "name": "LinkedIn",
-                "url": "https://www.linkedin.com/in/nicolasgodineau/",
+                "url": "#",
                 "icon": "linkedin"
             }
         ],
-        "textCallToAction": "engagez moi !",
-        "fromName": "Prénom & nom",
-        "send": "Envoyer"
+        "textCallToAction": "engagez moi !"
     },
     "introduction": {
         "header": {
             "subtitle": "introduction",
-            "text": "Dites bonjour à **Nicolas**, développeur Web et photographe."
+            "text": "Dites bonjour à **Jhon**, développeur Web et photographe."
         },
         "description": "Je conçois et code des choses magnifiquement simples et j'aime ce que je fais. Simple comme ça !"
     },
@@ -61,22 +59,6 @@
                 "location": "Montréal, Canada",
                 "subtitle": "Création d’un site web mobile responsive en équipe",
                 "description": "Technologie:React, Laravel, Mysql, Tailwind\n Logiciel de gestion de versions GIT\n Méthodologie AGILE, utilisation de Scrumdesk\n Conception et création de maquette\n Recueil des besoins client, mise en place d’un cahier des charges."
-            },
-            "2": {
-                "id": 2,
-                "year": "Février 2022 -> Juillet 2023",
-                "title": "étudiant, projet d’école",
-                "location": "Montréal, Canada",
-                "subtitle": "Réalisation de projets dans le cadre de la formation",
-                "description": "Technologie : React, VueJs, Laravel, Mysql, Javascript, PHP, Tailwind CSS, HTML5, CSS\nLogiciel de gestion de versions GIT."
-            },
-            "3": {
-                "id": 3,
-                "year": "2019 -> 2021",
-                "title": "Chef de projet",
-                "location": "Montréal, Canada",
-                "subtitle": "",
-                "description": "Gestion de projets en organisant, coordonnant et animant une équipe.\nSuivie de la conception du projet, relation client.\nAssurer un soutien technique lors de la réalisation des travaux et des mises en service et participer à l’élaboration des plans de déploiement\nSupport technique et du soutien à l’exploitation en cas de pannes du réseau\nDévelopper des relations avec la clientèle pour soutenir le développement des affaires"
             }
         }
     },
@@ -113,26 +95,6 @@
                         "name": "React",
                         "percentage": 60,
                         "className": "devicon-react-original"
-                    },
-                    {
-                        "name": "VueJs",
-                        "percentage": 60,
-                        "className": "devicon-vuejs-plain"
-                    },
-                    {
-                        "name": "Laravel",
-                        "percentage": 60,
-                        "className": "devicon-laravel-plain"
-                    },
-                    {
-                        "name": "Tailwind CSS",
-                        "percentage": 60,
-                        "className": "devicon-tailwindcss-plain"
-                    },
-                    {
-                        "name": "Mysql",
-                        "percentage": 60,
-                        "className": "devicon-mysql-plain"
                     }
                 ]
             },
@@ -143,170 +105,6 @@
                         "name": "Bootstrap",
                         "percentage": 60,
                         "className": "devicon-bootstrap-plain"
-                    },
-                    {
-                        "name": "NPM",
-                        "percentage": 40,
-                        "className": "devicon-npm-original-wordmark"
-                    },
-                    {
-                        "name": "VSCode",
-                        "percentage": 60,
-                        "className": "devicon-vscode-plain"
-                    },
-                    {
-                        "name": "Git",
-                        "percentage": 60,
-                        "className": "devicon-git-plain"
-                    },
-                    {
-                        "name": "Figma",
-                        "percentage": 60,
-                        "className": "devicon-figma-plain"
-                    }
-                ]
-            }
-        }
-    },
-    "portfolio": {
-        "header": {
-            "subtitle": "portfolio",
-            "text": "Featured **Projects**"
-        },
-        "projets": {
-            "mars": {
-                "title": "Projet Maison sur Mars",
-                "subtitle": "Créer un site statistique avec Laravel.",
-                "description": "Le projet doit avoir au moins 4 routes pointées vers le contrôleur.\nAvoir un formulaire et utiliser la méthode post.\nTraiter les données reçues et les afficher dans une page.\nTravailler avec un fichier « Master » et utiliser « blade » pour les vues.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/mars/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/mars/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/mars/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/mars/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/mars/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/mars/Projet1_3.webp"
-                    }
-                ]
-            },
-            "faceMaisonneuve": {
-                "title": "Projet FaceMaisonneuve",
-                "subtitle": "Créer un site de discussion pour étudiant.",
-                "description": "Générer 15 villes, 100 étudiants et 10 articles en utilisant Faker Factory.\nImplémenter les méthodes pour afficher, créer, modifier et supprimer un étudiant et/ou article.\nCréer une page de connexion avec un mot de passe crypté.\nMettre en place un système multilingue.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_5.webp"
-                    }
-                ]
-            },
-            "meteo": {
-                "title": "Projet Météo",
-                "subtitle": "Créer une single page application avec REst",
-                "description": "Création un serveur nodeJS.\nRécupération des données d’une API de notre choix.\nAu lancement du serveur, le fichier JSON doit être mis à jour.\nCréer des pages pour afficher différentes informations que l'api nous renvoie",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_5.webp"
-                    }
-                ]
-            },
-            "stampee": {
-                "title": "Projet Stampee",
-                "subtitle": "Créer un site de vente aux enchère multi-pages.",
-                "description": "Créer une identité visuelle et les pages HTML et CSS + une base de données\nLe projet doit être de type MVC mais sans framework\nPossibilité de créer un compte, de le modifier, de créer une annonce et d’enchérir sur les ventes.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_5.webp"
-                    }
-                ]
-            },
-            "noemie": {
-                "title": "Site professionnel make-up artiste",
-                "subtitle": "Créer avec WordPress.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/noemie/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/noemie/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/noemie/Projet1_3.webp"
-                    }
-                ]
-            },
-            "photographie": {
-                "title": "Site web perso",
-                "subtitle": "Créer avec VueJs et TailwindCss",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/photographie/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/photographie/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/photographie/Projet1_3.webp"
                     }
                 ]
             }

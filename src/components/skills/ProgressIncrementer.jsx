@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import theme from "../theme/theme";
 import { Typography } from "@mui/material";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function ProgressIncrementer({ targetPercentage }) {
     const [percentage, setPercentage] = useState(0);
@@ -60,14 +58,9 @@ export default function ProgressIncrementer({ targetPercentage }) {
         };
     }, [targetPercentage]);
 
-    useEffect(() => {
-        AOS.init(); // Initialise AOS pour les animations
-    }, []);
 
     return (
-        <div ref={elementRef} data-aos="fade-up">
-            {" "}
-            {/* Élément référencé pour l'Intersection Observer et animation AOS */}
+        <div ref={elementRef}>
             <Typography
                 component="p"
                 sx={{

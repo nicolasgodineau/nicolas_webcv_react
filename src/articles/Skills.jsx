@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 import theme from "../components/theme/theme";
 import { Typography, Box, Divider, Grid } from "@mui/material";
 
-import CustomArticleContainer from "components/CustomArticleContainer.jsx";
-import Skill from "../components/skills/Skill.jsx"; // pour l'affichage d'un skill
+import CustomArticleContainer from "../components/CustomArticleContainer";
+import Skill from "../components/skills/skill"; // pour l'affichage d'un skill
 import { faShapes } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 
-export default function Skills({ AosEffect, AosDelay }) {
+export default function Skills() {
     const { t } = useTranslation();
 
     const dataHeader = {
@@ -18,12 +18,7 @@ export default function Skills({ AosEffect, AosDelay }) {
     };
 
     return (
-        <CustomArticleContainer
-            icon={faShapes}
-            data={dataHeader}
-            AosEffect={AosEffect}
-            AosDelay={AosDelay}
-        >
+        <CustomArticleContainer icon={faShapes} data={dataHeader}>
             <Box
                 component="div"
                 disablegutters="true"
@@ -35,7 +30,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                     justifyContent: "space-between",
                     gap: "1rem",
                 }}
-                data-aos="fade-left"
             >
                 <Typography
                     sx={{
@@ -62,8 +56,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                             flexDirection: "column",
                         },
                     }}
-                    data-aos="fade-left"
-                    data-aos-delay="100"
                 >
                     {t("skills.category.connaissance.list", {
                         returnObjects: true,
@@ -94,7 +86,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                     justifyContent: "space-between",
                     gap: "1rem",
                 }}
-                data-aos="fade-left"
             >
                 <Typography
                     sx={{
@@ -123,8 +114,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                             justifyContent: "center",
                         },
                     }}
-                    data-aos="fade-left"
-                    data-aos-delay="100"
                 >
                     {t("skills.category.langagesFrameworks.list", {
                         returnObjects: true,
@@ -155,7 +144,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                     justifyContent: "space-between",
                     gap: "2rem",
                 }}
-                data-aos="fade-left"
             >
                 <Typography
                     sx={{
@@ -184,8 +172,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                             justifyContent: "center",
                         },
                     }}
-                    data-aos="fade-left"
-                    data-aos-delay="100"
                 >
                     {t("skills.category.logicielsOutils.list", {
                         returnObjects: true,

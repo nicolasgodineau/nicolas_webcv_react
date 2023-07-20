@@ -2,13 +2,11 @@ import React from "react";
 import theme from "../components/theme/theme";
 import { Container } from "@mui/material";
 
-import Header from "components/Header.jsx"; // pour le header de la section
+import Header from "../components/header"; // pour le header de la section
 
 export default function CustomArticleContainer({
     icon,
     data,
-    AosEffect,
-    AosDelay,
     children,
 }) {
     return (
@@ -16,8 +14,6 @@ export default function CustomArticleContainer({
             component="article"
             disableGutters={true}
             /* maxWidth="sm2" */
-            data-aos={AosEffect}
-            data-aos-delay={AosDelay}
             sx={{
                 overflow: "hidden",
                 paddingY: 9,
