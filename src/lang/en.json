@@ -2,40 +2,42 @@
     "personalInformations": {
         "titleLine1": "Web Developper",
         "titleLine2": "Photographer",
-        "name": "Jhon",
-        "lastName": "Doe",
-        "email": "#",
+        "name": "Nicolas",
+        "lastName": "Godineau",
+        "email": "hello@nicolasgodineau.com",
         "baseIn": "Base in",
         "city": "Montréal",
         "country": " Canada",
         "links": [
             {
                 "name": "instagram",
-                "url": "#",
+                "url": "https://www.instagram.com/nicolasg_portraits/",
                 "icon": "instagram"
             },
             {
                 "name": "Github",
-                "url": "#",
+                "url": "https://github.com/nicolasgodineau",
                 "icon": "github"
             },
             {
                 "name": "Website",
-                "url": "#",
+                "url": "www.nicolasgodineau.com",
                 "icon": "globe"
             },
             {
                 "name": "LinkedIn",
-                "url": "#",
+                "url": "https://www.linkedin.com/in/nicolasgodineau/",
                 "icon": "linkedin"
             }
         ],
-        "textCallToAction": "hire me !"
+        "textCallToAction": "hire me !",
+        "fromName": "Firstname & name",
+        "send": "Send"
     },
     "introduction": {
         "header": {
             "subtitle": "introduction",
-            "text": "Say Hi to **Jhon**, Web Developer and Photographer."
+            "text": "Say Hi to **Nicolas**, Web Developer and Photographer."
         },
         "description": "I design and code beautifully simple things and i love what i do. Just simple like that!"
     },
@@ -59,6 +61,22 @@
                 "location": "Montreal, Canada",
                 "subtitle": "Creation of a responsive mobile website in a team",
                 "description": "Technology: React, Laravel, MySQL, Tailwind\nVersion control software: Git\nAGILE methodology, using Scrumdesk\nDesign and prototyping\nGathering client requirements, creating a specification document."
+            },
+            "2": {
+                "id": 2,
+                "year": "February 2022 -> July 2023",
+                "title": "Student, School Project",
+                "location": "Montreal, Canada",
+                "subtitle": "Execution of projects as part of the training",
+                "description": "Technology: React, Vue.js, Laravel, MySQL, JavaScript, PHP, Tailwind CSS, HTML5, CSS\nVersion control software: Git."
+            },
+            "3": {
+                "id": 3,
+                "year": "2019 -> 2021",
+                "title": "Project Manager",
+                "location": "Montreal, Canada",
+                "subtitle": "",
+                "description": "Project management by organizing, coordinating, and leading a team.\nMonitoring project design, client relationship.\nProviding technical support during implementation and deployment planning.\nTechnical support and operational assistance in case of network failures.\nBuilding client relationships to support business development."
             }
         }
     },
@@ -95,6 +113,26 @@
                         "name": "React",
                         "percentage": 60,
                         "className": "devicon-react-original"
+                    },
+                    {
+                        "name": "VueJs",
+                        "percentage": 60,
+                        "className": "devicon-vuejs-plain"
+                    },
+                    {
+                        "name": "Laravel",
+                        "percentage": 60,
+                        "className": "devicon-laravel-plain"
+                    },
+                    {
+                        "name": "Tailwind CSS",
+                        "percentage": 60,
+                        "className": "devicon-tailwindcss-plain"
+                    },
+                    {
+                        "name": "Mysql",
+                        "percentage": 60,
+                        "className": "devicon-mysql-plain"
                     }
                 ]
             },
@@ -105,8 +143,79 @@
                         "name": "Bootstrap",
                         "percentage": 60,
                         "className": "devicon-bootstrap-plain"
+                    },
+                    {
+                        "name": "NPM",
+                        "percentage": 40,
+                        "className": "devicon-npm-original-wordmark"
+                    },
+                    {
+                        "name": "VSCode",
+                        "percentage": 60,
+                        "className": "devicon-vscode-plain"
+                    },
+                    {
+                        "name": "Git",
+                        "percentage": 60,
+                        "className": "devicon-git-plain"
+                    },
+                    {
+                        "name": "Figma",
+                        "percentage": 60,
+                        "className": "devicon-figma-plain"
                     }
                 ]
+            }
+        }
+    },
+    "portfolio": {
+        "header": {
+            "subtitle": "portfolio",
+            "text": "Featured **Projects**"
+        },
+        "projets": {
+            "mars": {
+                "title": "Mars Project",
+                "subtitle": "Create a statistical website with Laravel.",
+                "description": "The project must have at least 4 routes pointed to the controller.\nHave a form and use the POST method.\nProcess the received data and display it on a page.\nWork with a 'Master' file and use 'blade' for views.",
+                "img": 3,
+                "textAlt": "Projet house on Mars"
+            },
+            "faceMaisonneuve": {
+                "title": "FaceMaisonneuve Project",
+                "subtitle": "Create a student discussion website.",
+                "description": "Generate 15 cities, 100 students, and 10 articles using Faker Factory.\nImplement methods to display, create, modify, and delete a student and/or article.\nCreate a login page with encrypted password.\nSet up a multilingual system.",
+                "img": 5,
+                "textAlt": "Projet house on Mars"
+            },
+            "meteo": {
+                "title": "Weather Project",
+                "subtitle": "Create a single page application with REST",
+                "description": "Create a nodeJS server.\nRetrieve data from an API of our choice.\nUpdate the JSON file when the server is launched.\nCreate pages to display different information returned by the API.",
+                "img": 0,
+                "textAlt": "Projet house on Mars"
+            },
+            "stampee": {
+                "title": "Stampee Project",
+                "subtitle": "Create a multi-page auction site.",
+                "description": "Create visual identity, HTML and CSS pages, and a database.\nThe project should be MVC-based but without a framework.\nAbility to create an account, modify it, create an ad, and bid on sales.",
+                "img": 4,
+                "textAlt": "Projet house on Mars"
+            },
+            "noemie": {
+                "title": "Professional Makeup Artist Website",
+                "subtitle": "Created with WordPress.",
+                "description": "",
+
+                "img": 3,
+                "textAlt": "Projet house on Mars"
+            },
+            "photographie": {
+                "title": "Personal Photography Website",
+                "subtitle": "Created with VueJs and TailwindCss",
+                "description": "",
+                "img": 3,
+                "textAlt": "Projet house on Mars"
             }
         }
     }

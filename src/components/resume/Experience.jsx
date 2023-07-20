@@ -32,6 +32,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                     padding: 0,
                 },
             }}
+            data-aos="fade-up"
+            data-aos-delay={`${delay}`}
         >
             {/* Conteneur pour chaque expérience */}
             <Container
@@ -81,6 +83,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                         alignItems: "center",
                         justifyContent: "space-between",
                     }}
+                    data-aos="fade-up"
+                    data-aos-delay="100"
                 >
                     <Typography
                         component="p"
@@ -92,6 +96,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                                     ? theme.palette.accent
                                     : theme.palette.text.primary,
                         }}
+                        data-aos="fade-left"
+                        data-aos-delay="500"
                     >
                         {year}
                     </Typography>
@@ -103,6 +109,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                             fontSize: "12px",
                             color: theme.palette.text.secondary,
                         }}
+                        data-aos="fade-left"
+                        data-aos-delay="700"
                     >
                         {location}
                     </Typography>
@@ -116,6 +124,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                         marginBottom: "5px",
                         color: theme.palette.text.primary,
                     }}
+                    data-aos="fade-up"
+                    data-aos-delay={`${delay}`}
                 >
                     {title.charAt(0).toUpperCase() + title.substring(1)}
                     {/* Récupère la première lettre de la phrase avec `charAt(0)` et la met en majuscule avec `toUpperCase()`. */}
@@ -129,6 +139,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                         marginBottom: "5px",
                         color: theme.palette.text.primary,
                     }}
+                    data-aos="fade-up"
+                    data-aos-delay={`${delay}`}
                 >
                     {subtitle.charAt(0).toUpperCase() + subtitle.substring(1)}
                     {/* Récupère la première lettre de la phrase avec `charAt(0)` et la met en majuscule avec `toUpperCase()`. */}
@@ -141,6 +153,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                     className="listExperience"
                     dense={true}
                     sx={{ listStyle: "inside", listStyleType: "disc" }}
+                    data-aos="fade-up"
+                    data-aos-delay={`${delay}`}
                 >
                     {textWithLineBreaks.map((line, index) => (
                         <ListItem
@@ -153,6 +167,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                                 color: theme.palette.text.secondary,
                                 paddingLeft: 3,
                             }}
+                            data-aos="fade-up"
+                            data-aos-delay={`${index * 100}`}
                         >
                             <ListItemIcon
                                 sx={{

@@ -47,7 +47,8 @@ export default function Header({ icon, data, variant, fontSize }) {
                         marginBottom: 2.5,
                     },
                 }}
-
+                data-aos="fade-down"
+                data-aos-delay="100"
             >
                 <FontAwesomeIcon icon={icon} />
                 <Typography
@@ -71,6 +72,8 @@ export default function Header({ icon, data, variant, fontSize }) {
                     fontFamily: "Poiret One, cursive",
                     fontWeight: "bold",
                 }}
+                data-aos="zoom-in"
+                data-aos-delay="200"
             >
                 {extractedTexts.beforeText}
                 <Typography

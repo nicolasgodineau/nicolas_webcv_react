@@ -3,6 +3,7 @@ import { createRoot } from "react-dom";
 import "../src/index.css";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import i18n from "i18next";
+import "aos/dist/aos.css";
 
 import App from "./App";
 import translationEN from "./lang/en.json";

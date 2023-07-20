@@ -15,8 +15,9 @@ import {
 } from "@mui/material";
 
 import Button from "@mui/material/Button";
-import Jhon from "../images/img_profil.Jpeg"
+import Nicolas from "../images/Nicolas.webp";
 import LanguageSelect from "./LanguageSelect.jsx";
+import ContactModal from "./sidebar/ContactModal.jsx";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 import Data from "../lang/en.json";
@@ -24,6 +25,9 @@ import Data from "../lang/en.json";
 export default function SideBar({
     selectedLanguage,
     handleChangeLanguage,
+    isMobileDevice,
+    AosEffect,
+    AosDelay,
 }) {
     const { t } = useTranslation();
     const [showContact, setShowText] = useState(true);
@@ -86,9 +90,11 @@ export default function SideBar({
                     justifyContent: "space-evenly",
                     gap: 4,
                     padding: 4,
+
                     border: `2px solid ${theme.palette.text.secondary}`,
                     borderRadius: 5,
                     height: "fit-content",
+
                     backgroundColor: theme.palette.background.dark,
                     [theme.breakpoints.down("tablet")]: {
                         // Styles pour les écrans de largeur maximale "tablet" (1090px)
@@ -107,6 +113,9 @@ export default function SideBar({
                     fontFamily: "Poiret One, cursive",
                     fontWeight: "bold",
                 }}
+                data-aos={isMobileDevice ? undefined : AosEffect}
+                data-aos-once={isMobileDevice ? "" : "true"}
+                data-aos-delay={isMobileDevice ? "" : { AosDelay }}
             >
                 <LanguageSelect
                     selectedLanguage={selectedLanguage}
@@ -120,6 +129,8 @@ export default function SideBar({
                         alignItems: "start",
                         justifyContent: "space-between",
                     }}
+                    data-aos={isMobileDevice ? undefined : "fade-right"}
+                    data-aos-once={isMobileDevice ? undefined : "true"}
                 >
                     <Typography
                         component="h2"
@@ -129,6 +140,9 @@ export default function SideBar({
                             fontFamily: "Poiret One, cursive",
                             fontWeight: "bold",
                         }}
+                        data-aos={isMobileDevice ? undefined : "fade-right"}
+                        data-aos-once={isMobileDevice ? undefined : "true"}
+                        data-aos-delay="200"
                     >
                         {t("personalInformations.name")}
                     </Typography>
@@ -137,6 +151,9 @@ export default function SideBar({
                         sx={{
                             padding: "0px",
                         }}
+                        data-aos={isMobileDevice ? undefined : "fade-right"}
+                        data-aos-once={isMobileDevice ? undefined : "true"}
+                        data-aos-delay="500"
                     >
                         <ListItemText>
                             {t("personalInformations.titleLine1")}
@@ -146,118 +163,143 @@ export default function SideBar({
                         </ListItemText>
                     </List>
                 </Box>
-                <Box
-                    component="div"
-                    ref={targetElementRef}
-                    sx={{
-                        minHeight: "358px",
-                        minWidth: "100%",
-                        width: "100%",
-                        display: "flex",
-                        alignItems: "center",
-                        flexDirection: "column",
-                        gap: 2,
-                    }}
-                >
-                    <Avatar
+                {showContact ? (
+                    <Box
                         component="div"
-                        variant="square"
-                        src={Jhon}
-                        alt={t("personalInformations.name")}
-                        aria-label={t("personalInformations.name")}
+                        ref={targetElementRef}
                         sx={{
-                            width: 240,
-                            height: 240,
-                            borderRadius: 7,
-                        }}
-                    />
-                    <Typography
-                        component="p"
-                        disablePadding={true}
-                        sx={{
-                            fontSize: 24,
-                            color: theme.palette.text.primary,
-                            fontFamily: "Poiret One, cursive",
-                            fontWeight: "bold",
-                        }}
-                    >
-                        {t("personalInformations.baseIn")}{" "}
-                        {t("personalInformations.city")},
-                        {t("personalInformations.country")}
-                    </Typography>
-                    <List
-                        component="ul"
-                        dense={true}
-                        disablePadding={true}
-                        sx={{
+                            minHeight: "358px",
+                            minWidth: "100%",
                             width: "100%",
                             display: "flex",
                             alignItems: "center",
-                            justifyContent: "space-between",
-                            marginBottom: 0,
+                            flexDirection: "column",
+                            gap: 2,
                         }}
                     >
-                        {links.map((link) => (
-                            <ListItem
-                                key={link.id}
-                                sx={{
-                                    width: "50px",
-                                    height: "50px",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    padding: 0,
-                                    border: `2px solid ${theme.palette.text.secondary}`,
-                                    borderRadius: "50%",
-                                    ":hover": {
-                                        cursor: "pointer",
-                                        color: theme.palette.accent,
-                                        border: `2px solid ${theme.palette.accent}`,
-                                    },
-                                }}
-                            >
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    aria-label={link.name}
-                                    href={link.url}
-                                    color="inherit"
+                        <Avatar
+                            component="div"
+                            variant="square"
+                            src={Nicolas}
+                            alt="Nicolas"
+                            aria-label="Nicolas"
+                            sx={{
+                                width: 240,
+                                height: 240,
+                                borderRadius: 7,
+                            }}
+                            data-aos={isMobileDevice ? undefined : "fade-right"}
+                            data-aos-once={isMobileDevice ? undefined : "true"}
+                        />
+                        <Typography
+                            component="p"
+                            disablePadding={true}
+                            sx={{
+                                fontSize: 24,
+                                color: theme.palette.text.primary,
+                                fontFamily: "Poiret One, cursive",
+                                fontWeight: "bold",
+                            }}
+                            data-aos={isMobileDevice ? undefined : "fade-right"}
+                            data-aos-once={isMobileDevice ? undefined : "true"}
+                        >
+                            {t("personalInformations.baseIn")}{" "}
+                            {t("personalInformations.city")},
+                            {t("personalInformations.country")}
+                        </Typography>
+                        <List
+                            component="ul"
+                            dense={true}
+                            disablePadding={true}
+                            sx={{
+                                width: "100%",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "space-between",
+                                marginBottom: 0,
+                            }}
+                        >
+                            {links.map((link) => (
+                                <ListItem
+                                    key={link.id}
+                                    sx={{
+                                        width: "50px",
+                                        height: "50px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        padding: 0,
+                                        border: `2px solid ${theme.palette.text.secondary}`,
+                                        borderRadius: "50%",
+                                        ":hover": {
+                                            cursor: "pointer",
+                                            color: theme.palette.accent,
+                                            border: `2px solid ${theme.palette.accent}`,
+                                        },
+                                    }}
+                                    data-aos={
+                                        isMobileDevice
+                                            ? undefined
+                                            : "fade-right"
+                                    }
+                                    data-aos-once={
+                                        isMobileDevice ? undefined : "true"
+                                    }
+                                    data-aos-delay="600"
                                 >
-                                    <Avatar
-                                        color="inherit"
+                                    <Link
+                                        target="_blank"
+                                        rel="noreferrer"
                                         aria-label={link.name}
-                                        sx={{
-                                            width: 30,
-                                            height: 30,
-                                        }}
-                                        src={require(`../images/icons/Svg/${link.icon}.svg`)}
-                                    />
-                                </Link>
-                            </ListItem>
-                        ))}
-                    </List>
-                    <Button
-                        sx={{
-                            width: "100%",
-                            padding: "12px 44px",
-                            borderRadius: 32,
-                            backgroundColor: theme.palette.accent,
-                            border: `2px solid ${theme.palette.accent}`,
-                            color: "black",
-                            ":hover": {
-                                cursor: "pointer",
-                                color: theme.palette.accent,
-                                backgroundColor:
-                                    theme.palette.background.dark,
-                            },
-                        }}
-                        variant="text"
-                        startIcon={<MailOutlineIcon />}
-                        onClick={toggleContent}
-                    >
-                        {t("personalInformations.textCallToAction")}
-                    </Button>
-                </Box>
+                                        href={link.url}
+                                        color="inherit"
+                                    >
+                                        <Avatar
+                                            color="inherit"
+                                            aria-label={link.name}
+                                            sx={{
+                                                width: 30,
+                                                height: 30,
+                                            }}
+                                            src={require(`../images/icons/Svg/${link.icon}.svg`)}
+                                        />
+                                    </Link>
+                                </ListItem>
+                            ))}
+                        </List>
+                        <Button
+                            sx={{
+                                width: "100%",
+                                padding: "12px 44px",
+                                borderRadius: 32,
+                                backgroundColor: theme.palette.accent,
+                                border: `2px solid ${theme.palette.accent}`,
+                                color: "black",
+                                ":hover": {
+                                    cursor: "pointer",
+                                    color: theme.palette.accent,
+                                    backgroundColor:
+                                        theme.palette.background.dark,
+                                },
+                            }}
+                            data-aos={isMobileDevice ? undefined : "fade-right"}
+                            data-aos-once={isMobileDevice ? undefined : "true"}
+                            variant="text"
+                            startIcon={<MailOutlineIcon />}
+                            onClick={toggleContent}
+                        >
+                            {t("personalInformations.textCallToAction")}
+                        </Button>
+                    </Box>
+                ) : (
+                    <Box>
+                        <ContactModal
+                            toggleContent={toggleContent}
+                            isMobileDevice={isMobileDevice}
+                            dimensions={elementDimensions}
+                        />
+                    </Box>
+                )}
             </Box>
             <Box
                 sx={{

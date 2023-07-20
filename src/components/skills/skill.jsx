@@ -19,6 +19,8 @@ export default function Skill({ skill, delay }) {
                 gap: "1rem",
                 minWidth: "80px",
             }}
+            data-aos="fade-left"
+            data-aos-delay={`${delay}`}
         >
             {/* Affiche l'icône de compétence */}
             {skill.className && ( // Affiche uniquement l'icon si il y a une className

@@ -5,7 +5,7 @@ import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import Experience from "../components/resume/Experience.jsx"; // pour l'affichage d'une experience
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 
-export default function Resume() {
+export default function Resume({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
 
     const dataHeader = {
@@ -21,7 +21,12 @@ export default function Resume() {
     const lastExperienceId = Object.keys(experiences).length;
 
     return (
-        <CustomArticleContainer icon={faBriefcase} data={dataHeader}>
+        <CustomArticleContainer
+            icon={faBriefcase}
+            data={dataHeader}
+            AosEffect={AosEffect}
+            AosDelay={AosDelay}
+        >
             {Object.values(experiences).map((experience, index) => (
                 <Experience
                     key={experience.id}
