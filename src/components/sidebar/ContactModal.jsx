@@ -179,6 +179,7 @@ const ContactModal = ({ toggleContent, isMobileDevice, dimensions }) => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-evenly",
+                        gap: 1,
                     }}
                 >
                     <Button
