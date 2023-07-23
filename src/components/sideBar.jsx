@@ -7,7 +7,6 @@ import {
     Typography,
     List,
     ListItem,
-    ListItemText,
     Avatar,
     Link,
     Container,
@@ -90,7 +89,6 @@ export default function SideBar({
                     justifyContent: "space-evenly",
                     gap: 4,
                     padding: 4,
-
                     border: `2px solid ${theme.palette.text.secondary}`,
                     borderRadius: 5,
                     height: "fit-content",
@@ -105,7 +103,10 @@ export default function SideBar({
                     [theme.breakpoints.down("xs")]: {
                         // Styles pour les écrans de largeur maximale "tablet" (1090px)
                         padding: 0,
+                        paddingBottom: 4,
                         border: "none",
+                        borderBottom: `2px solid ${theme.palette.text.secondary}`,
+                        borderRadius: 0,
                     },
                     "@media (max-height: 680px)": {
                         gap: "10px",
@@ -146,22 +147,25 @@ export default function SideBar({
                     >
                         {t("personalInformations.name")}
                     </Typography>
-                    <List
-                        component="ul"
+                    <Box
+                        component="div"
                         sx={{
+                            display: "flex",
+                            flexDirection: "column",
                             padding: "0px",
                         }}
                         data-aos={isMobileDevice ? undefined : "fade-right"}
                         data-aos-once={isMobileDevice ? undefined : "true"}
                         data-aos-delay="500"
                     >
-                        <ListItemText>
+                        <Typography>
                             {t("personalInformations.titleLine1")}
-                        </ListItemText>
-                        <ListItemText>
-                            & {t("personalInformations.titleLine2")}
-                        </ListItemText>
-                    </List>
+                        </Typography>
+                        <Typography>
+                            {"& "}
+                            {t("personalInformations.titleLine2")}
+                        </Typography>
+                    </Box>
                 </Box>
                 {showContact ? (
                     <Box
@@ -193,7 +197,7 @@ export default function SideBar({
                         />
                         <Typography
                             component="p"
-                            disablePadding={true}
+                            disablepadding="true"
                             sx={{
                                 fontSize: 24,
                                 color: theme.palette.text.primary,
@@ -210,7 +214,7 @@ export default function SideBar({
                         <List
                             component="ul"
                             dense={true}
-                            disablePadding={true}
+                            disablepadding="true"
                             sx={{
                                 width: "100%",
                                 display: "flex",
@@ -257,6 +261,7 @@ export default function SideBar({
                                         <Avatar
                                             color="inherit"
                                             aria-label={link.name}
+                                            alt={link.name}
                                             sx={{
                                                 width: 30,
                                                 height: 30,
@@ -275,7 +280,7 @@ export default function SideBar({
                                 backgroundColor: theme.palette.accent,
                                 border: `2px solid ${theme.palette.accent}`,
                                 color: "black",
-                                ":hover": {
+                                "&:hover": {
                                     cursor: "pointer",
                                     color: theme.palette.accent,
                                     backgroundColor:
