@@ -4,7 +4,7 @@ import theme from "../components/theme/theme";
 import { Typography, Box, Divider, Grid } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
-import Skill from "../components/skills/Skill.jsx"; // pour l'affichage d'un skill
+import Skill from "../components/skills/skill.jsx"; // pour l'affichage d'un skill
 import { faShapes } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 
 export default function Skills({ AosEffect, AosDelay }) {
