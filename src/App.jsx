@@ -8,7 +8,7 @@ import {
     useMediaQuery,
 } from "@mui/material";
 import theme from "../src/components/theme/theme.js";
-import SideBar from "./components/SideBar.jsx";
+import SideBar from "../src/components/sideBar.jsx";
 import Introduction from "articles/Introduction.jsx";
 import About from "articles/About.jsx";
 import Resume from "articles/Resume.jsx";

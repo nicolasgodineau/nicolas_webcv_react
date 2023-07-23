@@ -7,7 +7,7 @@ import { Divider, Typography, Box } from "@mui/material";
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import { faGripVertical } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import data from "../lang/en.json"; // import des data du JSON anglais
-import Gallery from "components/portfolio/Gallery.jsx";
+import Gallery from "../components/portfolio/gallery.jsx";
 
 export default function Portfolio({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
