@@ -52,7 +52,7 @@ export default function Header({ icon, data, variant, fontSize }) {
             >
                 <FontAwesomeIcon icon={icon} />
                 <Typography
-                    component="h4"
+                    component="h1"
                     sx={{
                         fontSize: "14px",
                         color: theme.palette.primary,
@@ -65,7 +65,7 @@ export default function Header({ icon, data, variant, fontSize }) {
             </Box>
             {/* Zone text header */}
             <Typography
-                component="h1"
+                component="h2"
                 variant={variant}
                 sx={{
                     fontSize: { fontSize },
