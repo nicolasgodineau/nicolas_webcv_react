@@ -67,13 +67,13 @@
                             "line": "Technologies : React, Laravel, MySQL, MUI"
                         },
                         {
-                            "line": "Logiciel de contrôle de version : GIT"
+                            "line": "Logiciel de contrôle de version : GIT utilisation de la Méthodologie AGILE"
                         },
                         {
-                            "line": "Méthodologie AGILE : Développement de pages web dynamiques en utilisant React pour offrir une expérience utilisateur immersive et réactive."
+                            "line": "Design et développement de pages web dynamiques en utilisant React pour offrir une expérience utilisateur immersive et réactive."
                         },
                         {
-                            "line": "Collaboration active dans la mise en place d'un CMS interne basé sur Laravel et MySQL pour gérer efficacement le contenu et les fonctionnalités du site web."
+                            "line": "Aide à la mise en place du CMS interne basé sur Laravel et MySQL pour gérer efficacement le contenu et les fonctionnalités du site web."
                         },
                         {
                             "line": "Expérience avec le framework Mui pour concevoir des interfaces modernes et conviviales, améliorant ainsi l'utilisabilité et l'accessibilité du produit."
@@ -124,19 +124,16 @@
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Gestion de projet : Organisation, coordination et direction des équipes pour assurer l'exécution réussie des projets."
+                            "line": "Organisation, coordination et direction des équipes pour assurer l'exécution réussie des projets."
                         },
                         {
-                            "line": "Suivi de la conception du projet et relations avec les clients : Supervision du développement des projets et maintien de solides relations avec les clients."
+                            "line": "Supervision du développement des projets et maintien de solides relations avec les clients."
                         },
                         {
-                            "line": "Assistance technique lors de la planification de la mise en œuvre et du déploiement : Fourniture d'une expertise pour faciliter la mise en œuvre et le déploiement en douceur."
+                            "line": "Assistance technique lors de la planification de la mise en œuvre et la maintenance."
                         },
                         {
-                            "line": "Assistance technique et aide opérationnelle en cas de pannes de réseau : Fourniture d'une assistance rapide en cas de problèmes de réseau pour assurer un fonctionnement ininterrompu."
-                        },
-                        {
-                            "line": "Établissement de relations avec les clients pour le développement des affaires : Favoriser des liens solides avec les clients pour soutenir la croissance de l'entreprise."
+                            "line": "Favoriser des liens solides avec les clients pour soutenir la croissance de l'entreprise."
                         }
                     ]
                 },
@@ -147,10 +144,10 @@
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Inspection, surveillance, test et déploiement de systèmes de transmission et de distribution : Réalisation d'inspections approfondies, de tests efficaces et de la mise en œuvre réussie de réseaux de fibre optique et de cuivre."
+                            "line": "Réalisation d'inspections approfondies, de tests efficaces et de la mise en œuvre réussie de réseaux de fibre optique et de cuivre."
                         },
                         {
-                            "line": "Communication et coordination du développement et de l'achèvement des travaux : Facilitation d'une communication efficace entre les membres de l'équipe pour assurer une coordination fluide dans le développement du projet et l'achèvement en temps voulu des tâches."
+                            "line": "Communication et coordination du développement et de l'achèvement des travaux."
                         }
                     ]
                 }
@@ -175,7 +172,7 @@
                             "line": "Création de sites web attrayants et fonctionnels, en utilisant des compétences en programmation et une gestion de base de données robuste."
                         },
                         {
-                            "line": "Apprentissage de technologies demandées sur le marché : Recherche active de connaissances sur les technologies de pointe telles que React, Vue.js et Laravel pour rester à la pointe du marché dynamique."
+                            "line": "Apprentissage de technologies demandées sur le marché : Solide base sur les technologies telles que React, Vue.js et Laravel afin de rester à la pointe du marché."
                         }
                     ]
                 },
@@ -186,13 +183,13 @@
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Installateur d'équipements électriques : Compétent pour installer divers équipements et systèmes électriques en toute sécurité et efficacité, en veillant à respecter les réglementations et les normes de l'industrie."
+                            "line": "Installation de  divers équipements et systèmes électriques, en veillant à respecter les réglementations et les normes de l'industrie."
                         },
                         {
-                            "line": "Mise en service et maintenance des systèmes : Expérience dans la configuration méticuleuse, les tests et la maintenance des systèmes électriques pour optimiser les performances et réduire les temps d'arrêt."
+                            "line": "Tests et maintenance des systèmes électriques."
                         },
                         {
-                            "line": "Lecture et interprétation de plans ou de schémas : Compétent pour déchiffrer des plans et des schémas électriques complexes, facilitant ainsi une mise en œuvre précise et un dépannage efficace."
+                            "line": "Lecture et interprétation de plans ou de schémas, facilitant ainsi une mise en œuvre précise et un dépannage efficace."
                         }
                     ]
                 }
