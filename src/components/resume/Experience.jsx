@@ -11,18 +11,14 @@ import {
 import { faCircle } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Experience({
-    experience,
-    lastExperienceId,
-    delay,
-    index,
-}) {
+export default function Experience({ experience, delay, index }) {
     return (
         <Container
             component="div"
             disablegutters="true"
             key={index}
             sx={{
+                marginBottom: 2,
                 [theme.breakpoints.down("sm")]: {
                     // Styles pour les écrans de largeur maximale 600px
                     padding: 0,
@@ -39,7 +35,7 @@ export default function Experience({
                 sx={{
                     position: "relative",
                     paddingLeft: 6,
-                    paddingBottom: index === lastExperienceId + 1 ? "0px" : 6,
+                    paddingBottom: 0,
                     "&::before": {
                         content: '""',
                         position: "absolute",
@@ -61,7 +57,7 @@ export default function Experience({
                         top: 10,
                         left: 5,
                         width: "2px",
-                        height: "100%",
+                        height: "99%",
                         borderRadius: "50px",
                         background: theme.palette.text.secondary,
                     },
@@ -79,6 +75,13 @@ export default function Experience({
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
+                        marginBottom: 2,
+                        [theme.breakpoints.down("sm")]: {
+                            // Styles pour les écrans de largeur maximale 600px
+                            flexDirection: "column",
+                            alignItems: "start",
+                            marginBottom: 1,
+                        },
                     }}
                     data-aos="fade-up"
                     data-aos-delay="100"
@@ -87,7 +90,6 @@ export default function Experience({
                         component="p"
                         sx={{
                             display: "block",
-                            marginBottom: 2,
                             color:
                                 index === 0
                                     ? theme.palette.accent
@@ -102,7 +104,6 @@ export default function Experience({
                         component="p"
                         sx={{
                             display: "block",
-                            marginBottom: 2,
                             fontSize: "12px",
                             color: theme.palette.text.secondary,
                         }}
@@ -150,10 +151,12 @@ export default function Experience({
                 <List
                     component="ul"
                     className="listExperience"
-                    dense={true}
-                    sx={{ listStyle: "inside", listStyleType: "disc" }}
+                    dense={false}
                     data-aos="fade-up"
                     data-aos-delay={`${delay}`}
+                    sx={{
+                        padding: 0,
+                    }}
                 >
                     {experience.descriptions.map((description, index) => (
                         <ListItem
@@ -164,7 +167,10 @@ export default function Experience({
                             sx={{
                                 fontSize: "16px",
                                 color: theme.palette.text.secondary,
-                                paddingLeft: 3,
+                                [theme.breakpoints.down("xs")]: {
+                                    // Styles pour les écrans de largeur maximale 600px
+                                    padding: 0,
+                                },
                             }}
                             data-aos="fade-up"
                             data-aos-delay={`${index * 100}`}
@@ -174,6 +180,10 @@ export default function Experience({
                                     fontSize: 9,
                                     marginTop: 0,
                                     paddingTop: 1,
+                                    [theme.breakpoints.down("sm")]: {
+                                        // Styles pour les écrans de largeur maximale 600px
+                                        minWidth: "24px",
+                                    },
                                 }}
                             >
                                 <FontAwesomeIcon
@@ -190,41 +200,6 @@ export default function Experience({
                             {description.line}
                         </ListItem>
                     ))}
-                    {/*                     {textWithLineBreaks.map((line, index) => (
-                        <ListItem
-                            component="li"
-                            alignItems="flex-start"
-                            dense={true}
-                            key={index}
-                            sx={{
-                                fontSize: "16px",
-                                color: theme.palette.text.secondary,
-                                paddingLeft: 3,
-                            }}
-                            data-aos="fade-up"
-                            data-aos-delay={`${index * 100}`}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    fontSize: 9,
-                                    marginTop: 0,
-                                    paddingTop: 1,
-                                }}
-                            >
-                                <FontAwesomeIcon
-                                    icon={faCircle}
-                                    color={theme.palette.text.secondary}
-                                    sx={{
-                                        [theme.breakpoints.down("sm")]: {
-                                            // Styles pour les écrans de largeur maximale 600px
-                                            minWith: "24px",
-                                        },
-                                    }}
-                                />
-                            </ListItemIcon>
-                            {line}
-                        </ListItem>
-                    ))} */}
                 </List>
             </Container>
         </Container>

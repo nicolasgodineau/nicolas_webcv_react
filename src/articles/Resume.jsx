@@ -16,11 +16,6 @@ export default function Resume({ AosEffect, AosDelay }) {
         },
     };
 
-    const experiences = t("resume.experiences", { returnObjects: true });
-
-    // Récupère la dernière experience, pour supprimer du padding bottom
-    const lastExperienceId = Object.keys(experiences).length;
-
     return (
         <CustomArticleContainer
             icon={faBriefcase}
@@ -47,7 +42,6 @@ export default function Resume({ AosEffect, AosDelay }) {
                     key={index}
                     index={index}
                     experience={experience}
-                    lastExperienceId={lastExperienceId}
                     delay={index * 150}
                 />
             ))}
@@ -70,7 +64,6 @@ export default function Resume({ AosEffect, AosDelay }) {
                     key={index}
                     index={index}
                     experience={experience}
-                    lastExperienceId={lastExperienceId}
                     delay={index * 100}
                 />
             ))}
