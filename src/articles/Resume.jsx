@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
+import theme from "../components/theme/theme";
+import { Typography } from "@mui/material";
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import Experience from "../components/resume/Experience.jsx"; // pour l'affichage d'une experience
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
@@ -27,25 +28,50 @@ export default function Resume({ AosEffect, AosDelay }) {
             AosEffect={AosEffect}
             AosDelay={AosDelay}
         >
-            {Object.values(experiences).map((experience, index) => (
+            {/* Experiences */}
+            <Typography
+                sx={{
+                    fontSize: "2rem",
+                    paddingTop: "2rem",
+                    color: theme.palette.text.primary,
+                    fontFamily: "Lato, sans-serif",
+                    fontWeight: "light",
+                }}
+            >
+                {t(`resume.experiences.title`)}
+            </Typography>
+            {t("resume.experiences.list", {
+                returnObjects: true,
+            }).map((experience, index) => (
                 <Experience
-                    key={experience.id}
-                    experience={{
-                        id: experience.id,
-                        year: t(`resume.experiences.${experience.id}.year`),
-                        title: t(`resume.experiences.${experience.id}.title`),
-                        location: t(
-                            `resume.experiences.${experience.id}.location`
-                        ),
-                        subtitle: t(
-                            `resume.experiences.${experience.id}.subtitle`
-                        ),
-                        description: t(
-                            `resume.experiences.${experience.id}.description`
-                        ),
-                    }}
+                    key={index}
+                    index={index}
+                    experience={experience}
                     lastExperienceId={lastExperienceId}
                     delay={index * 150}
+                />
+            ))}
+            {/* Scolarité */}
+            <Typography
+                sx={{
+                    fontSize: "2rem",
+                    paddingTop: "2rem",
+                    color: theme.palette.text.primary,
+                    fontFamily: "Lato, sans-serif",
+                    fontWeight: "light",
+                }}
+            >
+                {t(`resume.schooling.title`)}
+            </Typography>
+            {t("resume.schooling.list", {
+                returnObjects: true,
+            }).map((experience, index) => (
+                <Experience
+                    key={index}
+                    index={index}
+                    experience={experience}
+                    lastExperienceId={lastExperienceId}
+                    delay={index * 100}
                 />
             ))}
         </CustomArticleContainer>

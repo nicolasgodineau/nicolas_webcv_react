@@ -11,26 +11,23 @@ import {
 import { faCircle } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Experience({ experience, lastExperienceId, delay }) {
-    const { id, year, title, location, subtitle, description } = experience;
-
-    const separateTextByLineBreaks = (inputText) => {
-        const lines = inputText.split("\n"); // Sépare le texte en lignes en utilisant le saut de ligne comme séparateur
-        return lines;
-    };
-
-    const textWithLineBreaks = separateTextByLineBreaks(description); // Appel de la fonction pour séparer le texte par sauts de ligne
-
+export default function Experience({
+    experience,
+    lastExperienceId,
+    delay,
+    index,
+}) {
     return (
         <Container
             component="div"
             disablegutters="true"
-            key={experience.id}
+            key={index}
             sx={{
                 [theme.breakpoints.down("sm")]: {
                     // Styles pour les écrans de largeur maximale 600px
                     padding: 0,
                 },
+                overflow: "hidden",
             }}
             data-aos="fade-up"
             data-aos-delay={`${delay}`}
@@ -42,7 +39,7 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                 sx={{
                     position: "relative",
                     paddingLeft: 6,
-                    paddingBottom: id === lastExperienceId ? "0px" : 6,
+                    paddingBottom: index === lastExperienceId + 1 ? "0px" : 6,
                     "&::before": {
                         content: '""',
                         position: "absolute",
@@ -52,7 +49,7 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                         height: "12px",
                         borderRadius: "50px",
                         background:
-                            id === 1
+                            index === 0
                                 ? theme.palette.accent
                                 : theme.palette.text.secondary,
                         zIndex: 10,
@@ -92,14 +89,14 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                             display: "block",
                             marginBottom: 2,
                             color:
-                                experience.id === 1
+                                index === 0
                                     ? theme.palette.accent
                                     : theme.palette.text.primary,
                         }}
                         data-aos="fade-left"
                         data-aos-delay="500"
                     >
-                        {year}
+                        {experience.year}
                     </Typography>
                     <Typography
                         component="p"
@@ -112,7 +109,7 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                         data-aos="fade-left"
                         data-aos-delay="700"
                     >
-                        {location}
+                        {experience.location}
                     </Typography>
                 </Box>
 
@@ -127,7 +124,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                     data-aos="fade-up"
                     data-aos-delay={`${delay}`}
                 >
-                    {title.charAt(0).toUpperCase() + title.substring(1)}
+                    {experience.title.charAt(0).toUpperCase() +
+                        experience.title.substring(1)}
                     {/* Récupère la première lettre de la phrase avec `charAt(0)` et la met en majuscule avec `toUpperCase()`. */}
                     {/* Concatène la première lettre en majuscule avec le reste du texte en utilisant `substring(1)`. */}
                 </Typography>
@@ -142,7 +140,8 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                     data-aos="fade-up"
                     data-aos-delay={`${delay}`}
                 >
-                    {subtitle.charAt(0).toUpperCase() + subtitle.substring(1)}
+                    {experience.subtitle.charAt(0).toUpperCase() +
+                        experience.subtitle.substring(1)}
                     {/* Récupère la première lettre de la phrase avec `charAt(0)` et la met en majuscule avec `toUpperCase()`. */}
                     {/* Concatène la première lettre en majuscule avec le reste du texte en utilisant `substring(1)`. */}
                 </Typography>
@@ -156,7 +155,42 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                     data-aos="fade-up"
                     data-aos-delay={`${delay}`}
                 >
-                    {textWithLineBreaks.map((line, index) => (
+                    {experience.descriptions.map((description, index) => (
+                        <ListItem
+                            component="li"
+                            alignItems="flex-start"
+                            dense={true}
+                            key={index}
+                            sx={{
+                                fontSize: "16px",
+                                color: theme.palette.text.secondary,
+                                paddingLeft: 3,
+                            }}
+                            data-aos="fade-up"
+                            data-aos-delay={`${index * 100}`}
+                        >
+                            <ListItemIcon
+                                sx={{
+                                    fontSize: 9,
+                                    marginTop: 0,
+                                    paddingTop: 1,
+                                }}
+                            >
+                                <FontAwesomeIcon
+                                    icon={faCircle}
+                                    color={theme.palette.text.secondary}
+                                    sx={{
+                                        [theme.breakpoints.down("sm")]: {
+                                            // Styles pour les écrans de largeur maximale 600px
+                                            minWith: "24px",
+                                        },
+                                    }}
+                                />
+                            </ListItemIcon>
+                            {description.line}
+                        </ListItem>
+                    ))}
+                    {/*                     {textWithLineBreaks.map((line, index) => (
                         <ListItem
                             component="li"
                             alignItems="flex-start"
@@ -190,7 +224,7 @@ export default function Experience({ experience, lastExperienceId, delay }) {
                             </ListItemIcon>
                             {line}
                         </ListItem>
-                    ))}
+                    ))} */}
                 </List>
             </Container>
         </Container>

@@ -10,21 +10,25 @@
         "country": " Canada",
         "links": [
             {
+                "id": 1,
                 "name": "instagram",
                 "url": "https://www.instagram.com/nicolasg_portraits/",
                 "icon": "instagram"
             },
             {
+                "id": 2,
                 "name": "Github",
                 "url": "https://github.com/nicolasgodineau",
                 "icon": "github"
             },
             {
+                "id": 3,
                 "name": "Website",
                 "url": "www.nicolasgodineau.com",
                 "icon": "globe"
             },
             {
+                "id": 4,
                 "name": "LinkedIn",
                 "url": "https://www.linkedin.com/in/nicolasgodineau/",
                 "icon": "linkedin"
@@ -32,7 +36,8 @@
         ],
         "textCallToAction": "hire me !",
         "fromName": "Firstname & name",
-        "send": "Send"
+        "send": "Send",
+        "sendSucces": "Your message has been sent !"
     },
     "introduction": {
         "header": {
@@ -51,33 +56,151 @@
     "resume": {
         "header": {
             "subtitle": "resume",
-            "text": "Education & **Experiences**"
+            "text": "My **career** journey"
         },
         "experiences": {
-            "1": {
-                "id": 1,
-                "year": "May 2023 -> June 2023",
-                "title": "Student, End-of-Program Project",
-                "location": "Montreal, Canada",
-                "subtitle": "Creation of a responsive mobile website in a team",
-                "description": "Technology: React, Laravel, MySQL, Tailwind\nVersion control software: Git\nAGILE methodology, using Scrumdesk\nDesign and prototyping\nGathering client requirements, creating a specification document."
-            },
-            "2": {
-                "id": 2,
-                "year": "February 2022 -> July 2023",
-                "title": "Student, School Project",
-                "location": "Montreal, Canada",
-                "subtitle": "Execution of projects as part of the training",
-                "description": "Technology: React, Vue.js, Laravel, MySQL, JavaScript, PHP, Tailwind CSS, HTML5, CSS\nVersion control software: Git."
-            },
-            "3": {
-                "id": 3,
-                "year": "2019 -> 2021",
-                "title": "Project Manager",
-                "location": "Montreal, Canada",
-                "subtitle": "",
-                "description": "Project management by organizing, coordinating, and leading a team.\nMonitoring project design, client relationship.\nProviding technical support during implementation and deployment planning.\nTechnical support and operational assistance in case of network failures.\nBuilding client relationships to support business development."
-            }
+            "title": "Experiences",
+            "list": [
+                {
+                    "year": "June 2023 -> July 2023",
+                    "title": "Internship",
+                    "location": "Montreal, Canada",
+                    "subtitle": "Internship at 'Agence-d.ca' - Personnel placement startup. Contributions to web page creation and involvement in deploying their in-house CMS.",
+                    "descriptions": [
+                        {
+                            "line": "Technologies: React, Laravel, MySQL, MUI"
+                        },
+                        {
+                            "line": "Version control software: GIT"
+                        },
+                        {
+                            "line": "AGILE methodology: Development of dynamic web pages using React to provide an immersive and responsive user experience."
+                        },
+                        {
+                            "line": "Active collaboration in setting up an in-house CMS based on Laravel and MySQL to efficiently manage website content and features."
+                        },
+                        {
+                            "line": "Experience with Mui framework to design modern and user-friendly interfaces, thereby enhancing the product's usability and accessibility."
+                        }
+                    ]
+                },
+                {
+                    "year": "May 2023 -> June 2023",
+                    "title": "Student, End-of-Program Project",
+                    "location": "Montreal, Canada",
+                    "subtitle": "Creation of a responsive mobile website in a team",
+                    "descriptions": [
+                        {
+                            "line": "Technology: React, Laravel, MySQL, Tailwind"
+                        },
+                        {
+                            "line": "Version control software: Git"
+                        },
+                        {
+                            "line": "AGILE methodology, using Scrumdesk"
+                        },
+                        {
+                            "line": "Design and prototyping"
+                        },
+                        {
+                            "line": "Gathering client requirements, creating a specification document."
+                        }
+                    ]
+                },
+                {
+                    "year": "February 2022 -> July 2023",
+                    "title": "Student, School Project",
+                    "location": "Montreal, Canada",
+                    "subtitle": "Execution of projects as part of the training",
+                    "descriptions": [
+                        {
+                            "line": "Technology: Skilled in React, Vue.js, Laravel, MySQl,JavaScript, PHP, Tailwind CSS, HTML5, and CSS for versatile web development."
+                        },
+                        {
+                            "line": "Version control software: Proficient in Git for effective code management and seamless team collaboration."
+                        }
+                    ]
+                },
+                {
+                    "year": "2019 -> 2021",
+                    "title": "Project Manager",
+                    "location": "Montreal, Canada",
+                    "subtitle": "",
+                    "descriptions": [
+                        {
+                            "line": "Project management: Organizing, coordinating, and leading teams to ensure successful project execution."
+                        },
+                        {
+                            "line": "Monitoring project design and client relations: Overseeing project development and maintaining strong client relationships."
+                        },
+                        {
+                            "line": "Technical support during implementation and deployment planning: Providing expertise to facilitate smooth implementation and deployment."
+                        },
+                        {
+                            "line": "Technical support and operational assistance during network failures: Offering prompt assistance during network issues to ensure uninterrupted operations."
+                        },
+                        {
+                            "line": "Building client relationships for business development: Fostering strong client connections to support business growth."
+                        }
+                    ]
+                },
+                {
+                    "year": "2007 -> 2019",
+                    "title": "Telecom Technician",
+                    "location": "Montreal, Canada and France",
+                    "subtitle": "",
+                    "descriptions": [
+                        {
+                            "line": "Inspect, monitor, test, and deploy transmission and distribution systems: Conducting thorough inspections, efficient testing, and successful implementation of both optical fiber and copper networks."
+                        },
+                        {
+                            "line": "Communicate and coordinate the development and completion of work: Facilitating effective communication among team members to ensure seamless coordination in project development and timely completion of tasks."
+                        }
+                    ]
+                }
+            ]
+        },
+        "schooling": {
+            "title": "Schooling",
+            "list": [
+                {
+                    "year": "2022 -> July 2023",
+                    "title": "Web design and programming training",
+                    "location": "Montreal, Canada",
+                    "subtitle": "",
+                    "descriptions": [
+                        {
+                            "line": "Accomplishment of individual and team projects: Deliver diverse projects, showcasing strong teamwork, project management, and client relationship skills."
+                        },
+                        {
+                            "line": "Designing and maintaining websites: Monitoring project design, client relationship."
+                        },
+                        {
+                            "line": "Creating visually appealing and functional websites, utilizing programming expertise and robust database management."
+                        },
+                        {
+                            "line": "Learning in-demand technologies in the market: Actively pursuing knowledge in cutting-edge technologies like React, Vue.js, and Laravel to stay ahead in the dynamic market."
+                        }
+                    ]
+                },
+                {
+                    "year": "2004 -> 2006",
+                    "title": "Electrical equipment installer",
+                    "location": "Bordeaux, France",
+                    "subtitle": "",
+                    "descriptions": [
+                        {
+                            "line": "Electrical Equipment Installer: Skilled in safely and efficiently installing various electrical equipment and systems, ensuring compliance with regulations and industry standards."
+                        },
+                        {
+                            "line": "Commissioning and Maintenance of Systems: Experienced in the meticulous setup, testing, and maintenance of electrical systems to optimize performance and minimize downtime."
+                        },
+                        {
+                            "line": "Reading and Interpreting Plans or Diagrams: Proficient in deciphering complex electrical plans and diagrams, facilitating accurate implementation and troubleshooting."
+                        }
+                    ]
+                }
+            ]
         }
     },
     "skills": {
@@ -116,7 +239,7 @@
                     },
                     {
                         "name": "VueJs",
-                        "percentage": 60,
+                        "percentage": 50,
                         "className": "devicon-vuejs-plain"
                     },
                     {
@@ -133,6 +256,11 @@
                         "name": "Mysql",
                         "percentage": 60,
                         "className": "devicon-mysql-plain"
+                    },
+                    {
+                        "name": "Material ui",
+                        "percentage": 60,
+                        "className": "devicon-materialui-plain"
                     }
                 ]
             },
@@ -140,29 +268,29 @@
                 "title": "Software",
                 "list": [
                     {
-                        "name": "Bootstrap",
-                        "percentage": 60,
-                        "className": "devicon-bootstrap-plain"
-                    },
-                    {
-                        "name": "NPM",
-                        "percentage": 40,
-                        "className": "devicon-npm-original-wordmark"
-                    },
-                    {
                         "name": "VSCode",
-                        "percentage": 60,
+                        "percentage": 70,
                         "className": "devicon-vscode-plain"
                     },
                     {
                         "name": "Git",
-                        "percentage": 60,
+                        "percentage": 50,
                         "className": "devicon-git-plain"
                     },
                     {
                         "name": "Figma",
                         "percentage": 60,
                         "className": "devicon-figma-plain"
+                    },
+                    {
+                        "name": "Illustrator",
+                        "percentage": 70,
+                        "className": "devicon-illustrator-plain"
+                    },
+                    {
+                        "name": "Photoshop",
+                        "percentage": 70,
+                        "className": "devicon-photoshop-plain"
                     }
                 ]
             }
