@@ -32,7 +32,8 @@
         ],
         "textCallToAction": "engagez moi !",
         "fromName": "Prénom & nom",
-        "send": "Envoyer"
+        "send": "Envoyer",
+        "sendSucces": "Votre message a été envoyé avec succès !"
     },
     "introduction": {
         "header": {
@@ -54,30 +55,148 @@
             "text": "**Expériences** & Éducation"
         },
         "experiences": {
-            "1": {
-                "id": 1,
-                "year": "Mai 2023 -> Juin 2023",
-                "title": "étudiant, projet fin de formation",
-                "location": "Montréal, Canada",
-                "subtitle": "Création d’un site web mobile responsive en équipe",
-                "description": "Technologie:React, Laravel, Mysql, Tailwind\n Logiciel de gestion de versions GIT\n Méthodologie AGILE, utilisation de Scrumdesk\n Conception et création de maquette\n Recueil des besoins client, mise en place d’un cahier des charges."
-            },
-            "2": {
-                "id": 2,
-                "year": "Février 2022 -> Juillet 2023",
-                "title": "étudiant, projet d’école",
-                "location": "Montréal, Canada",
-                "subtitle": "Réalisation de projets dans le cadre de la formation",
-                "description": "Technologie : React, VueJs, Laravel, Mysql, Javascript, PHP, Tailwind CSS, HTML5, CSS\nLogiciel de gestion de versions GIT."
-            },
-            "3": {
-                "id": 3,
-                "year": "2019 -> 2021",
-                "title": "Chef de projet",
-                "location": "Montréal, Canada",
-                "subtitle": "",
-                "description": "Gestion de projets en organisant, coordonnant et animant une équipe.\nSuivie de la conception du projet, relation client.\nAssurer un soutien technique lors de la réalisation des travaux et des mises en service et participer à l’élaboration des plans de déploiement\nSupport technique et du soutien à l’exploitation en cas de pannes du réseau\nDévelopper des relations avec la clientèle pour soutenir le développement des affaires"
-            }
+            "title": "Expériences",
+            "list": [
+                {
+                    "year": "Juin 2023 -> Juillet 2023",
+                    "title": "Stage",
+                    "location": "Montréal, Canada",
+                    "subtitle": "Stage chez 'Agence-d.ca' - Startup spécialisée dans le placement du personnel. Contributions à la création de pages web et participation au déploiement de leur CMS interne.",
+                    "descriptions": [
+                        {
+                            "line": "Technologies : React, Laravel, MySQL, MUI"
+                        },
+                        {
+                            "line": "Logiciel de contrôle de version : GIT"
+                        },
+                        {
+                            "line": "Méthodologie AGILE : Développement de pages web dynamiques en utilisant React pour offrir une expérience utilisateur immersive et réactive."
+                        },
+                        {
+                            "line": "Collaboration active dans la mise en place d'un CMS interne basé sur Laravel et MySQL pour gérer efficacement le contenu et les fonctionnalités du site web."
+                        },
+                        {
+                            "line": "Expérience avec le framework Mui pour concevoir des interfaces modernes et conviviales, améliorant ainsi l'utilisabilité et l'accessibilité du produit."
+                        }
+                    ]
+                },
+                {
+                    "year": "Mai 2023 -> Juin 2023",
+                    "title": "Étudiant, Projet de fin de programme",
+                    "location": "Montréal, Canada",
+                    "subtitle": "Création d'un site web mobile responsive en équipe",
+                    "descriptions": [
+                        {
+                            "line": "Technologies : React, Laravel, MySQL, Tailwind"
+                        },
+                        {
+                            "line": "Logiciel de contrôle de version : Git"
+                        },
+                        {
+                            "line": "Méthodologie AGILE, en utilisant Scrumdesk"
+                        },
+                        {
+                            "line": "Conception et prototypage"
+                        },
+                        {
+                            "line": "Collecte des exigences du client et création d'un document de spécification."
+                        }
+                    ]
+                },
+                {
+                    "year": "Février 2022 -> Juillet 2023",
+                    "title": "Étudiant, Projet scolaire",
+                    "location": "Montréal, Canada",
+                    "subtitle": "Réalisation de projets dans le cadre de la formation",
+                    "descriptions": [
+                        {
+                            "line": "Technologies : Compétent en React, Vue.js, Laravel, MySQl, JavaScript, PHP, Tailwind CSS, HTML5 et CSS pour le développement web polyvalent."
+                        },
+                        {
+                            "line": "Logiciel de contrôle de version : Maîtrise de Git pour une gestion efficace du code et une collaboration transparente au sein de l'équipe."
+                        }
+                    ]
+                },
+                {
+                    "year": "2019 -> 2021",
+                    "title": "Chef de Projet",
+                    "location": "Montréal, Canada",
+                    "subtitle": "",
+                    "descriptions": [
+                        {
+                            "line": "Gestion de projet : Organisation, coordination et direction des équipes pour assurer l'exécution réussie des projets."
+                        },
+                        {
+                            "line": "Suivi de la conception du projet et relations avec les clients : Supervision du développement des projets et maintien de solides relations avec les clients."
+                        },
+                        {
+                            "line": "Assistance technique lors de la planification de la mise en œuvre et du déploiement : Fourniture d'une expertise pour faciliter la mise en œuvre et le déploiement en douceur."
+                        },
+                        {
+                            "line": "Assistance technique et aide opérationnelle en cas de pannes de réseau : Fourniture d'une assistance rapide en cas de problèmes de réseau pour assurer un fonctionnement ininterrompu."
+                        },
+                        {
+                            "line": "Établissement de relations avec les clients pour le développement des affaires : Favoriser des liens solides avec les clients pour soutenir la croissance de l'entreprise."
+                        }
+                    ]
+                },
+                {
+                    "year": "2007 -> 2019",
+                    "title": "Technicien en Télécommunications",
+                    "location": "Montréal, Canada et France",
+                    "subtitle": "",
+                    "descriptions": [
+                        {
+                            "line": "Inspection, surveillance, test et déploiement de systèmes de transmission et de distribution : Réalisation d'inspections approfondies, de tests efficaces et de la mise en œuvre réussie de réseaux de fibre optique et de cuivre."
+                        },
+                        {
+                            "line": "Communication et coordination du développement et de l'achèvement des travaux : Facilitation d'une communication efficace entre les membres de l'équipe pour assurer une coordination fluide dans le développement du projet et l'achèvement en temps voulu des tâches."
+                        }
+                    ]
+                }
+            ]
+        },
+        "schooling": {
+            "title": "Formation",
+            "list": [
+                {
+                    "year": "2022 -> Juillet 2023",
+                    "title": "Formation en conception et programmation web",
+                    "location": "Montréal, Canada",
+                    "subtitle": "",
+                    "descriptions": [
+                        {
+                            "line": "Réalisation de projets individuels et en équipe : Réalisation de divers projets mettant en valeur de solides compétences en travail d'équipe, en gestion de projet et en relations avec les clients."
+                        },
+                        {
+                            "line": "Conception et maintenance de sites web : Suivi de la conception de projets, relations avec les clients."
+                        },
+                        {
+                            "line": "Création de sites web attrayants et fonctionnels, en utilisant des compétences en programmation et une gestion de base de données robuste."
+                        },
+                        {
+                            "line": "Apprentissage de technologies demandées sur le marché : Recherche active de connaissances sur les technologies de pointe telles que React, Vue.js et Laravel pour rester à la pointe du marché dynamique."
+                        }
+                    ]
+                },
+                {
+                    "year": "2004 -> 2006",
+                    "title": "Installateur d'équipements électriques",
+                    "location": "Bordeaux, France",
+                    "subtitle": "",
+                    "descriptions": [
+                        {
+                            "line": "Installateur d'équipements électriques : Compétent pour installer divers équipements et systèmes électriques en toute sécurité et efficacité, en veillant à respecter les réglementations et les normes de l'industrie."
+                        },
+                        {
+                            "line": "Mise en service et maintenance des systèmes : Expérience dans la configuration méticuleuse, les tests et la maintenance des systèmes électriques pour optimiser les performances et réduire les temps d'arrêt."
+                        },
+                        {
+                            "line": "Lecture et interprétation de plans ou de schémas : Compétent pour déchiffrer des plans et des schémas électriques complexes, facilitant ainsi une mise en œuvre précise et un dépannage efficace."
+                        }
+                    ]
+                }
+            ]
         }
     },
     "skills": {
@@ -133,22 +252,17 @@
                         "name": "Mysql",
                         "percentage": 60,
                         "className": "devicon-mysql-plain"
+                    },
+                    {
+                        "name": "Material ui",
+                        "percentage": 60,
+                        "className": "devicon-materialui-plain"
                     }
                 ]
             },
             "logicielsOutils": {
                 "title": "Logiciel",
                 "list": [
-                    {
-                        "name": "Bootstrap",
-                        "percentage": 60,
-                        "className": "devicon-bootstrap-plain"
-                    },
-                    {
-                        "name": "NPM",
-                        "percentage": 40,
-                        "className": "devicon-npm-original-wordmark"
-                    },
                     {
                         "name": "VSCode",
                         "percentage": 60,
@@ -163,6 +277,16 @@
                         "name": "Figma",
                         "percentage": 60,
                         "className": "devicon-figma-plain"
+                    },
+                    {
+                        "name": "Illustrator",
+                        "percentage": 70,
+                        "className": "devicon-illustrator-plain"
+                    },
+                    {
+                        "name": "Photoshop",
+                        "percentage": 70,
+                        "className": "devicon-photoshop-plain"
                     }
                 ]
             }

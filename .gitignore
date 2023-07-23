@@ -139,3 +139,4 @@ src/images/portfolio/stampee/thumbnails_2.webp
 src/images/portfolio/stampee/thumbnails_3.webp
 src/images/portfolio/stampee/thumbnails_4.webp
 .gitignore
+package-lock.json
