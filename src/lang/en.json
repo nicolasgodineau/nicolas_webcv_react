@@ -4,31 +4,26 @@
         "titleLine2": "Photographer",
         "name": "Nicolas",
         "lastName": "Godineau",
-        "email": "hello@nicolasgodineau.com",
         "baseIn": "Base in",
         "city": "Montréal",
         "country": " Canada",
         "links": [
             {
-                "id": 1,
                 "name": "instagram",
                 "url": "https://www.instagram.com/nicolasg_portraits/",
                 "icon": "instagram"
             },
             {
-                "id": 2,
                 "name": "Github",
                 "url": "https://github.com/nicolasgodineau",
                 "icon": "github"
             },
             {
-                "id": 3,
                 "name": "Website",
                 "url": "www.nicolasgodineau.com",
                 "icon": "globe"
             },
             {
-                "id": 4,
                 "name": "LinkedIn",
                 "url": "https://www.linkedin.com/in/nicolasgodineau/",
                 "icon": "linkedin"
@@ -64,97 +59,91 @@
                 {
                     "year": "June 2023 -> July 2023",
                     "title": "Internship",
-                    "location": "Montreal, Canada",
-                    "subtitle": "Internship at 'Agence-d.ca' - Personnel placement startup. Contributions to web page creation and involvement in deploying their in-house CMS.",
+                    "location": "Agence-d.ca - Montréal, Canada",
+                    "subtitle": "Internship at 'Agence-d.ca' - Startup specialized in staff placement. Contributions to the creation of web pages and participation in the creation of their internal CMS.",
                     "descriptions": [
                         {
-                            "line": "Technologies: React, Laravel, MySQL, MUI"
+                            "line": "Technologies: React, Laravel, MySQL, MUI, Docker, Postman"
                         },
                         {
-                            "line": "Version control software: GIT"
+                            "line": "GIT version control software and use of AGILE Methodology."
                         },
                         {
-                            "line": "AGILE methodology: Development of dynamic web pages using React to provide an immersive and responsive user experience."
+                            "line": "Design and development of dynamic web pages using React to provide an immersive and responsive user experience."
                         },
                         {
-                            "line": "Active collaboration in setting up an in-house CMS based on Laravel and MySQL to efficiently manage website content and features."
+                            "line": "Help with the implementation of the internal CMS based on Laravel and MySQL to efficiently manage the content and functionalities of the website."
                         },
                         {
-                            "line": "Experience with Mui framework to design modern and user-friendly interfaces, thereby enhancing the product's usability and accessibility."
+                            "line": "Experience with the Mui framework to design modern and user-friendly interfaces, thus improving the accessibility of the product."
                         }
                     ]
                 },
                 {
                     "year": "May 2023 -> June 2023",
                     "title": "Student, End-of-Program Project",
-                    "location": "Montreal, Canada",
+                    "location": "Maisonneuve College - Montreal, Canada",
                     "subtitle": "Creation of a responsive mobile website in a team",
                     "descriptions": [
                         {
                             "line": "Technology: React, Laravel, MySQL, Tailwind"
                         },
                         {
-                            "line": "Version control software: Git"
+                            "line": "GIT version control software and use of AGILE Methodology."
                         },
                         {
-                            "line": "AGILE methodology, using Scrumdesk"
+                            "line": "Design and multi-page design."
                         },
                         {
-                            "line": "Design and prototyping"
-                        },
-                        {
-                            "line": "Gathering client requirements, creating a specification document."
+                            "line": "Collecting customer requirements and creating a specification document."
                         }
                     ]
                 },
                 {
                     "year": "February 2022 -> July 2023",
                     "title": "Student, School Project",
-                    "location": "Montreal, Canada",
+                    "location": "Maisonneuve College - Montreal, Canada",
                     "subtitle": "Execution of projects as part of the training",
                     "descriptions": [
                         {
-                            "line": "Technology: Skilled in React, Vue.js, Laravel, MySQl,JavaScript, PHP, Tailwind CSS, HTML5, and CSS for versatile web development."
+                            "line": "Technologies: Proficient in React, Vue.js, Laravel, MySQl, JavaScript, PHP, Tailwind CSS, HTML5 and CSS for general purpose web development."
                         },
                         {
-                            "line": "Version control software: Proficient in Git for effective code management and seamless team collaboration."
+                            "line": "Git version control software for efficient code management and seamless team collaboration."
                         }
                     ]
                 },
                 {
                     "year": "2019 -> 2021",
                     "title": "Project Manager",
-                    "location": "Montreal, Canada",
+                    "location": "Com-net - Montreal, Canada",
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Project management: Organizing, coordinating, and leading teams to ensure successful project execution."
+                            "line": "Organizing, coordinating and leading teams to ensure the successful execution of projects."
                         },
                         {
-                            "line": "Monitoring project design and client relations: Overseeing project development and maintaining strong client relationships."
+                            "line": "Overseeing project development and maintaining strong client relationships."
                         },
                         {
-                            "line": "Technical support during implementation and deployment planning: Providing expertise to facilitate smooth implementation and deployment."
+                            "line": "Technical assistance during implementation planning and maintenance."
                         },
                         {
-                            "line": "Technical support and operational assistance during network failures: Offering prompt assistance during network issues to ensure uninterrupted operations."
-                        },
-                        {
-                            "line": "Building client relationships for business development: Fostering strong client connections to support business growth."
+                            "line": "Foster strong relationships with customers to support business growth."
                         }
                     ]
                 },
                 {
                     "year": "2007 -> 2019",
                     "title": "Telecom Technician",
-                    "location": "Montreal, Canada and France",
+                    "location": "Com-net - Montreal, Canada and various companies in France",
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Inspect, monitor, test, and deploy transmission and distribution systems: Conducting thorough inspections, efficient testing, and successful implementation of both optical fiber and copper networks."
+                            "line": "Performing thorough inspections, effective testing and successful implementation of fiber optic and copper networks."
                         },
                         {
-                            "line": "Communicate and coordinate the development and completion of work: Facilitating effective communication among team members to ensure seamless coordination in project development and timely completion of tasks."
+                            "line": "Communication and coordination of development and completion of work."
                         }
                     ]
                 }
@@ -166,20 +155,20 @@
                 {
                     "year": "2022 -> July 2023",
                     "title": "Web design and programming training",
-                    "location": "Montreal, Canada",
+                    "location": "Maisonneuve College - Montreal, Canada",
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Accomplishment of individual and team projects: Deliver diverse projects, showcasing strong teamwork, project management, and client relationship skills."
+                            "line": "Completion of various projects showcasing skills in teamwork, project management and client relations."
                         },
                         {
-                            "line": "Designing and maintaining websites: Monitoring project design, client relationship."
+                            "line": "Creation of attractive, functional websites and visual and interactive interfaces, using programming languages as HTML, CSS and JavaScript."
                         },
                         {
-                            "line": "Creating visually appealing and functional websites, utilizing programming expertise and robust database management."
+                            "line": "Experience in designing, setting up and managing relational databases such as MySQL."
                         },
                         {
-                            "line": "Learning in-demand technologies in the market: Actively pursuing knowledge in cutting-edge technologies like React, Vue.js, and Laravel to stay ahead in the dynamic market."
+                            "line": "Learning technologies demanded on the market such as React, Vue.js and Laravel."
                         }
                     ]
                 },
@@ -190,13 +179,13 @@
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Electrical Equipment Installer: Skilled in safely and efficiently installing various electrical equipment and systems, ensuring compliance with regulations and industry standards."
+                            "line": "Installation of various electrical equipment and systems, ensuring compliance with industry regulations and standards."
                         },
                         {
-                            "line": "Commissioning and Maintenance of Systems: Experienced in the meticulous setup, testing, and maintenance of electrical systems to optimize performance and minimize downtime."
+                            "line": "Testing and maintenance of electrical systems."
                         },
                         {
-                            "line": "Reading and Interpreting Plans or Diagrams: Proficient in deciphering complex electrical plans and diagrams, facilitating accurate implementation and troubleshooting."
+                            "line": "Reading and interpreting plans or diagrams, facilitating precise implementation and effective troubleshooting."
                         }
                     ]
                 }

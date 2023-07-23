@@ -4,7 +4,6 @@
         "titleLine2": "Photographe",
         "name": "Nicolas",
         "lastName": "Godineau",
-        "email": "hello@nicolasgodineau.com",
         "baseIn": "Situé à",
         "city": "Montréal",
         "country": " Canada",
@@ -60,43 +59,40 @@
                 {
                     "year": "Juin 2023 -> Juillet 2023",
                     "title": "Stage",
-                    "location": "Montréal, Canada",
-                    "subtitle": "Stage chez 'Agence-d.ca' - Startup spécialisée dans le placement du personnel. Contributions à la création de pages web et participation au déploiement de leur CMS interne.",
+                    "location": "Agence-d.ca - Montréal, Canada",
+                    "subtitle": "Stage chez 'Agence-d.ca' - Startup spécialisée dans le placement du personnel. Contributions à la création de pages web et participation a la création de leur CMS interne.",
                     "descriptions": [
                         {
-                            "line": "Technologies : React, Laravel, MySQL, MUI"
+                            "line": "Technologies : React, Laravel, MySQL, MUI, Docker, Postman"
                         },
                         {
-                            "line": "Logiciel de contrôle de version : GIT utilisation de la Méthodologie AGILE"
+                            "line": "Logiciel de contrôle de version GIT et utilisation de la Méthodologie AGILE."
                         },
                         {
-                            "line": "Design et développement de pages web dynamiques en utilisant React pour offrir une expérience utilisateur immersive et réactive."
+                            "line": "Design et développement de pages web dynamiques en utilisant Réact pour offrir une expérience utilisateur immersive et réactive."
                         },
                         {
                             "line": "Aide à la mise en place du CMS interne basé sur Laravel et MySQL pour gérer efficacement le contenu et les fonctionnalités du site web."
                         },
                         {
-                            "line": "Expérience avec le framework Mui pour concevoir des interfaces modernes et conviviales, améliorant ainsi l'utilisabilité et l'accessibilité du produit."
+                            "line": "Expérience avec le framework Mui pour concevoir des interfaces modernes et conviviales, améliorant ainsi l'accessibilité du produit."
                         }
                     ]
                 },
                 {
                     "year": "Mai 2023 -> Juin 2023",
                     "title": "Étudiant, Projet de fin de programme",
-                    "location": "Montréal, Canada",
+                    "location": "Collège de Maisonneuve - Montréal, Canada",
                     "subtitle": "Création d'un site web mobile responsive en équipe",
                     "descriptions": [
                         {
                             "line": "Technologies : React, Laravel, MySQL, Tailwind"
                         },
                         {
-                            "line": "Logiciel de contrôle de version : Git"
+                            "line": "Logiciel de contrôle de version GIT et utilisation de la Méthodologie AGILE."
                         },
                         {
-                            "line": "Méthodologie AGILE, en utilisant Scrumdesk"
-                        },
-                        {
-                            "line": "Conception et prototypage"
+                            "line": "Design et conception de plusieurs pages."
                         },
                         {
                             "line": "Collecte des exigences du client et création d'un document de spécification."
@@ -106,21 +102,21 @@
                 {
                     "year": "Février 2022 -> Juillet 2023",
                     "title": "Étudiant, Projet scolaire",
-                    "location": "Montréal, Canada",
+                    "location": "Collège de Maisonneuve - Montréal, Canada",
                     "subtitle": "Réalisation de projets dans le cadre de la formation",
                     "descriptions": [
                         {
                             "line": "Technologies : Compétent en React, Vue.js, Laravel, MySQl, JavaScript, PHP, Tailwind CSS, HTML5 et CSS pour le développement web polyvalent."
                         },
                         {
-                            "line": "Logiciel de contrôle de version : Maîtrise de Git pour une gestion efficace du code et une collaboration transparente au sein de l'équipe."
+                            "line": "Logiciel de contrôle de version de Git pour une gestion efficace du code et une collaboration transparente au sein de l'équipe."
                         }
                     ]
                 },
                 {
                     "year": "2019 -> 2021",
-                    "title": "Chef de Projet",
-                    "location": "Montréal, Canada",
+                    "title": "Chef de Projet pour Com-net",
+                    "location": "Com-net - Montréal, Canada",
                     "subtitle": "",
                     "descriptions": [
                         {
@@ -140,7 +136,7 @@
                 {
                     "year": "2007 -> 2019",
                     "title": "Technicien en Télécommunications",
-                    "location": "Montréal, Canada et France",
+                    "location": "Com-net - Montréal, Canada et plusieurs entreprises en France",
                     "subtitle": "",
                     "descriptions": [
                         {
@@ -159,37 +155,37 @@
                 {
                     "year": "2022 -> Juillet 2023",
                     "title": "Formation en conception et programmation web",
-                    "location": "Montréal, Canada",
+                    "location": "Collège de Maisonneuve - Montréal, Canada",
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Réalisation de projets individuels et en équipe : Réalisation de divers projets mettant en valeur de solides compétences en travail d'équipe, en gestion de projet et en relations avec les clients."
+                            "line": "Réalisation de divers projets mettant en valeur des compétences en travail d'équipe, en gestion de projet et en relations avec les clients."
                         },
                         {
-                            "line": "Conception et maintenance de sites web : Suivi de la conception de projets, relations avec les clients."
+                            "line": "Création de sites web attrayants, fonctionnels et d'interfaces visuelles et interactives, en utilisant des langages de programmation tels que HTML, CSS et JavaScript."
                         },
                         {
-                            "line": "Création de sites web attrayants et fonctionnels, en utilisant des compétences en programmation et une gestion de base de données robuste."
+                            "line": "Expérience dans la conception, la mise en place et la gestion de bases de données relationnelles telles que MySQL."
                         },
                         {
-                            "line": "Apprentissage de technologies demandées sur le marché : Solide base sur les technologies telles que React, Vue.js et Laravel afin de rester à la pointe du marché."
+                            "line": "Apprentissage de technologies demandées sur le marché telles que React, Vue.js et Laravel."
                         }
                     ]
                 },
                 {
                     "year": "2004 -> 2006",
                     "title": "Installateur d'équipements électriques",
-                    "location": "Bordeaux, France",
+                    "location": "Centre de formation - Bordeaux, France",
                     "subtitle": "",
                     "descriptions": [
                         {
-                            "line": "Installation de  divers équipements et systèmes électriques, en veillant à respecter les réglementations et les normes de l'industrie."
+                            "line": "Installation de divers équipements et systèmes électriques, en veillant à respecter les réglementations et les normes de l'industrie."
                         },
                         {
                             "line": "Tests et maintenance des systèmes électriques."
                         },
                         {
-                            "line": "Lecture et interprétation de plans ou de schémas, facilitant ainsi une mise en œuvre précise et un dépannage efficace."
+                            "line": "Lecture et interprétation de plans ou de schémas, facilitant une mise en œuvre précise et un dépannage efficace."
                         }
                     ]
                 }
