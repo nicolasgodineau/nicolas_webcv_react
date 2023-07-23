@@ -14,7 +14,7 @@ import {
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CloseIcon from "@mui/icons-material/Close";
 
-const ContactModal = ({ toggleContent, isMobileDevice, dimensions }) => {
+const ContactModal = ({ toggleContent, dimensions }) => {
     const [isConfettiActive, setConfettiActive] = useState(false);
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const [open, setOpen] = useState(false);
@@ -71,8 +71,8 @@ const ContactModal = ({ toggleContent, isMobileDevice, dimensions }) => {
         // Réinitialiser l'animation après une courte durée
         setTimeout(() => {
             setConfettiActive(false);
-        }, 2000); // Durée en millisecondes de l'animation de confettis
-        setOpen(false); // Fermer la modal ou effectuer toute autre action nécessaire après la soumission du formulaire
+            toggleContent(); // Fermer la modal
+        }, 2000); // Durée en millisecondes de l'animation de confettis puis ferme la modale
     };
 
     return (
