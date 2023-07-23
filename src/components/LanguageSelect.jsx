@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { IconButton, Menu, MenuItem, Box } from "@mui/material";
 import theme from "../components/theme/theme";
@@ -10,6 +10,18 @@ export default function LanguageSelect() {
     const { i18n } = useTranslation();
     const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
     const [anchorEl, setAnchorEl] = useState(null);
+
+    function detectBrowserLanguage() {
+        const userLanguage = navigator.language || navigator.userLanguage;
+        return userLanguage.split("-")[0]; // Récupère la langue principale (ex: "fr" pour "fr-FR")
+    }
+
+    // Fonction pour détecter la langue du navigateur lors du chargement initial du composant
+    useEffect(() => {
+        const browserLanguage = detectBrowserLanguage();
+        setSelectedLanguage(browserLanguage); // Mettre à jour l'état de la langue avec la langue du navigateur
+        i18n.changeLanguage(browserLanguage); // Changer la langue de l'application en fonction de la langue du navigateur
+    }, [i18n]);
 
     const handleChangeLanguage = (language) => {
         setSelectedLanguage(language);
@@ -27,6 +39,7 @@ export default function LanguageSelect() {
 
     return (
         <Box
+            component="div"
             position="absolute"
             top="-30px"
             left="0px"
