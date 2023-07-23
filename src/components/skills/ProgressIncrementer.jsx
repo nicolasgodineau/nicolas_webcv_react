@@ -51,11 +51,11 @@ export default function ProgressIncrementer({ targetPercentage }) {
             observer = new IntersectionObserver(handleIntersection, options);
             observer.observe(elementRef.current); // Attache l'observer à l'élément référencé
         }
-
+        const currentElement = elementRef.current;
         // Nettoyage de l'Intersection Observer lorsque le composant est démonté
         return () => {
-            if (observer && elementRef.current) {
-                observer.unobserve(elementRef.current); // Détache l'observer de l'élément référencé
+            if (observer && currentElement) {
+                observer.unobserve(currentElement);
             }
         };
     }, [targetPercentage]);
