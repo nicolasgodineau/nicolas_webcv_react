@@ -223,9 +223,9 @@ export default function SideBar({
                                 marginBottom: 0,
                             }}
                         >
-                            {links.map((link) => (
+                            {links.map((link, index) => (
                                 <ListItem
-                                    key={link.id}
+                                    key={index}
                                     sx={{
                                         width: "50px",
                                         height: "50px",
