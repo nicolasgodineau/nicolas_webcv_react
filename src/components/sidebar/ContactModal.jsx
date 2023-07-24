@@ -14,7 +14,7 @@ import {
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CloseIcon from "@mui/icons-material/Close";
 
-const ContactModal = ({ toggleContent, dimensions }) => {
+export default function ContactModal({ toggleContent, dimensions }) {
     const [isConfettiActive, setConfettiActive] = useState(false);
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const [open, setOpen] = useState(false);
@@ -76,154 +76,165 @@ const ContactModal = ({ toggleContent, dimensions }) => {
     };
 
     return (
-        <Box
+        <FormControl
             open={open}
             onClose={() => setOpen(false)}
             sx={{
                 width: dimensions.width,
                 height: dimensions.height,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
             }}
+            component="form"
+            onSubmit={handleSubmit(onSubmit)}
         >
-            <FormControl
-                component="form"
-                onSubmit={handleSubmit(onSubmit)}
-                sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                }}
-            >
-                {isFormSubmitted ? (
-                    <Typography
-                        variant="body1"
-                        color={theme.palette.accent}
-                        sx={{ margin: "auto 0" }}
-                    >
-                        {t("personalInformations.sendSucces")}
-                    </Typography>
-                ) : (
-                    <Box>
-                        <Controller
-                            name="name"
-                            control={control}
-                            defaultValue=""
-                            rules={{ required: "Ce champ est requis" }}
-                            render={({ field }) => (
-                                <TextField
-                                    label={t("personalInformations.fromName")}
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                    error={Boolean(errors.name)}
-                                    helperText={
-                                        errors.name && errors.name.message
-                                    }
-                                    sx={{ borderRadius: "12px" }}
-                                    {...field}
-                                />
-                            )}
-                        />
-                        <Controller
-                            name="email"
-                            control={control}
-                            defaultValue=""
-                            rules={{
-                                required: "Ce champ est requis",
-                                pattern: {
-                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                    message: "Adresse e-mail invalide",
-                                },
-                            }}
-                            render={({ field }) => (
-                                <TextField
-                                    label="Email"
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                    error={Boolean(errors.email)}
-                                    helperText={
-                                        errors.email && errors.email.message
-                                    }
-                                    {...field}
-                                />
-                            )}
-                        />
-                        <Controller
-                            name="message"
-                            control={control}
-                            defaultValue=""
-                            rules={{ required: "Ce champ est requis" }}
-                            render={({ field }) => (
-                                <TextField
-                                    label="Message"
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                    multiline
-                                    rows={4}
-                                    error={Boolean(errors.message)}
-                                    helperText={
-                                        errors.message && errors.message.message
-                                    }
-                                    sx={{ borderRadius: "12px" }}
-                                    {...field}
-                                />
-                            )}
-                        />
-                    </Box>
-                )}
+            {isFormSubmitted ? (
+                <Typography
+                    variant="body1"
+                    color={theme.palette.accent}
+                    sx={{ margin: "auto 0" }}
+                >
+                    {t("personalInformations.sendSucces")}
+                </Typography>
+            ) : (
                 <Box
-                    component="div"
                     sx={{
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-evenly",
-                        gap: 1,
+                        flexDirection: "column",
+                        gap: 2,
+                        [theme.breakpoints.down("md")]: {
+                            // Styles pour les écrans de largeur maximale "md" (1090px)
+                            height: "100%",
+                        },
                     }}
                 >
-                    <Button
-                        type="submit"
-                        sx={{
-                            padding: "12px 44px",
-                            borderRadius: 32,
-                            backgroundColor: theme.palette.accent,
-                            border: `2px solid ${theme.palette.accent}`,
-                            color: "black",
-                            ":hover": {
-                                cursor: "pointer",
-                                color: theme.palette.accent,
-                                backgroundColor: theme.palette.background.dark,
+                    <Controller
+                        name="name"
+                        control={control}
+                        defaultValue=""
+                        rules={{ required: t("personalInformations.required") }}
+                        render={({ field }) => (
+                            <TextField
+                                label={t("personalInformations.fromName")}
+                                variant="filled"
+                                fullWidth
+                                margin="normal"
+                                error={Boolean(errors.name)}
+                                helperText={errors.name && errors.name.message}
+                                {...field}
+                                sx={{
+                                    backgroundColor: "#2a2a2a",
+                                }}
+                            />
+                        )}
+                    />
+                    <Controller
+                        name="email"
+                        control={control}
+                        defaultValue=""
+                        rules={{
+                            required: t("personalInformations.required"),
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: t(
+                                    "personalInformations.invalideEmail"
+                                ),
                             },
                         }}
-                        variant="text"
-                        startIcon={<MailOutlineIcon />}
-                    >
-                        {t("personalInformations.send")}
-                    </Button>{" "}
-                    <Confetti active={isConfettiActive} />
-                    <IconButton
-                        sx={{
-                            padding: "12px 44px",
-                            borderRadius: 32,
-                            backgroundColor: theme.palette.danger,
-                            border: `2px solid ${theme.palette.danger}`,
-                            color: "black",
-                            ":hover": {
-                                cursor: "pointer",
-                                color: theme.palette.danger,
-                                backgroundColor: theme.palette.background.dark,
-                            },
-                        }}
-                        onClick={handleClick}
-                        variant="text"
-                    >
-                        <CloseIcon />
-                    </IconButton>
+                        render={({ field }) => (
+                            <TextField
+                                label="Email"
+                                variant="filled"
+                                fullWidth
+                                margin="normal"
+                                error={Boolean(errors.email)}
+                                helperText={
+                                    errors.email && errors.email.message
+                                }
+                                {...field}
+                                sx={{
+                                    backgroundColor: "#2a2a2a",
+                                }}
+                            />
+                        )}
+                    />
+                    <Controller
+                        name="message"
+                        control={control}
+                        defaultValue=""
+                        rules={{ required: t("personalInformations.required") }}
+                        render={({ field }) => (
+                            <TextField
+                                label="Message"
+                                variant="filled"
+                                fullWidth
+                                margin="normal"
+                                multiline
+                                rows={4}
+                                error={Boolean(errors.message)}
+                                helperText={
+                                    errors.message && errors.message.message
+                                }
+                                {...field}
+                                sx={{
+                                    backgroundColor: "#2a2a2a",
+                                }}
+                            />
+                        )}
+                    />
                 </Box>
-            </FormControl>
-        </Box>
+            )}
+            <Box
+                component="div"
+                sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-evenly",
+                    gap: 1,
+                }}
+            >
+                <Button
+                    type="submit"
+                    sx={{
+                        padding: "12px 44px",
+                        borderRadius: 32,
+                        backgroundColor: theme.palette.accent,
+                        border: `2px solid ${theme.palette.accent}`,
+                        color: "black",
+                        ":hover": {
+                            cursor: "pointer",
+                            color: theme.palette.accent,
+                            backgroundColor: theme.palette.background.dark,
+                        },
+                    }}
+                    variant="text"
+                    startIcon={<MailOutlineIcon />}
+                >
+                    {t("personalInformations.send")}
+                </Button>{" "}
+                <Confetti active={isConfettiActive} />
+                <IconButton
+                    sx={{
+                        padding: "12px 44px",
+                        borderRadius: 32,
+                        backgroundColor: theme.palette.danger,
+                        border: `2px solid ${theme.palette.danger}`,
+                        color: "black",
+                        ":hover": {
+                            cursor: "pointer",
+                            color: theme.palette.danger,
+                            backgroundColor: theme.palette.background.dark,
+                        },
+                    }}
+                    onClick={handleClick}
+                    variant="text"
+                >
+                    <CloseIcon />
+                </IconButton>
+            </Box>
+        </FormControl>
     );
-};
-
-export default ContactModal;
+}
