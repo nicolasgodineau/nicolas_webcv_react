@@ -15,13 +15,12 @@ export default function CustomArticleContainer({
         <Container
             component="article"
             disableGutters={true}
-            /* maxWidth="sm2" */
             data-aos={AosEffect}
             data-aos-delay={AosDelay}
             sx={{
                 overflow: "hidden",
                 paddingY: 9,
-                [theme.breakpoints.down("tablet")]: {
+                [theme.breakpoints.down("md")]: {
                     paddingTop: 5,
                     paddingBottom: 0,
                     paddingX: 0,

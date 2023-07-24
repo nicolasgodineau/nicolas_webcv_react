@@ -42,8 +42,8 @@ export default function Header({ icon, data, variant, fontSize }) {
                     border: `2px solid ${theme.palette.text.secondary}`,
                     borderRadius: 5,
                     marginBottom: 5,
-                    [theme.breakpoints.down("tablet")]: {
-                        // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                    [theme.breakpoints.down("md")]: {
+                        // Styles pour les écrans de largeur maximale "md" (1090px)
                         marginBottom: 2.5,
                     },
                 }}

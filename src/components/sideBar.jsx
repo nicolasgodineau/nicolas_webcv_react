@@ -24,13 +24,14 @@ import Data from "../lang/en.json";
 export default function SideBar({
     selectedLanguage,
     handleChangeLanguage,
-    isMobileDevice,
     AosEffect,
     AosDelay,
 }) {
     const { t } = useTranslation();
     const [showContact, setShowText] = useState(true);
-    const isTablet = useMediaQuery((theme) => theme.breakpoints.down("tablet"));
+
+    // Pour la désactivation des annimations au format tablette
+    const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
     const links = Data.personalInformations.links;
 
@@ -63,15 +64,16 @@ export default function SideBar({
     return (
         <Container
             component="aside"
-            disableGutters={isTablet} // Désactive les marges si c'est en mode tablette
             sx={{
                 width: "max-content",
-                ...(isTablet && {
-                    height: "100svh",
-                }),
-                [theme.breakpoints.down("tablet")]: {
-                    // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                [theme.breakpoints.down("md")]: {
+                    // Styles pour les écrans de largeur maximale "md" (1090px)
                     width: "100%",
+                    height: "100svh",
+                },
+                [theme.breakpoints.down("sm")]: {
+                    // Styles pour les écrans de largeur maximale "sm" (600px)
+                    padding: 0,
                 },
             }}
         >
@@ -92,16 +94,16 @@ export default function SideBar({
                     border: `2px solid ${theme.palette.text.secondary}`,
                     borderRadius: 5,
                     height: "fit-content",
-
                     backgroundColor: theme.palette.background.dark,
-                    [theme.breakpoints.down("tablet")]: {
-                        // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                    [theme.breakpoints.down("md")]: {
+                        // Styles pour les écrans de largeur maximale "md" (1090px)
                         position: "initial",
                         width: "100%",
+                        height: "80svh",
                         marginTop: "2rem",
                     },
                     [theme.breakpoints.down("xs")]: {
-                        // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                        // Styles pour les écrans de largeur maximale "xs" (450px)
                         padding: 0,
                         paddingBottom: 4,
                         border: "none",
@@ -114,9 +116,9 @@ export default function SideBar({
                     fontFamily: "Poiret One, cursive",
                     fontWeight: "bold",
                 }}
-                data-aos={isMobileDevice ? undefined : AosEffect}
-                data-aos-once={isMobileDevice ? "" : "true"}
-                data-aos-delay={isMobileDevice ? "" : { AosDelay }}
+                data-aos={isMediumScreen ? undefined : AosEffect}
+                data-aos-once={isMediumScreen ? "" : "true"}
+                data-aos-delay={isMediumScreen ? "" : { AosDelay }}
             >
                 <LanguageSelect
                     selectedLanguage={selectedLanguage}
@@ -130,8 +132,8 @@ export default function SideBar({
                         alignItems: "start",
                         justifyContent: "space-between",
                     }}
-                    data-aos={isMobileDevice ? undefined : "fade-right"}
-                    data-aos-once={isMobileDevice ? undefined : "true"}
+                    data-aos={isMediumScreen ? undefined : "fade-right"}
+                    data-aos-once={isMediumScreen ? undefined : "true"}
                 >
                     <Typography
                         component="h2"
@@ -141,8 +143,8 @@ export default function SideBar({
                             fontFamily: "Poiret One, cursive",
                             fontWeight: "bold",
                         }}
-                        data-aos={isMobileDevice ? undefined : "fade-right"}
-                        data-aos-once={isMobileDevice ? undefined : "true"}
+                        data-aos={isMediumScreen ? undefined : "fade-right"}
+                        data-aos-once={isMediumScreen ? undefined : "true"}
                         data-aos-delay="200"
                     >
                         {t("personalInformations.name")}
@@ -154,8 +156,8 @@ export default function SideBar({
                             flexDirection: "column",
                             padding: "0px",
                         }}
-                        data-aos={isMobileDevice ? undefined : "fade-right"}
-                        data-aos-once={isMobileDevice ? undefined : "true"}
+                        data-aos={isMediumScreen ? undefined : "fade-right"}
+                        data-aos-once={isMediumScreen ? undefined : "true"}
                         data-aos-delay="500"
                     >
                         <Typography>
@@ -178,7 +180,12 @@ export default function SideBar({
                             display: "flex",
                             alignItems: "center",
                             flexDirection: "column",
+                            justifyContent: "space-evenly",
                             gap: 2,
+                            [theme.breakpoints.down("md")]: {
+                                // Styles pour les écrans de largeur maximale "md" (1090px)
+                                height: "100%",
+                            },
                         }}
                     >
                         <Avatar
@@ -192,8 +199,8 @@ export default function SideBar({
                                 height: 240,
                                 borderRadius: 7,
                             }}
-                            data-aos={isMobileDevice ? undefined : "fade-right"}
-                            data-aos-once={isMobileDevice ? undefined : "true"}
+                            data-aos={isMediumScreen ? undefined : "fade-right"}
+                            data-aos-once={isMediumScreen ? undefined : "true"}
                         />
                         <Typography
                             component="p"
@@ -204,8 +211,8 @@ export default function SideBar({
                                 fontFamily: "Poiret One, cursive",
                                 fontWeight: "bold",
                             }}
-                            data-aos={isMobileDevice ? undefined : "fade-right"}
-                            data-aos-once={isMobileDevice ? undefined : "true"}
+                            data-aos={isMediumScreen ? undefined : "fade-right"}
+                            data-aos-once={isMediumScreen ? undefined : "true"}
                         >
                             {t("personalInformations.baseIn")}{" "}
                             {t("personalInformations.city")},
@@ -221,6 +228,10 @@ export default function SideBar({
                                 alignItems: "center",
                                 justifyContent: "space-between",
                                 marginBottom: 0,
+                                [theme.breakpoints.down("md")]: {
+                                    // Styles pour les écrans de largeur maximale "md" (1090px)
+                                    justifyContent: "space-evenly",
+                                },
                             }}
                         >
                             {links.map((link, index) => (
@@ -242,12 +253,12 @@ export default function SideBar({
                                         },
                                     }}
                                     data-aos={
-                                        isMobileDevice
+                                        isMediumScreen
                                             ? undefined
                                             : "fade-right"
                                     }
                                     data-aos-once={
-                                        isMobileDevice ? undefined : "true"
+                                        isMediumScreen ? undefined : "true"
                                     }
                                     data-aos-delay="600"
                                 >
@@ -287,8 +298,8 @@ export default function SideBar({
                                         theme.palette.background.dark,
                                 },
                             }}
-                            data-aos={isMobileDevice ? undefined : "fade-right"}
-                            data-aos-once={isMobileDevice ? undefined : "true"}
+                            data-aos={isMediumScreen ? undefined : "fade-right"}
+                            data-aos-once={isMediumScreen ? undefined : "true"}
                             variant="text"
                             startIcon={<MailOutlineIcon />}
                             onClick={toggleContent}
@@ -300,7 +311,7 @@ export default function SideBar({
                     <Box>
                         <ContactModal
                             toggleContent={toggleContent}
-                            isMobileDevice={isMobileDevice}
+                            isMediumScreen={isMediumScreen}
                             dimensions={elementDimensions}
                         />
                     </Box>
@@ -311,8 +322,8 @@ export default function SideBar({
                     margin: "0 auto",
                     color: theme.palette.accent,
                     display: "none",
-                    [theme.breakpoints.down("tablet")]: {
-                        // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                    [theme.breakpoints.down("md")]: {
+                        // Styles pour les écrans de largeur maximale "md" (1090px)
                         display: "block",
                     },
                 }}
