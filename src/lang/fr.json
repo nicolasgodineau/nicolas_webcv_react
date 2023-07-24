@@ -10,7 +10,7 @@
         "links": [
             {
                 "name": "instagram",
-                "url": "https://www.instagram.com/nicolasg_portraits/",
+                "url": "https://www.instagram.com/nicolasg_travel/",
                 "icon": "instagram"
             },
             {
@@ -20,7 +20,7 @@
             },
             {
                 "name": "Website",
-                "url": "www.nicolasgodineau.com",
+                "url": "https://nicolasgodineau.com/",
                 "icon": "globe"
             },
             {
@@ -32,7 +32,9 @@
         "textCallToAction": "engagez moi !",
         "fromName": "Prénom & nom",
         "send": "Envoyer",
-        "sendSucces": "Votre message a été envoyé avec succès !"
+        "sendSucces": "Votre message a été envoyé avec succès !",
+        "required": "Ce champ est obligatoire",
+        "invalideEmail": "Adresse e-mail invalide"
     },
     "introduction": {
         "header": {
@@ -60,7 +62,7 @@
                     "year": "Juin 2023 -> Juillet 2023",
                     "title": "Stage",
                     "location": "Agence-d.ca - Montréal, Canada",
-                    "subtitle": "Stage chez 'Agence-d.ca' - Startup spécialisée dans le placement du personnel. Contributions à la création de pages web et participation a la création de leur CMS interne.",
+                    "subtitle": "Stage chez 'Agence-d.ca' - Startup spécialisée dans le placement du personnel. Contributions et participation à la création de pages web et au développement de leur CMS interne.",
                     "descriptions": [
                         {
                             "line": "Technologies : React, Laravel, MySQL, MUI, Docker, Postman"
@@ -195,7 +197,7 @@
     "skills": {
         "header": {
             "subtitle": "Mes compétences",
-            "text": "Mes **Avantages**"
+            "text": "Mes **Forces**"
         },
         "category": {
             "connaissance": {
