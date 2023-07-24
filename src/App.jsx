@@ -18,9 +18,6 @@ import Portfolio from "articles/Portfolio.jsx";
 export default function App() {
     const { i18n } = useTranslation();
 
-    // Pour la désactivation des annimations au format tablette
-    const isMobileDevice = useMediaQuery(theme.breakpoints.down("tablet"));
-
     useEffect(() => {
         AOS.init({
             useClassNames: true, // Utilise des noms de classe pour les animations (optionnel)
@@ -57,8 +54,8 @@ export default function App() {
                         display: "flex",
                         disableScrolling: "true",
                         backgroundColor: theme.palette.background.dark,
-                        [theme.breakpoints.down("tablet")]: {
-                            // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                        [theme.breakpoints.down("md")]: {
+                            // Styles pour les écrans de largeur maximale "md" (1090px)
                             flexDirection: "column",
                         },
                     }}
@@ -66,7 +63,6 @@ export default function App() {
                     <SideBar
                         AosEffect="fade-up"
                         AosDelay="0"
-                        isMobileDevice={isMobileDevice}
                         selectedLanguage={selectedLanguage}
                         handleChangeLanguage={handleChangeLanguage}
                     />
@@ -75,8 +71,8 @@ export default function App() {
                         sx={{
                             flexGrow: "1",
                             overflow: "hidden",
-                            [theme.breakpoints.down("tablet")]: {
-                                // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                            [theme.breakpoints.down("md")]: {
+                                // Styles pour les écrans de largeur maximale "md" (1090px)
                                 padding: 0,
                             },
                         }}
