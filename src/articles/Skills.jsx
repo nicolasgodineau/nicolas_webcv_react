@@ -58,7 +58,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                         gap: "1rem",
                         flexWrap: "wrap",
                         [theme.breakpoints.down("sm")]: {
-                            // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                            // Styles pour les écrans de largeur maximale "md" (1090px)
                             flexDirection: "column",
                         },
                     }}
@@ -119,7 +119,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                         gap: "2rem",
                         overflow: "hidden",
                         [theme.breakpoints.down("sm")]: {
-                            // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                            // Styles pour les écrans de largeur maximale "md" (1090px)
                             justifyContent: "center",
                         },
                     }}
@@ -180,7 +180,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                         gap: "2rem",
                         overflow: "hidden",
                         [theme.breakpoints.down("sm")]: {
-                            // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                            // Styles pour les écrans de largeur maximale "md" (1090px)
                             justifyContent: "center",
                         },
                     }}
