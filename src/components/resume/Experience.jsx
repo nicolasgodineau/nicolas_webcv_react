@@ -19,6 +19,8 @@ export default function Experience({ experience, delay, index }) {
             key={index}
             sx={{
                 marginBottom: 2,
+                paddingRight: 0,
+                paddingRight: "0px!important",
                 [theme.breakpoints.down("sm")]: {
                     // Styles pour les écrans de largeur maximale 600px
                     padding: 0,
@@ -35,6 +37,7 @@ export default function Experience({ experience, delay, index }) {
                 sx={{
                     position: "relative",
                     paddingLeft: 6,
+                    paddingRight: "0px!important",
                     paddingBottom: 0,
                     "&::before": {
                         content: '""',
@@ -76,6 +79,7 @@ export default function Experience({ experience, delay, index }) {
                         alignItems: "center",
                         justifyContent: "space-between",
                         marginBottom: 2,
+                        paddingRight: 0,
                         [theme.breakpoints.down("sm")]: {
                             // Styles pour les écrans de largeur maximale 600px
                             flexDirection: "column",
@@ -167,6 +171,7 @@ export default function Experience({ experience, delay, index }) {
                             sx={{
                                 fontSize: "16px",
                                 color: theme.palette.text.secondary,
+                                paddingRight: 0,
                                 [theme.breakpoints.down("xs")]: {
                                     // Styles pour les écrans de largeur maximale 600px
                                     padding: 0,
