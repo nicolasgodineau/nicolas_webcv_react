@@ -11,18 +11,6 @@ export default function LanguageSelect() {
     const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
     const [anchorEl, setAnchorEl] = useState(null);
 
-    function detectBrowserLanguage() {
-        const userLanguage = navigator.language || navigator.userLanguage;
-        return userLanguage.split("-")[0]; // Récupère la langue principale (ex: "fr" pour "fr-FR")
-    }
-
-    // Fonction pour détecter la langue du navigateur lors du chargement initial du composant
-    useEffect(() => {
-        const browserLanguage = detectBrowserLanguage();
-        setSelectedLanguage(browserLanguage); // Mettre à jour l'état de la langue avec la langue du navigateur
-        i18n.changeLanguage(browserLanguage); // Changer la langue de l'application en fonction de la langue du navigateur
-    }, [i18n]);
-
     const handleChangeLanguage = (language) => {
         setSelectedLanguage(language);
         i18n.changeLanguage(language);
@@ -46,8 +34,8 @@ export default function LanguageSelect() {
             display="inline-flex"
             alignItems="center"
             sx={{
-                [theme.breakpoints.down("tablet")]: {
-                    // Styles pour les écrans de largeur maximale "tablet" (1090px)
+                [theme.breakpoints.down("md")]: {
+                    // Styles pour les écrans de largeur maximale "md" (1090px)
                     top: "5px",
                     left: "30px",
                 },
