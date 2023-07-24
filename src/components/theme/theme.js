@@ -43,6 +43,9 @@ const theme = createTheme({
     },
     spacing: 8,
     palette: {
+        primary: {
+            main: "#999999",
+        },
         background: {
             dark: "#1f1f1f",
             light: "#f9f9f9",
@@ -53,6 +56,7 @@ const theme = createTheme({
             secondary: "#999999",
             accent: "#28e98c",
         },
+
         accent: "#28e98c",
         danger: "#e92828c4",
     },
@@ -60,11 +64,8 @@ const theme = createTheme({
         values: {
             xs: 450,
             sm: 600,
-            sm2: 720,
-            md: 900,
-            tablet: 1090,
+            md: 1090,
             lg: 1200,
-            xl: 1536,
         },
     },
 });
