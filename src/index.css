@@ -8,12 +8,6 @@ html {
     background-color: #1f1f1f;
 }
 
-body {
-    margin: 0 auto !important;
-    max-width: 1440px;
-    background-color: #1f1f1f !important;
-}
-
 .arrow {
     width: 0;
     height: 40px;
