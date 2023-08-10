@@ -2,6 +2,7 @@
     "personalInformations": {
         "titleLine1": "Web Developper",
         "titleLine2": "Photographer",
+        "subtitle": "Web Developper & Photographer",
         "name": "Nicolas",
         "lastName": "Godineau",
         "baseIn": "Base in",
@@ -29,7 +30,7 @@
                 "icon": "linkedin"
             }
         ],
-        "textCallToAction": "hire me !",
+        "textCallToAction": "contact me !",
         "fromName": "Firstname & name",
         "send": "Send",
         "sendSucces": "Your message has been sent !",
@@ -39,7 +40,7 @@
     "introduction": {
         "header": {
             "subtitle": "introduction",
-            "text": "Say Hi to **Nicolas**, Web Developer and Photographer."
+            "text": "hey! I'm **Nicolas**, web developer and photographer."
         },
         "description": "I design and code beautifully simple things and i love what i do. Just simple like that!"
     },
@@ -221,37 +222,32 @@
                 ]
             },
             "langagesFrameworks": {
-                "title": "Software and tools",
+                "title": "Developement stack",
                 "list": [
                     {
                         "name": "React",
-                        "percentage": 60,
+                        "percentage": 71,
                         "className": "devicon-react-original"
                     },
                     {
                         "name": "VueJs",
-                        "percentage": 50,
+                        "percentage": 62,
                         "className": "devicon-vuejs-plain"
                     },
                     {
                         "name": "Laravel",
-                        "percentage": 60,
+                        "percentage": 75,
                         "className": "devicon-laravel-plain"
                     },
                     {
                         "name": "Tailwind CSS",
-                        "percentage": 60,
+                        "percentage": 79,
                         "className": "devicon-tailwindcss-plain"
                     },
                     {
                         "name": "Mysql",
-                        "percentage": 60,
+                        "percentage": 67,
                         "className": "devicon-mysql-plain"
-                    },
-                    {
-                        "name": "Material ui",
-                        "percentage": 60,
-                        "className": "devicon-materialui-plain"
                     }
                 ]
             },
@@ -259,28 +255,23 @@
                 "title": "Software",
                 "list": [
                     {
-                        "name": "VSCode",
-                        "percentage": 70,
-                        "className": "devicon-vscode-plain"
-                    },
-                    {
                         "name": "Git",
-                        "percentage": 50,
+                        "percentage": 63,
                         "className": "devicon-git-plain"
                     },
                     {
                         "name": "Figma",
-                        "percentage": 60,
+                        "percentage": 82,
                         "className": "devicon-figma-plain"
                     },
                     {
                         "name": "Illustrator",
-                        "percentage": 70,
+                        "percentage": 78,
                         "className": "devicon-illustrator-plain"
                     },
                     {
                         "name": "Photoshop",
-                        "percentage": 70,
+                        "percentage": 83,
                         "className": "devicon-photoshop-plain"
                     }
                 ]
@@ -295,7 +286,7 @@
         "projets": {
             "mars": {
                 "title": "Mars Project",
-                "subtitle": "Create a statistical website with Laravel.",
+                "subtitle": "Create a static website with Laravel.",
                 "description": "The project must have at least 4 routes pointed to the controller.\nHave a form and use the POST method.\nProcess the received data and display it on a page.\nWork with a 'Master' file and use 'blade' for views.",
                 "img": 3,
                 "textAlt": "Projet house on Mars"
@@ -311,7 +302,7 @@
                 "title": "Weather Project",
                 "subtitle": "Create a single page application with REST",
                 "description": "Create a nodeJS server.\nRetrieve data from an API of our choice.\nUpdate the JSON file when the server is launched.\nCreate pages to display different information returned by the API.",
-                "img": 0,
+                "img": 3,
                 "textAlt": "Projet house on Mars"
             },
             "stampee": {
@@ -337,5 +328,9 @@
                 "textAlt": "Projet house on Mars"
             }
         }
+    },
+    "footer": {
+        "line1": "Made by me, for me!",
+        "line2": "I am aware that the hue of green is very similar to the one used by Spotify. However, I have no control on the fact that they draw their inspiration from my creativity..."
     }
 }

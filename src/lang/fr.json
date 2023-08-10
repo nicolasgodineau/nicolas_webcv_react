@@ -2,34 +2,13 @@
     "personalInformations": {
         "titleLine1": "Développeur Web",
         "titleLine2": "Photographe",
+        "subtitle": "Développeur Web & Photographe",
         "name": "Nicolas",
         "lastName": "Godineau",
         "baseIn": "Situé à",
         "city": "Montréal",
-        "country": " Canada",
-        "links": [
-            {
-                "name": "instagram",
-                "url": "https://www.instagram.com/nicolasg_travel/",
-                "icon": "instagram"
-            },
-            {
-                "name": "Github",
-                "url": "https://github.com/nicolasgodineau",
-                "icon": "github"
-            },
-            {
-                "name": "Website",
-                "url": "https://nicolasgodineau.com/",
-                "icon": "globe"
-            },
-            {
-                "name": "LinkedIn",
-                "url": "https://www.linkedin.com/in/nicolasgodineau/",
-                "icon": "linkedin"
-            }
-        ],
-        "textCallToAction": "engagez moi !",
+        "country": " CA",
+        "textCallToAction": "contactez-moi !",
         "fromName": "Prénom & nom",
         "send": "Envoyer",
         "sendSucces": "Votre message a été envoyé avec succès !",
@@ -39,21 +18,28 @@
     "introduction": {
         "header": {
             "subtitle": "introduction",
-            "text": "Dites bonjour à **Nicolas**, développeur Web et photographe."
+            "text": "Hey! moi c'est **Nicolas**, développeur Web et photographe."
         },
-        "description": "Je conçois et code des choses magnifiquement simples et j'aime ce que je fais. Simple comme ça !"
+        "description": "Je conçois et code des choses magnifiquement simples et j'aime ce que je fais. Aussi simple comme ça !"
     },
-    "about": {
+    "about2": {
         "header": {
             "subtitle": "A propos",
             "text": "De la construction au développement web : **une transition passionnante!**"
         },
         "description": "Je suis passionné par cette nouvelle étape de ma carrière et j'ai hâte de travailler avec vous pour donner vie à vos idées et objectifs en ligne. N'hésitez pas à parcourir mon portfolio pour découvrir quelques-uns de mes projets passés."
     },
+    "about": {
+        "header": {
+            "subtitle": "A propos",
+            "text": "Hey! moi c'est **Nicolas**, développeur web et photographe."
+        },
+        "description": "Je conçois et code des choses magnifiquement simples et j'aime ce que je fais. Aussi simple comme ça !"
+    },
     "resume": {
         "header": {
             "subtitle": "curriculum vitae",
-            "text": "**Expériences** & Éducation"
+            "text": "**Expériences** & Formation"
         },
         "experiences": {
             "title": "Expériences",
@@ -62,7 +48,7 @@
                     "year": "Juin 2023 -> Juillet 2023",
                     "title": "Stage",
                     "location": "Agence-d.ca - Montréal, Canada",
-                    "subtitle": "Stage chez 'Agence-d.ca' - Startup spécialisée dans le placement du personnel. Contributions et participation à la création de pages web et au développement de leur CMS interne.",
+                    "subtitle": "Stage chez 'Agence-d.ca' - Startup spécialisée dans le placement du personnel. Contribution et participation à la création de pages web et au développement de leur CMS interne.",
                     "descriptions": [
                         {
                             "line": "Technologies : React, Laravel, MySQL, MUI, Docker, Postman"
@@ -196,12 +182,12 @@
     },
     "skills": {
         "header": {
-            "subtitle": "Mes compétences",
+            "subtitle": "compétences",
             "text": "Mes **Forces**"
         },
         "category": {
             "connaissance": {
-                "title": "Connaissance",
+                "title": "Connaissances",
                 "list": [
                     {
                         "name": "Coordination de travaux"
@@ -221,81 +207,22 @@
                 ]
             },
             "langagesFrameworks": {
-                "title": "Logiciel et outils",
-                "list": [
-                    {
-                        "name": "React",
-                        "percentage": 60,
-                        "className": "devicon-react-original"
-                    },
-                    {
-                        "name": "VueJs",
-                        "percentage": 60,
-                        "className": "devicon-vuejs-plain"
-                    },
-                    {
-                        "name": "Laravel",
-                        "percentage": 60,
-                        "className": "devicon-laravel-plain"
-                    },
-                    {
-                        "name": "Tailwind CSS",
-                        "percentage": 60,
-                        "className": "devicon-tailwindcss-plain"
-                    },
-                    {
-                        "name": "Mysql",
-                        "percentage": 60,
-                        "className": "devicon-mysql-plain"
-                    },
-                    {
-                        "name": "Material ui",
-                        "percentage": 60,
-                        "className": "devicon-materialui-plain"
-                    }
-                ]
+                "title": "Stack de développement"
             },
             "logicielsOutils": {
-                "title": "Logiciel",
-                "list": [
-                    {
-                        "name": "VSCode",
-                        "percentage": 60,
-                        "className": "devicon-vscode-plain"
-                    },
-                    {
-                        "name": "Git",
-                        "percentage": 60,
-                        "className": "devicon-git-plain"
-                    },
-                    {
-                        "name": "Figma",
-                        "percentage": 60,
-                        "className": "devicon-figma-plain"
-                    },
-                    {
-                        "name": "Illustrator",
-                        "percentage": 70,
-                        "className": "devicon-illustrator-plain"
-                    },
-                    {
-                        "name": "Photoshop",
-                        "percentage": 70,
-                        "className": "devicon-photoshop-plain"
-                    }
-                ]
+                "title": "Logiciel"
             }
         }
     },
     "portfolio": {
         "header": {
             "subtitle": "portfolio",
-            "text": "Featured **Projects**"
+            "text": "**Projets** en vedette"
         },
         "projets": {
             "mars": {
                 "title": "Projet Maison sur Mars",
-                "subtitle": "Créer un site statistique avec Laravel.",
+                "subtitle": "Créer un site static avec Laravel.",
                 "description": "Le projet doit avoir au moins 4 routes pointées vers le contrôleur.\nAvoir un formulaire et utiliser la méthode post.\nTraiter les données reçues et les afficher dans une page.\nTravailler avec un fichier « Master » et utiliser « blade » pour les vues.",
                 "img": [
                     {
@@ -430,5 +357,9 @@
                 ]
             }
         }
+    },
+    "footer": {
+        "line1": "Fait par moi, pour moi!",
+        "line2": "Je suis conscient que la teinte de vert est très similaire à celle utilisée par Spotify. Cependant, je n'ai aucun contrôle sur le fait qu'ils puisent leurs inspirations dans ma créativité..."
     }
 }
