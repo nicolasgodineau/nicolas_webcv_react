@@ -104,6 +104,7 @@ export default function SideBar({
                     },
                     [theme.breakpoints.down("xs")]: {
                         // Styles pour les écrans de largeur maximale "xs" (450px)
+                        height: "auto",
                         padding: 0,
                         paddingBottom: 4,
                         border: "none",
@@ -129,7 +130,7 @@ export default function SideBar({
                     sx={{
                         width: "100%",
                         display: "flex",
-                        alignItems: "start",
+                        alignItems: "baseline",
                         justifyContent: "space-between",
                     }}
                     data-aos={isMediumScreen ? undefined : "fade-right"}
@@ -149,25 +150,15 @@ export default function SideBar({
                     >
                         {t("personalInformations.name")}
                     </Typography>
-                    <Box
-                        component="div"
-                        sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            padding: "0px",
-                        }}
+                    <Typography
+                        component="h3"
                         data-aos={isMediumScreen ? undefined : "fade-right"}
                         data-aos-once={isMediumScreen ? undefined : "true"}
                         data-aos-delay="500"
                     >
-                        <Typography>
-                            {t("personalInformations.titleLine1")}
-                        </Typography>
-                        <Typography>
-                            {"& "}
-                            {t("personalInformations.titleLine2")}
-                        </Typography>
-                    </Box>
+                        {t("personalInformations.city")},
+                        {t("personalInformations.country")}
+                    </Typography>
                 </Box>
                 {showContact ? (
                     <Box
@@ -182,7 +173,7 @@ export default function SideBar({
                             flexDirection: "column",
                             justifyContent: "space-evenly",
                             gap: 2,
-                            [theme.breakpoints.down("md")]: {
+                            [theme.breakpoints.down("sm")]: {
                                 // Styles pour les écrans de largeur maximale "md" (1090px)
                                 height: "100%",
                             },
@@ -195,28 +186,33 @@ export default function SideBar({
                             alt="Nicolas"
                             aria-label="Nicolas"
                             sx={{
-                                width: 240,
-                                height: 240,
+                                minHeight: "240px",
+                                minWidth: "240px",
                                 borderRadius: 7,
+                                objectFit: "cover",
+                                [theme.breakpoints.down("sm")]: {
+                                    // Styles pour les écrans de largeur maximale "md" (1090px)
+                                    minHeight: "200px",
+                                    minWidth: "200px",
+                                },
                             }}
                             data-aos={isMediumScreen ? undefined : "fade-right"}
                             data-aos-once={isMediumScreen ? undefined : "true"}
                         />
+
                         <Typography
-                            component="p"
+                            component="h1"
                             disablepadding="true"
                             sx={{
-                                fontSize: 24,
-                                color: theme.palette.text.primary,
+                                fontSize: "clamp(1rem, 6vw, 1.5rem)",
+                                color: theme.palette.accent,
                                 fontFamily: "Poiret One, cursive",
                                 fontWeight: "bold",
                             }}
                             data-aos={isMediumScreen ? undefined : "fade-right"}
                             data-aos-once={isMediumScreen ? undefined : "true"}
                         >
-                            {t("personalInformations.baseIn")}{" "}
-                            {t("personalInformations.city")},
-                            {t("personalInformations.country")}
+                            {t("personalInformations.subtitle")}
                         </Typography>
                         <List
                             component="ul"

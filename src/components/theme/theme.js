@@ -18,18 +18,17 @@ const theme = createTheme({
         MuiCssBaseline: {
             styleOverrides: `
         @keyframes mui-preload-keyframes {
-          from {
+        from {
             visibility: hidden;
-          }
+        }
         }
         .mui-preload-image {
-          animation: mui-preload-keyframes 0s steps(1) forwards;
-          visibility: hidden;
-          position: absolute;
-          top: -9999px;
-          left: -9999px;
-        }
-      `,
+        animation: mui-preload-keyframes 0s steps(1) forwards;
+        visibility: hidden;
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        }`,
             "@global": {
                 ".mui-preload-image": {
                     backgroundImage: `url('../images/Nicolas.webp')`,
@@ -54,7 +53,6 @@ const theme = createTheme({
         text: {
             primary: "#fff",
             secondary: "#999999",
-            accent: "#28e98c",
         },
 
         accent: "#28e98c",

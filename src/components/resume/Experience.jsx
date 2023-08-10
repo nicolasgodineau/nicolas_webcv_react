@@ -47,10 +47,11 @@ export default function Experience({ experience, delay, index }) {
                         width: "12px",
                         height: "12px",
                         borderRadius: "50px",
-                        background:
+                        /*                         background:
                             index === 0
                                 ? theme.palette.accent
-                                : theme.palette.text.secondary,
+                                : theme.palette.text.secondary, */
+                        background: theme.palette.text.secondary,
                         zIndex: 10,
                     },
                     "&::after": {
@@ -94,10 +95,11 @@ export default function Experience({ experience, delay, index }) {
                         component="p"
                         sx={{
                             display: "block",
-                            color:
+                            /*                             color:
                                 index === 0
                                     ? theme.palette.accent
-                                    : theme.palette.text.primary,
+                                    : theme.palette.text.primary, */
+                            color: theme.palette.text.primary,
                         }}
                         data-aos="fade-left"
                         data-aos-delay="500"
@@ -124,7 +126,7 @@ export default function Experience({ experience, delay, index }) {
                     sx={{
                         fontSize: "clamp(1.2rem, 4vw, 2rem)",
                         marginBottom: "5px",
-                        color: theme.palette.text.primary,
+                        color: theme.palette.accent,
                     }}
                     data-aos="fade-up"
                     data-aos-delay={`${delay}`}
@@ -134,22 +136,22 @@ export default function Experience({ experience, delay, index }) {
                     {/* Récupère la première lettre de la phrase avec `charAt(0)` et la met en majuscule avec `toUpperCase()`. */}
                     {/* Concatène la première lettre en majuscule avec le reste du texte en utilisant `substring(1)`. */}
                 </Typography>
-                <Typography
-                    component="h3"
-                    sx={{
-                        fontSize: "16px",
-                        fontWeight: "regular",
-                        marginBottom: "5px",
-                        color: theme.palette.text.primary,
-                    }}
-                    data-aos="fade-up"
-                    data-aos-delay={`${delay}`}
-                >
-                    {experience.subtitle.charAt(0).toUpperCase() +
-                        experience.subtitle.substring(1)}
-                    {/* Récupère la première lettre de la phrase avec `charAt(0)` et la met en majuscule avec `toUpperCase()`. */}
-                    {/* Concatène la première lettre en majuscule avec le reste du texte en utilisant `substring(1)`. */}
-                </Typography>
+                {experience.subtitle && (
+                    <Typography
+                        component="h3"
+                        sx={{
+                            fontSize: "16px",
+                            fontWeight: "regular",
+                            marginBottom: "5px",
+                            color: theme.palette.text.primary,
+                        }}
+                        data-aos="fade-up"
+                        data-aos-delay={`${delay}`}
+                    >
+                        {experience.subtitle.charAt(0).toUpperCase() +
+                            experience.subtitle.substring(1)}
+                    </Typography>
+                )}
 
                 {/* Affiche la description de l'expérience */}
                 <List

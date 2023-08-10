@@ -37,17 +37,21 @@ export default function Skills({ AosEffect, AosDelay }) {
                 }}
                 data-aos="fade-left"
             >
-                <Typography
+                {/*                 <Typography
                     sx={{
                         fontSize: "2rem",
                         paddingTop: "2rem",
                         color: theme.palette.text.primary,
                         fontFamily: "Lato, sans-serif",
                         fontWeight: "light",
+                        [theme.breakpoints.down("sm")]: {
+                            // Styles pour les écrans de largeur maximale "md" (1090px)
+                            display: "none",
+                        },
                     }}
                 >
                     {t("skills.category.connaissance.title")}
-                </Typography>
+                </Typography> */}
                 <Grid
                     sx={{
                         width: "100%",

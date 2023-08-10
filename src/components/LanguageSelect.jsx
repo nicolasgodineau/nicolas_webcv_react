@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IconButton, Menu, MenuItem, Box } from "@mui/material";
 import theme from "../components/theme/theme";
@@ -37,7 +37,8 @@ export default function LanguageSelect() {
                 [theme.breakpoints.down("md")]: {
                     // Styles pour les écrans de largeur maximale "md" (1090px)
                     top: "5px",
-                    left: "30px",
+                    left: "unset",
+                    right: "5px",
                 },
             }}
         >

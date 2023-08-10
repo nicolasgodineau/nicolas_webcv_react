@@ -25,6 +25,7 @@ export default function Resume({ AosEffect, AosDelay }) {
         >
             {/* Experiences */}
             <Typography
+                component="h3"
                 sx={{
                     fontSize: "2rem",
                     paddingTop: "2rem",
@@ -32,6 +33,7 @@ export default function Resume({ AosEffect, AosDelay }) {
                     fontFamily: "Lato, sans-serif",
                     fontWeight: "light",
                 }}
+                data-aos="fade-up"
             >
                 {t(`resume.experiences.title`)}
             </Typography>
@@ -47,6 +49,7 @@ export default function Resume({ AosEffect, AosDelay }) {
             ))}
             {/* Scolarité */}
             <Typography
+                component="h3"
                 sx={{
                     fontSize: "2rem",
                     paddingTop: "2rem",
@@ -54,6 +57,8 @@ export default function Resume({ AosEffect, AosDelay }) {
                     fontFamily: "Lato, sans-serif",
                     fontWeight: "light",
                 }}
+                data-aos="fade-up"
+                delay={100}
             >
                 {t(`resume.schooling.title`)}
             </Typography>
@@ -64,7 +69,7 @@ export default function Resume({ AosEffect, AosDelay }) {
                     key={index}
                     index={index}
                     experience={experience}
-                    delay={index * 100}
+                    delay={index * 150}
                 />
             ))}
         </CustomArticleContainer>

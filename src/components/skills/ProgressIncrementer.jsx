@@ -71,7 +71,8 @@ export default function ProgressIncrementer({ targetPercentage }) {
             <Typography
                 component="p"
                 sx={{
-                    fontSize: "2.5rem",
+                    fontSize: "clamp(1.2rem, 3vw, 2.3rem)",
+                    fontWeight: "bolder",
                     color: theme.palette.accent,
                 }}
             >
