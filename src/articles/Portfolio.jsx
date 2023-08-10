@@ -76,14 +76,18 @@ export default function Portfolio({ AosEffect, AosDelay }) {
                                 {t(descriptionKey)}
                             </Typography>
                             <Gallery projet={projet} dossier={projetKey} />
-                            <Divider
-                                variant="middle"
-                                sx={{
-                                    marginY: "2rem",
-                                    backgroundColor:
-                                        theme.palette.text.secondary,
-                                }}
-                            />
+                            {/* Condition pour afficher le Divider sauf pour le dernier élément */}
+                            {index !==
+                            Object.keys(dataSection?.projets).length - 1 ? (
+                                <Divider
+                                    variant="middle"
+                                    sx={{
+                                        marginY: "2rem",
+                                        backgroundColor:
+                                            theme.palette.text.secondary,
+                                    }}
+                                />
+                            ) : null}
                         </Box>
                     );
                 }
