@@ -14,6 +14,7 @@ import About from "articles/About.jsx";
 import Resume from "articles/Resume.jsx";
 import Skills from "articles/Skills.jsx";
 import Portfolio from "articles/Portfolio.jsx";
+import Footer from "articles/Footer.jsx";
 
 export default function App() {
     const { i18n } = useTranslation();
@@ -77,13 +78,14 @@ export default function App() {
                             },
                         }}
                     >
-                        <Introduction AosEffect="fade-up" AosDelay="0" />
-                        <About AosEffect="fade-up" AosDelay="700" />
+                        {/* <Introduction AosEffect="fade-up" AosDelay="0" /> */}
+                        <About AosEffect="fade-up" AosDelay="0" />
                         <Resume AosEffect="fade-up" AosDelay="0" />
                         <Skills AosEffect="fade-up" AosDelay="0" />
                         <Portfolio AosEffect="fade-up" AosDelay="0" />
                     </Container>
                 </Container>
+                <Footer />
             </CssBaseline>
         </ThemeProvider>
     );
