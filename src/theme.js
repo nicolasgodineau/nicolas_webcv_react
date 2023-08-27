@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 
 const loadLCPImage = async () => {
     const image = new Image();
@@ -12,7 +12,7 @@ const loadLCPImage = async () => {
     return image;
 };
 
-const theme = createTheme({
+let theme = createTheme({
     //Préchargement de l'image LCP
     components: {
         MuiCssBaseline: {
@@ -67,6 +67,27 @@ const theme = createTheme({
         },
     },
 });
+
+theme = responsiveFontSizes(theme);
+
+/* Mémo des variants typo */
+/* 
+
+    h1
+    h2
+    h3
+    h4
+    h5
+    h6
+    subtitle1
+    subtitle2
+    body1
+    body2
+    button
+    caption
+    overline
+
+*/
 
 // Préchargement de l'image LCP
 loadLCPImage();

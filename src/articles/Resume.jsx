@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import theme from "../components/theme/theme";
+import theme from "../theme";
 import { Typography } from "@mui/material";
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import Experience from "../components/resume/Experience.jsx"; // pour l'affichage d'une experience
-import { faBriefcase } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
+import WorkIcon from "@mui/icons-material/Work";
 
 export default function Resume({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
@@ -18,7 +18,7 @@ export default function Resume({ AosEffect, AosDelay }) {
 
     return (
         <CustomArticleContainer
-            icon={faBriefcase}
+            icon={WorkIcon}
             data={dataHeader}
             AosEffect={AosEffect}
             AosDelay={AosDelay}
@@ -26,12 +26,12 @@ export default function Resume({ AosEffect, AosDelay }) {
             {/* Experiences */}
             <Typography
                 component="h3"
+                variant="h4"
                 sx={{
-                    fontSize: "2rem",
-                    paddingTop: "2rem",
+                    paddingTop: "0",
+                    paddingBottom: "1rem",
                     color: theme.palette.text.primary,
                     fontFamily: "Lato, sans-serif",
-                    fontWeight: "light",
                 }}
                 data-aos="fade-up"
             >
@@ -50,12 +50,12 @@ export default function Resume({ AosEffect, AosDelay }) {
             {/* Scolarité */}
             <Typography
                 component="h3"
+                variant="h4"
                 sx={{
-                    fontSize: "2rem",
                     paddingTop: "2rem",
+                    paddingBottom: "1rem",
                     color: theme.palette.text.primary,
                     fontFamily: "Lato, sans-serif",
-                    fontWeight: "light",
                 }}
                 data-aos="fade-up"
                 delay={100}

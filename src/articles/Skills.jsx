@@ -1,11 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import theme from "../components/theme/theme";
+import theme from "../theme";
 import { Typography, Box, Divider, Grid } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import Skill from "../components/skills/skill.jsx"; // pour l'affichage d'un skill
-import { faShapes } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
+import InterestsIcon from "@mui/icons-material/Interests";
 
 export default function Skills({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
@@ -19,7 +19,7 @@ export default function Skills({ AosEffect, AosDelay }) {
 
     return (
         <CustomArticleContainer
-            icon={faShapes}
+            icon={InterestsIcon}
             data={dataHeader}
             AosEffect={AosEffect}
             AosDelay={AosDelay}
@@ -37,28 +37,13 @@ export default function Skills({ AosEffect, AosDelay }) {
                 }}
                 data-aos="fade-left"
             >
-                {/*                 <Typography
-                    sx={{
-                        fontSize: "2rem",
-                        paddingTop: "2rem",
-                        color: theme.palette.text.primary,
-                        fontFamily: "Lato, sans-serif",
-                        fontWeight: "light",
-                        [theme.breakpoints.down("sm")]: {
-                            // Styles pour les écrans de largeur maximale "md" (1090px)
-                            display: "none",
-                        },
-                    }}
-                >
-                    {t("skills.category.connaissance.title")}
-                </Typography> */}
                 <Grid
                     sx={{
                         width: "100%",
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "start",
-                        justifyContent: "space-between",
+                        justifyContent: "flex-start",
                         gap: "1rem",
                         flexWrap: "wrap",
                         [theme.breakpoints.down("sm")]: {
@@ -95,17 +80,16 @@ export default function Skills({ AosEffect, AosDelay }) {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "start",
-                    justifyContent: "space-between",
+                    justifyContent: "space-evenly",
                     gap: "1rem",
                 }}
                 data-aos="fade-left"
             >
                 <Typography
+                    variant="h4"
                     sx={{
-                        fontSize: "2rem",
                         color: theme.palette.text.primary,
                         fontFamily: "Lato, sans-serif",
-                        fontWeight: "light",
                     }}
                 >
                     {t("skills.category.langagesFrameworks.title")}
@@ -122,9 +106,9 @@ export default function Skills({ AosEffect, AosDelay }) {
                         justifyContent: "space-between",
                         gap: "2rem",
                         overflow: "hidden",
-                        [theme.breakpoints.down("sm")]: {
+                        [theme.breakpoints.down("md")]: {
                             // Styles pour les écrans de largeur maximale "md" (1090px)
-                            justifyContent: "center",
+                            justifyContent: "start",
                         },
                     }}
                     data-aos="fade-left"
@@ -162,11 +146,10 @@ export default function Skills({ AosEffect, AosDelay }) {
                 data-aos="fade-left"
             >
                 <Typography
+                    variant="h4"
                     sx={{
-                        fontSize: "2rem",
                         color: theme.palette.text.primary,
                         fontFamily: "Lato, sans-serif",
-                        fontWeight: "light",
                     }}
                 >
                     {t("skills.category.logicielsOutils.title")}
@@ -180,12 +163,12 @@ export default function Skills({ AosEffect, AosDelay }) {
                         flexDirection: "row",
                         flexWrap: "wrap",
                         alignItems: "center",
-                        justifyContent: "space-between",
+                        justifyContent: "space-evenly",
                         gap: "2rem",
                         overflow: "hidden",
-                        [theme.breakpoints.down("sm")]: {
+                        [theme.breakpoints.down("md")]: {
                             // Styles pour les écrans de largeur maximale "md" (1090px)
-                            justifyContent: "center",
+                            justifyContent: "start",
                         },
                     }}
                     data-aos="fade-left"

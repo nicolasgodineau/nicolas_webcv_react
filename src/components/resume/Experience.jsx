@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "../theme/theme.js";
+import theme from "../../theme";
 import {
     Container,
     Typography,
@@ -9,6 +9,7 @@ import {
     Box,
 } from "@mui/material";
 import { faCircle } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
+import CircleIcon from "@mui/icons-material/Circle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Experience({ experience, delay, index }) {
@@ -16,10 +17,10 @@ export default function Experience({ experience, delay, index }) {
         <Container
             component="div"
             disablegutters="true"
+            maxWidth="false"
             key={index}
             sx={{
                 marginBottom: 2,
-                paddingRight: 0,
                 paddingRight: "0px!important",
                 [theme.breakpoints.down("sm")]: {
                     // Styles pour les écrans de largeur maximale 600px
@@ -44,13 +45,9 @@ export default function Experience({ experience, delay, index }) {
                         position: "absolute",
                         top: 7,
                         left: 0,
-                        width: "12px",
-                        height: "12px",
+                        width: 12,
+                        height: 12,
                         borderRadius: "50px",
-                        /*                         background:
-                            index === 0
-                                ? theme.palette.accent
-                                : theme.palette.text.secondary, */
                         background: theme.palette.text.secondary,
                         zIndex: 10,
                     },
@@ -79,7 +76,7 @@ export default function Experience({ experience, delay, index }) {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        marginBottom: 2,
+                        marginBottom: "1rem",
                         paddingRight: 0,
                         [theme.breakpoints.down("sm")]: {
                             // Styles pour les écrans de largeur maximale 600px
@@ -93,12 +90,9 @@ export default function Experience({ experience, delay, index }) {
                 >
                     <Typography
                         component="p"
+                        variant="body1"
                         sx={{
                             display: "block",
-                            /*                             color:
-                                index === 0
-                                    ? theme.palette.accent
-                                    : theme.palette.text.primary, */
                             color: theme.palette.text.primary,
                         }}
                         data-aos="fade-left"
@@ -108,9 +102,9 @@ export default function Experience({ experience, delay, index }) {
                     </Typography>
                     <Typography
                         component="p"
+                        variant="body2"
                         sx={{
                             display: "block",
-                            fontSize: "12px",
                             color: theme.palette.text.secondary,
                         }}
                         data-aos="fade-left"
@@ -123,9 +117,9 @@ export default function Experience({ experience, delay, index }) {
                 {/* Affiche le titre de l'expérience */}
                 <Typography
                     component="h2"
+                    variant="h4"
                     sx={{
-                        fontSize: "clamp(1.2rem, 4vw, 2rem)",
-                        marginBottom: "5px",
+                        marginBottom: "1rem",
                         color: theme.palette.accent,
                     }}
                     data-aos="fade-up"
@@ -139,10 +133,9 @@ export default function Experience({ experience, delay, index }) {
                 {experience.subtitle && (
                     <Typography
                         component="h3"
+                        variant="subtitle1"
                         sx={{
-                            fontSize: "16px",
-                            fontWeight: "regular",
-                            marginBottom: "5px",
+                            marginBottom: "1rem",
                             color: theme.palette.text.primary,
                         }}
                         data-aos="fade-up"
@@ -161,20 +154,23 @@ export default function Experience({ experience, delay, index }) {
                     data-aos="fade-up"
                     data-aos-delay={`${delay}`}
                     sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: ".3rem",
                         padding: 0,
                     }}
                 >
                     {experience.descriptions.map((description, index) => (
                         <ListItem
                             component="li"
-                            alignItems="flex-start"
                             dense={true}
                             key={index}
                             sx={{
-                                fontSize: "16px",
+                                display: "flex",
+                                alignItems: "baseline",
                                 color: theme.palette.text.secondary,
-                                paddingRight: 0,
-                                [theme.breakpoints.down("xs")]: {
+                                padding: "0 0 0 1rem",
+                                [theme.breakpoints.down("sm")]: {
                                     // Styles pour les écrans de largeur maximale 600px
                                     padding: 0,
                                 },
@@ -184,27 +180,29 @@ export default function Experience({ experience, delay, index }) {
                         >
                             <ListItemIcon
                                 sx={{
-                                    fontSize: 9,
-                                    marginTop: 0,
-                                    paddingTop: 1,
+                                    height: 10,
+                                    minWidth: 10,
+                                    bgcolor: theme.palette.text.secondary,
+                                    borderRadius: 5,
+                                    marginRight: "2rem",
                                     [theme.breakpoints.down("sm")]: {
                                         // Styles pour les écrans de largeur maximale 600px
-                                        minWidth: "24px",
+                                        height: 8,
+                                        minWidth: 8,
+                                        marginRight: ".5rem",
                                     },
                                 }}
+                            />
+
+                            <Typography
+                                component="p"
+                                variant="body1"
+                                sx={{
+                                    color: theme.palette.text.secondary,
+                                }}
                             >
-                                <FontAwesomeIcon
-                                    icon={faCircle}
-                                    color={theme.palette.text.secondary}
-                                    sx={{
-                                        [theme.breakpoints.down("sm")]: {
-                                            // Styles pour les écrans de largeur maximale 600px
-                                            minWith: "24px",
-                                        },
-                                    }}
-                                />
-                            </ListItemIcon>
-                            {description.line}
+                                {description.line}
+                            </Typography>
                         </ListItem>
                     ))}
                 </List>

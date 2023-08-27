@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "../theme/theme.js";
+import theme from "../../theme";
 import { Typography, Box, Icon } from "@mui/material";
 import ProgressIncrementer from "./ProgressIncrementer.jsx";
 
@@ -16,7 +16,7 @@ export default function Skill({ skill, delay }) {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "1rem",
+                gap: ".3rem",
                 minWidth: "80px",
             }}
             data-aos="fade-left"
@@ -38,8 +38,8 @@ export default function Skill({ skill, delay }) {
             )}
             <Typography
                 component="p"
+                variant="body1"
                 sx={{
-                    fontSize: "1rem",
                     color: theme.palette.text.primary,
                 }}
             >

@@ -1,9 +1,11 @@
 import React from "react";
-import theme from "./theme/theme.js";
+import theme from "../theme";
 import { Box, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Header({ icon, data, variant, fontSize }) {
+    const IconComponent = icon;
+
     // Fonction pour extraire le texte entouré de ** et les parties avant et après
     const extractTextAndSurroundings = (inputText) => {
         const regex = /\*\*(.*?)\*\*/g; // regex pour extraire un mot entrouré de 2 **
@@ -31,7 +33,11 @@ export default function Header({ icon, data, variant, fontSize }) {
     const extractedTexts = extractTextAndSurroundings(data.header.texte); // Appel de la fonction d'extraction
 
     return (
-        <Box component="header" disablegutters="true" sx={{ marginBottom: 1 }}>
+        <Box
+            component="header"
+            disablegutters="true"
+            sx={{ marginBottom: "2rem" }}
+        >
             {/* For subtitle */}
             <Box
                 sx={{
@@ -55,9 +61,17 @@ export default function Header({ icon, data, variant, fontSize }) {
                 data-aos="fade-down"
                 data-aos-delay="100"
             >
-                <FontAwesomeIcon icon={icon} />
+                {IconComponent && (
+                    <IconComponent
+                        sx={{
+                            width: ".9em",
+                            height: ".9em",
+                        }}
+                    />
+                )}
                 <Typography
                     component="h1"
+                    variant="body1"
                     sx={{
                         fontSize: "14px",
                         color: theme.palette.primary,
@@ -71,7 +85,7 @@ export default function Header({ icon, data, variant, fontSize }) {
             {/* Zone text header */}
             <Typography
                 component="h2"
-                variant={variant}
+                variant="h3"
                 sx={{
                     fontSize: { fontSize },
                     fontFamily: "Poiret One, cursive",
@@ -83,7 +97,7 @@ export default function Header({ icon, data, variant, fontSize }) {
                 {extractedTexts.beforeText}
                 <Typography
                     component="span"
-                    variant={variant}
+                    variant="h3"
                     sx={{
                         fontSize: { fontSize },
                         color: theme.palette.accent,

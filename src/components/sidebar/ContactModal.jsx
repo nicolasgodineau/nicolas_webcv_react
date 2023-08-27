@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import Confetti from "react-dom-confetti";
 import { useTranslation } from "react-i18next";
-import theme from "../theme/theme";
+import theme from "../../theme";
 import {
     Button,
     Box,

@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import theme from "../components/theme/theme";
+import theme from "../theme";
 import { Typography } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
-import { faUser } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
+import PersonIcon from "@mui/icons-material/Person";
 
 export default function About({ AosEffect, AosDelay }) {
     const { t } = useTranslation();
@@ -17,13 +17,14 @@ export default function About({ AosEffect, AosDelay }) {
     };
     return (
         <CustomArticleContainer
-            icon={faUser}
+            icon={PersonIcon}
             data={dataHeader}
             AosEffect={AosEffect}
             AosDelay={AosDelay}
         >
             <Typography
                 component="p"
+                variant="subtitle1"
                 sx={{
                     maxWidth: "480px",
                     marginBottom: "30px",

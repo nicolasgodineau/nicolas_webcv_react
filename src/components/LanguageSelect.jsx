@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IconButton, Menu, MenuItem, Box } from "@mui/material";
-import theme from "../components/theme/theme";
-
+import theme from "../theme";
 import FR from "../images/icons/FR.png";
 import EN from "../images/icons/EN.png";
 

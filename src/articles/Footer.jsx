@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import theme from "../components/theme/theme";
+import theme from "../theme";
 import { Box, Typography } from "@mui/material";
 
 export default function Footer() {
@@ -12,8 +12,8 @@ export default function Footer() {
         <Box component="footer" sx={{ padding: 1, textAlign: "center" }}>
             <Typography
                 component="p"
+                variant="body2"
                 sx={{
-                    fontSize: ".9rem",
                     padding: 1,
                     color: theme.palette.text.secondary,
                 }}
@@ -22,6 +22,7 @@ export default function Footer() {
             </Typography>
             <Typography
                 component="p"
+                variant="body2"
                 sx={{
                     fontSize: ".5rem",
                     padding: 0,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import theme from "../theme/theme";
+import theme from "../../theme";
 import { Typography } from "@mui/material";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -70,8 +70,8 @@ export default function ProgressIncrementer({ targetPercentage }) {
             {/* Élément référencé pour l'Intersection Observer et animation AOS */}
             <Typography
                 component="p"
+                variant="h5"
                 sx={{
-                    fontSize: "clamp(1.2rem, 3vw, 2.3rem)",
                     fontWeight: "bolder",
                     color: theme.palette.accent,
                 }}

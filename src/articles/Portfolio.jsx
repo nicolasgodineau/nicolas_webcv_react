@@ -1,11 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import theme from "../components/theme/theme";
-
+import theme from "../theme";
 import { Divider, Typography, Box } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
-import { faGripVertical } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
+import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
 import data from "../lang/en.json"; // import des data du JSON anglais
 import Gallery from "../components/portfolio/gallery.jsx";
 
@@ -23,7 +22,7 @@ export default function Portfolio({ AosEffect, AosDelay }) {
 
     return (
         <CustomArticleContainer
-            icon={faGripVertical}
+            icon={DragIndicatorIcon}
             data={dataHeader}
             AosEffect={AosEffect}
             AosDelay={AosDelay}

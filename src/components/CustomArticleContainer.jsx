@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "../components/theme/theme";
+import theme from "../theme";
 import { Container } from "@mui/material";
 
 import Header from "../components/header.jsx"; // pour le header de la section
@@ -28,13 +28,7 @@ export default function CustomArticleContainer({
                 },
             }}
         >
-            <Header
-                component="header"
-                icon={icon}
-                data={data}
-                variant="h1"
-                fontSize="clamp(2rem, 6vw, 3rem)"
-            />
+            <Header component="header" icon={icon} data={data} />
             {children}
         </Container>
     );

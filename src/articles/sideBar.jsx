@@ -1,23 +1,27 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import theme from "./theme/theme";
-
+import theme from "../theme";
 import {
     Box,
     Typography,
     List,
-    ListItem,
     Avatar,
     Link,
     Container,
     useMediaQuery,
+    Icon,
 } from "@mui/material";
 
 import Button from "@mui/material/Button";
 import Nicolas from "../images/Nicolas.webp";
-import LanguageSelect from "./LanguageSelect.jsx";
-import ContactModal from "./sidebar/ContactModal.jsx";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import LanguageSelect from "../components/LanguageSelect.jsx";
+import ContactModal from "../components/sidebar/ContactModal.jsx";
+
+import MailIcon from "@mui/icons-material/MailOutline";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WebSiteIcon from "@mui/icons-material/Language";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import Data from "../lang/en.json";
 
@@ -60,6 +64,13 @@ export default function SideBar({
         // Mettre à jour les dimensions de l'élément lors du chargement initial de la page
         updateDimensions();
     }, []);
+
+    const iconMappings = {
+        github: GitHubIcon,
+        website: WebSiteIcon,
+        instagram: InstagramIcon,
+        linkedin: LinkedInIcon,
+    };
 
     return (
         <Container
@@ -152,6 +163,7 @@ export default function SideBar({
                     </Typography>
                     <Typography
                         component="h3"
+                        variant="body2"
                         data-aos={isMediumScreen ? undefined : "fade-right"}
                         data-aos-once={isMediumScreen ? undefined : "true"}
                         data-aos-delay="500"
@@ -202,6 +214,7 @@ export default function SideBar({
 
                         <Typography
                             component="h1"
+                            variant="h5"
                             disablepadding="true"
                             sx={{
                                 fontSize: "clamp(1rem, 6vw, 1.5rem)",
@@ -222,68 +235,67 @@ export default function SideBar({
                                 width: "100%",
                                 display: "flex",
                                 alignItems: "center",
-                                justifyContent: "space-between",
+                                justifyContent: "space-evenly",
                                 marginBottom: 0,
-                                [theme.breakpoints.down("md")]: {
-                                    // Styles pour les écrans de largeur maximale "md" (1090px)
-                                    justifyContent: "space-evenly",
-                                },
                             }}
                         >
-                            {links.map((link, index) => (
-                                <ListItem
-                                    key={index}
-                                    sx={{
-                                        width: "50px",
-                                        height: "50px",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        padding: 0,
-                                        border: `2px solid ${theme.palette.text.secondary}`,
-                                        borderRadius: "50%",
-                                        ":hover": {
-                                            cursor: "pointer",
-                                            color: theme.palette.accent,
-                                            border: `2px solid ${theme.palette.accent}`,
-                                        },
-                                    }}
-                                    data-aos={
-                                        isMediumScreen
-                                            ? undefined
-                                            : "fade-right"
-                                    }
-                                    data-aos-once={
-                                        isMediumScreen ? undefined : "true"
-                                    }
-                                    data-aos-delay="600"
-                                >
+                            {links.map((link, index) => {
+                                // Assurez-vous que link.icon est en minuscules pour la correspondance
+                                const iconName = link.icon.toLowerCase();
+                                const IconComponent = iconMappings[iconName];
+
+                                return (
                                     <Link
+                                        key={index}
                                         target="_blank"
                                         rel="noreferrer"
                                         aria-label={link.name}
                                         href={link.url}
-                                        color="inherit"
+                                        sx={{
+                                            width: "50px",
+                                            height: "50px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            border: `2px solid ${theme.palette.text.secondary}`,
+                                            borderRadius: 6,
+                                            padding: 0.7,
+                                            fill: theme.palette.text.secondary,
+                                            ":hover": {
+                                                cursor: "pointer",
+                                                color: theme.palette.accent,
+                                                border: `2px solid ${theme.palette.accent}`,
+                                                fill: theme.palette.accent,
+                                            },
+                                        }}
+                                        data-aos={
+                                            isMediumScreen
+                                                ? undefined
+                                                : "fade-right"
+                                        }
+                                        data-aos-once={
+                                            isMediumScreen ? undefined : "true"
+                                        }
+                                        data-aos-delay="600"
                                     >
-                                        <Avatar
-                                            color="inherit"
-                                            aria-label={link.name}
-                                            alt={link.name}
-                                            sx={{
-                                                width: 30,
-                                                height: 30,
-                                            }}
-                                            src={require(`../images/icons/Svg/${link.icon}.svg`)}
-                                        />
+                                        {/* Affichez l'icône correspondante si elle existe dans l'objet de correspondance */}
+                                        {IconComponent && (
+                                            <IconComponent
+                                                sx={{
+                                                    width: "1.3em",
+                                                    height: "1.3em",
+                                                }}
+                                            />
+                                        )}
                                     </Link>
-                                </ListItem>
-                            ))}
+                                );
+                            })}
                         </List>
                         <Button
                             sx={{
                                 width: "100%",
                                 padding: "12px 44px",
-                                borderRadius: 32,
+                                borderRadius: 5,
                                 backgroundColor: theme.palette.accent,
                                 border: `2px solid ${theme.palette.accent}`,
                                 color: "black",
@@ -297,7 +309,14 @@ export default function SideBar({
                             data-aos={isMediumScreen ? undefined : "fade-right"}
                             data-aos-once={isMediumScreen ? undefined : "true"}
                             variant="text"
-                            startIcon={<MailOutlineIcon />}
+                            startIcon={
+                                <MailIcon
+                                    sx={{
+                                        width: "1.2em",
+                                        height: "auto",
+                                    }}
+                                />
+                            }
                             onClick={toggleContent}
                         >
                             {t("personalInformations.textCallToAction")}
