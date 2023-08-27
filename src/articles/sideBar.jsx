@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useContext, useState, useRef } from "react";
+import { WindowHeightContext } from "../App";
 import { useTranslation } from "react-i18next";
 import theme from "../theme";
 import {
@@ -31,26 +32,28 @@ export default function SideBar({
     AosDelay,
 }) {
     const { t } = useTranslation();
+    const links = Data.personalInformations.links;
+
+    // Pour mettre à jour la hauteur de la fenêtre
+    const windowHeight = useContext(WindowHeightContext);
+
     const [showContact, setShowText] = useState(true);
 
     // Pour la désactivation des annimations au format tablette
     const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-    const links = Data.personalInformations.links;
-
     const toggleContent = () => {
         setShowText(!showContact);
-        updateDimensions(); // Met à jour les dimensions de l'élément après le basculement du contenu
+        updateDimensions(); // Met à jour les dimensions de la modal de contact après le basculement du contenu
     };
-
-    const targetElementRef = useRef(null); // Référence à l'élément à mesurer (div)
+    const targetElementRef = useRef(null); // Référence à mesurer
 
     const [elementDimensions, setElementDimensions] = useState({
         width: 281, // Valeur par défaut de la largeur
         height: 426, // Valeur par défaut de la hauteur
     });
 
-    // Fonction pour mettre à jour les dimensions de l'élément
+    // Fonction pour mettre à jour les dimensions de la modal de contact
     const updateDimensions = () => {
         if (targetElementRef.current) {
             const { width, height } =
@@ -58,11 +61,6 @@ export default function SideBar({
             setElementDimensions({ width, height });
         }
     };
-
-    useEffect(() => {
-        // Mettre à jour les dimensions de l'élément lors du chargement initial de la page
-        updateDimensions();
-    }, []);
 
     const iconMappings = {
         github: GitHubIcon,
@@ -74,12 +72,17 @@ export default function SideBar({
     return (
         <Container
             component="aside"
+            disablegutters="true"
+            maxWidth="false"
             sx={{
-                width: "max-content",
+                maxWidth: "fit-content",
+                paddingLeft: "0 !important",
                 [theme.breakpoints.down("md")]: {
                     // Styles pour les écrans de largeur maximale "md" (1090px)
-                    width: "100%",
-                    height: "100svh",
+                    height: windowHeight >= 650 ? "100svh" : "auto",
+                    maxWidth: "unset",
+                    padding: "0 !important",
+                    margin: "0 !important",
                 },
                 [theme.breakpoints.down("sm")]: {
                     // Styles pour les écrans de largeur maximale "sm" (600px)
@@ -89,40 +92,41 @@ export default function SideBar({
         >
             <Box
                 component="div"
-                position="sticky"
                 disablegutters="true"
+                maxWidth="false"
                 fixed="true"
                 sx={{
-                    width: "max-content",
+                    position: windowHeight >= 660 ? "sticky" : "inset",
                     top: "72px",
+                    left: "0",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "space-evenly",
                     gap: 4,
                     padding: 4,
+                    marginTop: windowHeight >= 660 ? "0" : "72px",
                     border: `2px solid ${theme.palette.grey[500]}`,
                     borderRadius: 5,
                     height: "fit-content",
                     backgroundColor: theme.palette.grey[900],
                     [theme.breakpoints.down("md")]: {
                         // Styles pour les écrans de largeur maximale "md" (1090px)
-                        position: "initial",
-                        width: "100%",
-                        height: "80svh",
+                        height: "80%",
+                        position: "relative",
+                        justifyContent: "start",
+                        gap: 1,
+                        top: "0px",
                         marginTop: "2rem",
                     },
                     [theme.breakpoints.down("xs")]: {
                         // Styles pour les écrans de largeur maximale "xs" (450px)
-                        height: "auto",
+                        height: windowHeight >= 550 ? "80svh" : "auto",
                         padding: 0,
-                        paddingBottom: 4,
+                        paddingBottom: 1,
                         border: "none",
-                        borderBottom: `2px solid ${theme.palette.grey[500]}`,
                         borderRadius: 0,
-                    },
-                    "@media (max-height: 680px)": {
-                        gap: "10px",
+                        borderBottom: `2px solid ${theme.palette.grey[500]}`,
                     },
                     fontFamily: "Poiret One, cursive",
                     fontWeight: "bold",
@@ -187,7 +191,7 @@ export default function SideBar({
                             flexDirection: "column",
                             justifyContent: "space-evenly",
                             gap: 2,
-                            [theme.breakpoints.down("sm")]: {
+                            [theme.breakpoints.down("md")]: {
                                 // Styles pour les écrans de largeur maximale "md" (1090px)
                                 height: "100%",
                             },
@@ -219,7 +223,6 @@ export default function SideBar({
                             variant="h5"
                             disablepadding="true"
                             sx={{
-                                fontSize: "clamp(1rem, 6vw, 1.5rem)",
                                 color: theme.palette.accent,
                                 fontFamily: "Poiret One, cursive",
                                 fontWeight: "bold",
@@ -318,6 +321,13 @@ export default function SideBar({
                                     backgroundColor:
                                         theme.palette.accentTransparent,
                                 },
+                                [theme.breakpoints.down("md")]: {
+                                    // Styles pour les écrans de largeur maximale "md" (1090px)
+                                    width: "50%",
+                                },
+                                [theme.breakpoints.down("sm")]: {
+                                    width: "100%",
+                                },
                             }}
                             data-aos={isMediumScreen ? undefined : "fade-right"}
                             data-aos-once={isMediumScreen ? undefined : "true"}
@@ -347,6 +357,9 @@ export default function SideBar({
             </Box>
             <Box
                 sx={{
+                    position: "absolute",
+                    right: "50%",
+                    transform: "translateX(-50%)",
                     margin: "0 auto",
                     color: theme.palette.accent,
                     display: "none",
