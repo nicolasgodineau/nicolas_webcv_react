@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poiret+One&display=swap");
 
 #root {
-    background-color: #1f1f1f;
+    background-color: #212121;
 }
 
 html {
-    background-color: #1f1f1f;
+    background-color: #212121;
 }
 
 .arrow {
@@ -28,6 +28,12 @@ html {
     border-top: 10px solid #999999;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
+}
+/* Définit la couleur du focus sur les imputs */
+.Mui-focused {
+    color: #212121 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
 }
 
 @keyframes scroll {
