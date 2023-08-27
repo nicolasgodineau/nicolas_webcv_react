@@ -57,8 +57,6 @@ export default function Header({ icon, data }) {
                         marginBottom: 2.5,
                     },
                 }}
-                data-aos="fade-down"
-                data-aos-delay="100"
             >
                 {IconComponent && (
                     <IconComponent

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { WindowHeightContext } from "../App";
 import theme from "../theme";
 import { Container } from "@mui/material";
 
@@ -11,18 +12,21 @@ export default function CustomArticleContainer({
     AosDelay,
     children,
 }) {
+    const windowHeight = useContext(WindowHeightContext);
     return (
         <Container
             component="article"
-            disableGutters={true}
+            disablegutters="true"
+            maxWidth="false"
             data-aos={AosEffect}
             data-aos-delay={AosDelay}
             sx={{
                 overflow: "hidden",
                 paddingY: 9,
+                paddingX: "0 !important",
                 [theme.breakpoints.down("md")]: {
-                    paddingTop: 5,
-                    paddingBottom: 0,
+                    paddingTop: windowHeight >= 650 ? "0px" : 5,
+                    paddingBottom: 5,
                     paddingX: 0,
                     marginLeft: 0,
                 },

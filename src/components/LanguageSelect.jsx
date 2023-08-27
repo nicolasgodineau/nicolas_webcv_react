@@ -39,6 +39,10 @@ export default function LanguageSelect() {
                     left: "unset",
                     right: "5px",
                 },
+                [theme.breakpoints.down("xs")]: {
+                    // Styles pour les écrans de largeur maximale "xs" (450px)
+                    top: "-1.5rem",
+                },
             }}
         >
             <IconButton

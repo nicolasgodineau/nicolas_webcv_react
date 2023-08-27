@@ -126,7 +126,12 @@ export default function ContactModal({ toggleContent, dimensions }) {
                                 helperText={errors.name && errors.name.message}
                                 {...field}
                                 sx={{
-                                    backgroundColor: "#2a2a2a",
+                                    backgroundColor: theme.palette.grey[500],
+                                    borderRadius: 5,
+                                    ".css-bgvhg1-MuiFormLabel-root-MuiInputLabel-root":
+                                        {
+                                            color: theme.palette.grey[900],
+                                        },
                                 }}
                             />
                         )}
@@ -156,7 +161,12 @@ export default function ContactModal({ toggleContent, dimensions }) {
                                 }
                                 {...field}
                                 sx={{
-                                    backgroundColor: "#2a2a2a",
+                                    backgroundColor: theme.palette.grey[500],
+                                    borderRadius: 5,
+                                    ".css-bgvhg1-MuiFormLabel-root-MuiInputLabel-root":
+                                        {
+                                            color: theme.palette.grey[900],
+                                        },
                                 }}
                             />
                         )}
@@ -180,7 +190,12 @@ export default function ContactModal({ toggleContent, dimensions }) {
                                 }
                                 {...field}
                                 sx={{
-                                    backgroundColor: "#2a2a2a",
+                                    backgroundColor: theme.palette.grey[500],
+                                    borderRadius: 5,
+                                    ".css-bgvhg1-MuiFormLabel-root-MuiInputLabel-root":
+                                        {
+                                            color: theme.palette.grey[900],
+                                        },
                                 }}
                             />
                         )}
@@ -192,7 +207,7 @@ export default function ContactModal({ toggleContent, dimensions }) {
                 sx={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "space-evenly",
+                    justifyContent: "space-between",
                     gap: 1,
                 }}
             >
