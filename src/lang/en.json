@@ -42,19 +42,19 @@
             "subtitle": "introduction",
             "text": "hey! I'm **Nicolas**, web developer and photographer."
         },
-        "description": "I design and code beautifully simple things and i love what i do. Just simple like that!"
+        "description": "I design and code beautifully simple things and love what I do. As simple as that!"
     },
     "about": {
         "header": {
             "subtitle": "about",
-            "text": "From construction to web development: **an exciting transition!**"
+            "text": "Hey! I'm **Nicolas**, web developer and photographer."
         },
         "description": "I am passionate about this new stage of my career and look forward to working with you to bring your ideas and goals to life online. Feel free to browse my portfolio to discover some of my past projects."
     },
     "resume": {
         "header": {
-            "subtitle": "resume",
-            "text": "My **career** journey"
+            "subtitle": "curriculum vitae",
+            "text": "My **professional** expedition"
         },
         "experiences": {
             "title": "Experiences",
@@ -197,7 +197,7 @@
     },
     "skills": {
         "header": {
-            "subtitle": "My skills",
+            "subtitle": "skills",
             "text": "My **Strengths**"
         },
         "category": {
