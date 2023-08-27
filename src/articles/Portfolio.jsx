@@ -46,30 +46,30 @@ export default function Portfolio({ AosEffect, AosDelay }) {
                         >
                             <Typography
                                 component="h2"
+                                variant="h4"
                                 sx={{
-                                    fontSize: "clamp(1.2rem, 4vw, 2rem)",
                                     marginBottom: "5px",
-                                    color: theme.palette.text.primary,
+                                    color: theme.palette.grey[100],
                                 }}
                             >
                                 {t(titleKey)}
                             </Typography>
                             <Typography
                                 component="h3"
+                                variant="subtitle1"
                                 sx={{
-                                    fontSize: "16px",
-                                    fontWeight: "bold",
+                                    fontWeight: "bolder",
                                     marginBottom: "5px",
-                                    color: theme.palette.text.primary,
+                                    color: theme.palette.grey[100],
                                 }}
                             >
                                 {t(subtitleKey)}
                             </Typography>
                             <Typography
                                 component="p"
+                                variant="body1"
                                 sx={{
-                                    fontSize: "16px",
-                                    color: theme.palette.text.secondary,
+                                    color: theme.palette.grey[400],
                                 }}
                             >
                                 {t(descriptionKey)}
@@ -83,7 +83,7 @@ export default function Portfolio({ AosEffect, AosDelay }) {
                                     sx={{
                                         marginY: "2rem",
                                         backgroundColor:
-                                            theme.palette.text.secondary,
+                                            theme.palette.grey[400],
                                     }}
                                 />
                             ) : null}

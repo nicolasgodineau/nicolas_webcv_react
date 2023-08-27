@@ -72,7 +72,7 @@ export default function LanguageSelect() {
                     sx: {
                         borderRadius: "10px",
 
-                        backgroundColor: theme.palette.background.dark,
+                        backgroundColor: theme.palette.grey[800],
                         overflow: "visible",
                         "& .MuiAvatar-root": {
                             width: 32,
@@ -93,7 +93,7 @@ export default function LanguageSelect() {
                 MenuListProps={{
                     style: {
                         "& .Mui-selected": {
-                            backgroundColor: theme.palette.background.dark,
+                            backgroundColor: theme.palette.grey[800],
                         },
                     },
                 }}

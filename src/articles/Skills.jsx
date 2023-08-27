@@ -69,7 +69,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                 variant="middle"
                 sx={{
                     marginY: "2rem",
-                    backgroundColor: theme.palette.text.secondary,
+                    backgroundColor: theme.palette.grey[400],
                 }}
             />
             <Box
@@ -88,7 +88,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                 <Typography
                     variant="h4"
                     sx={{
-                        color: theme.palette.text.primary,
+                        color: theme.palette.grey[100],
                         fontFamily: "Lato, sans-serif",
                     }}
                 >
@@ -129,7 +129,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                 variant="middle"
                 sx={{
                     marginY: "2rem",
-                    backgroundColor: theme.palette.text.secondary,
+                    backgroundColor: theme.palette.grey[400],
                 }}
             />
             <Box
@@ -148,7 +148,7 @@ export default function Skills({ AosEffect, AosDelay }) {
                 <Typography
                     variant="h4"
                     sx={{
-                        color: theme.palette.text.primary,
+                        color: theme.palette.grey[100],
                         fontFamily: "Lato, sans-serif",
                     }}
                 >

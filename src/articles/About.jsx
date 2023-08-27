@@ -28,7 +28,7 @@ export default function About({ AosEffect, AosDelay }) {
                 sx={{
                     maxWidth: "480px",
                     marginBottom: "30px",
-                    color: theme.palette.text.secondary,
+                    color: theme.palette.grey[400],
                 }}
             >
                 {t("about.description")}

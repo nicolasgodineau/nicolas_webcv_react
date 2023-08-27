@@ -15,18 +15,17 @@ export default function Footer() {
                 variant="body2"
                 sx={{
                     padding: 1,
-                    color: theme.palette.text.secondary,
+                    color: theme.palette.grey[400],
                 }}
             >
                 {t("footer.line1")} - {anneeEnCours}
             </Typography>
             <Typography
                 component="p"
-                variant="body2"
+                variant="caption"
                 sx={{
-                    fontSize: ".5rem",
                     padding: 0,
-                    color: theme.palette.text.secondary,
+                    color: theme.palette.grey[400],
                 }}
             >
                 {t("footer.line2")}

@@ -48,7 +48,7 @@ export default function Experience({ experience, delay, index }) {
                         width: 12,
                         height: 12,
                         borderRadius: "50px",
-                        background: theme.palette.text.secondary,
+                        background: theme.palette.grey[500],
                         zIndex: 10,
                     },
                     "&::after": {
@@ -60,7 +60,7 @@ export default function Experience({ experience, delay, index }) {
                         width: "2px",
                         height: "99%",
                         borderRadius: "50px",
-                        background: theme.palette.text.secondary,
+                        background: theme.palette.grey[500],
                     },
                     [theme.breakpoints.down("sm")]: {
                         // Styles pour les écrans de largeur maximale 600px
@@ -90,10 +90,10 @@ export default function Experience({ experience, delay, index }) {
                 >
                     <Typography
                         component="p"
-                        variant="body1"
+                        variant="body3"
                         sx={{
                             display: "block",
-                            color: theme.palette.text.primary,
+                            color: theme.palette.grey[50],
                         }}
                         data-aos="fade-left"
                         data-aos-delay="500"
@@ -105,7 +105,7 @@ export default function Experience({ experience, delay, index }) {
                         variant="body2"
                         sx={{
                             display: "block",
-                            color: theme.palette.text.secondary,
+                            color: theme.palette.grey[400],
                         }}
                         data-aos="fade-left"
                         data-aos-delay="700"
@@ -136,7 +136,7 @@ export default function Experience({ experience, delay, index }) {
                         variant="subtitle1"
                         sx={{
                             marginBottom: "1rem",
-                            color: theme.palette.text.primary,
+                            color: theme.palette.grey[50],
                         }}
                         data-aos="fade-up"
                         data-aos-delay={`${delay}`}
@@ -168,7 +168,7 @@ export default function Experience({ experience, delay, index }) {
                             sx={{
                                 display: "flex",
                                 alignItems: "baseline",
-                                color: theme.palette.text.secondary,
+                                color: theme.palette.grey[400],
                                 padding: "0 0 0 1rem",
                                 [theme.breakpoints.down("sm")]: {
                                     // Styles pour les écrans de largeur maximale 600px
@@ -182,7 +182,7 @@ export default function Experience({ experience, delay, index }) {
                                 sx={{
                                     height: 10,
                                     minWidth: 10,
-                                    bgcolor: theme.palette.text.secondary,
+                                    bgcolor: theme.palette.grey[400],
                                     borderRadius: 5,
                                     marginRight: "2rem",
                                     [theme.breakpoints.down("sm")]: {
@@ -198,7 +198,7 @@ export default function Experience({ experience, delay, index }) {
                                 component="p"
                                 variant="body1"
                                 sx={{
-                                    color: theme.palette.text.secondary,
+                                    color: theme.palette.grey[400],
                                 }}
                             >
                                 {description.line}

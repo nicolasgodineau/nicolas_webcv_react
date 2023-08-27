@@ -9,7 +9,6 @@ import {
     Link,
     Container,
     useMediaQuery,
-    Icon,
 } from "@mui/material";
 
 import Button from "@mui/material/Button";
@@ -102,10 +101,10 @@ export default function SideBar({
                     justifyContent: "space-evenly",
                     gap: 4,
                     padding: 4,
-                    border: `2px solid ${theme.palette.text.secondary}`,
+                    border: `2px solid ${theme.palette.grey[500]}`,
                     borderRadius: 5,
                     height: "fit-content",
-                    backgroundColor: theme.palette.background.dark,
+                    backgroundColor: theme.palette.grey[900],
                     [theme.breakpoints.down("md")]: {
                         // Styles pour les écrans de largeur maximale "md" (1090px)
                         position: "initial",
@@ -119,7 +118,7 @@ export default function SideBar({
                         padding: 0,
                         paddingBottom: 4,
                         border: "none",
-                        borderBottom: `2px solid ${theme.palette.text.secondary}`,
+                        borderBottom: `2px solid ${theme.palette.grey[500]}`,
                         borderRadius: 0,
                     },
                     "@media (max-height: 680px)": {
@@ -151,7 +150,7 @@ export default function SideBar({
                         component="h2"
                         variant="h4"
                         sx={{
-                            color: theme.palette.text.primary,
+                            color: theme.palette.grey[50],
                             fontFamily: "Poiret One, cursive",
                             fontWeight: "bold",
                         }}
@@ -167,6 +166,9 @@ export default function SideBar({
                         data-aos={isMediumScreen ? undefined : "fade-right"}
                         data-aos-once={isMediumScreen ? undefined : "true"}
                         data-aos-delay="500"
+                        sx={{
+                            color: theme.palette.grey[400],
+                        }}
                     >
                         {t("personalInformations.city")},
                         {t("personalInformations.country")}
@@ -200,7 +202,7 @@ export default function SideBar({
                             sx={{
                                 minHeight: "240px",
                                 minWidth: "240px",
-                                borderRadius: 7,
+                                borderRadius: 5,
                                 objectFit: "cover",
                                 [theme.breakpoints.down("sm")]: {
                                     // Styles pour les écrans de largeur maximale "md" (1090px)
@@ -251,21 +253,18 @@ export default function SideBar({
                                         rel="noreferrer"
                                         aria-label={link.name}
                                         href={link.url}
-                                        sx={{
+                                        /*                                         className="customOutline"
+                                         */ sx={{
                                             width: "50px",
                                             height: "50px",
                                             display: "flex",
                                             alignItems: "center",
                                             justifyContent: "center",
-                                            border: `2px solid ${theme.palette.text.secondary}`,
-                                            borderRadius: 6,
-                                            padding: 0.7,
-                                            fill: theme.palette.text.secondary,
+                                            borderRadius: 10,
                                             ":hover": {
-                                                cursor: "pointer",
-                                                color: theme.palette.accent,
-                                                border: `2px solid ${theme.palette.accent}`,
-                                                fill: theme.palette.accent,
+                                                backgroundColor:
+                                                    theme.palette
+                                                        .accentTransparent,
                                             },
                                         }}
                                         data-aos={
@@ -278,12 +277,26 @@ export default function SideBar({
                                         }
                                         data-aos-delay="600"
                                     >
-                                        {/* Affichez l'icône correspondante si elle existe dans l'objet de correspondance */}
+                                        {/* Icon */}
                                         {IconComponent && (
                                             <IconComponent
                                                 sx={{
-                                                    width: "1.3em",
-                                                    height: "1.3em",
+                                                    width: "100%",
+                                                    height: "100%",
+                                                    borderRadius: 10,
+                                                    border: `2px solid ${theme.palette.grey[400]}`,
+                                                    padding: "6px",
+                                                    fill: theme.palette
+                                                        .grey[400],
+                                                    ":hover": {
+                                                        border: `2px solid ${theme.palette.accent}`,
+
+                                                        fill: theme.palette
+                                                            .accent,
+                                                        backgroundColor:
+                                                            theme.palette
+                                                                .accentTransparent,
+                                                    },
                                                 }}
                                             />
                                         )}
@@ -298,12 +311,12 @@ export default function SideBar({
                                 borderRadius: 5,
                                 backgroundColor: theme.palette.accent,
                                 border: `2px solid ${theme.palette.accent}`,
-                                color: "black",
+                                color: theme.palette.grey[900],
                                 "&:hover": {
                                     cursor: "pointer",
                                     color: theme.palette.accent,
                                     backgroundColor:
-                                        theme.palette.background.dark,
+                                        theme.palette.accentTransparent,
                                 },
                             }}
                             data-aos={isMediumScreen ? undefined : "fade-right"}

@@ -30,10 +30,11 @@ export default function Resume({ AosEffect, AosDelay }) {
                 sx={{
                     paddingTop: "0",
                     paddingBottom: "1rem",
-                    color: theme.palette.text.primary,
+                    color: theme.palette.grey[50],
                     fontFamily: "Lato, sans-serif",
                 }}
                 data-aos="fade-up"
+                delay={300}
             >
                 {t(`resume.experiences.title`)}
             </Typography>
@@ -54,7 +55,7 @@ export default function Resume({ AosEffect, AosDelay }) {
                 sx={{
                     paddingTop: "2rem",
                     paddingBottom: "1rem",
-                    color: theme.palette.text.primary,
+                    color: theme.palette.grey[50],
                     fontFamily: "Lato, sans-serif",
                 }}
                 data-aos="fade-up"

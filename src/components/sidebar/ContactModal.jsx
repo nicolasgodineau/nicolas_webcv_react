@@ -200,14 +200,14 @@ export default function ContactModal({ toggleContent, dimensions }) {
                     type="submit"
                     sx={{
                         padding: "12px 44px",
-                        borderRadius: 32,
+                        borderRadius: 5,
                         backgroundColor: theme.palette.accent,
                         border: `2px solid ${theme.palette.accent}`,
                         color: "black",
                         ":hover": {
                             cursor: "pointer",
                             color: theme.palette.accent,
-                            backgroundColor: theme.palette.background.dark,
+                            backgroundColor: theme.palette.accentTransparent,
                         },
                     }}
                     variant="text"
@@ -219,18 +219,18 @@ export default function ContactModal({ toggleContent, dimensions }) {
                 <IconButton
                     sx={{
                         padding: "12px 44px",
-                        borderRadius: 32,
+                        borderRadius: 5,
                         backgroundColor: theme.palette.danger,
                         border: `2px solid ${theme.palette.danger}`,
                         color: "black",
                         ":hover": {
                             cursor: "pointer",
                             color: theme.palette.danger,
-                            backgroundColor: theme.palette.background.dark,
+                            backgroundColor: theme.palette.dangerTransparent,
                         },
                     }}
-                    onClick={handleClick}
                     variant="text"
+                    onClick={handleClick}
                 >
                     <CloseIcon />
                 </IconButton>

@@ -1,4 +1,5 @@
 import { createTheme, responsiveFontSizes } from "@mui/material";
+import { grey } from "@mui/material/colors";
 
 const loadLCPImage = async () => {
     const image = new Image();
@@ -39,24 +40,16 @@ let theme = createTheme({
     typography: {
         fontFamily: "Lato, sans-serif", // Police par défaut
         fontWeightRegular: 300,
+        body3: {
+            fontSize: "1.1rem",
+        },
     },
     spacing: 8,
     palette: {
-        primary: {
-            main: "#999999",
-        },
-        background: {
-            dark: "#1f1f1f",
-            light: "#f9f9f9",
-        },
-
-        text: {
-            primary: "#fff",
-            secondary: "#999999",
-        },
-
         accent: "#28e98c",
-        danger: "#e92828c4",
+        accentTransparent: "#28e98c0f",
+        danger: "#c62828",
+        dangerTransparent: "#c628280f",
     },
     breakpoints: {
         values: {

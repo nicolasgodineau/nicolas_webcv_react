@@ -6,6 +6,7 @@ import {
     ImageListItem,
     Modal,
     Button,
+    IconButton,
     Typography,
     Container,
     useMediaQuery,
@@ -103,30 +104,29 @@ export default function Gallery({ projet, dossier }) {
                         alignItems: "center",
                         gap: "1vh",
                         backdropFilter: "blur(20px)",
-                        /*  background: "#1f1f1f", */
                         overflow: "hidden",
                     }}
                     onClick={handleCloseModalContent}
                 >
-                    <Button
+                    <IconButton
                         sx={{
-                            width: "10%",
-                            padding: isSmallScreen ? "12px 44px" : "0px",
-                            borderRadius: 32,
+                            padding: "12px 44px",
+                            borderRadius: 5,
                             backgroundColor: theme.palette.danger,
                             border: `2px solid ${theme.palette.danger}`,
                             color: "black",
                             ":hover": {
                                 cursor: "pointer",
                                 color: theme.palette.danger,
-                                backgroundColor: "transparent",
+                                backgroundColor:
+                                    theme.palette.dangerTransparent,
                             },
                         }}
                         variant="text"
                         onClick={handleCloseModal}
                     >
                         <CloseIcon />
-                    </Button>
+                    </IconButton>
                     <img
                         src={selectedImage?.img}
                         alt={t(`portfolio.projets.${dossier}.title`)}
@@ -137,9 +137,9 @@ export default function Gallery({ projet, dossier }) {
                     />
                     <Typography
                         component="h4"
+                        variant="h4"
                         sx={{
-                            fontSize: "clamp(1.2rem, 6vw, 3rem)",
-                            color: theme.palette.primary,
+                            color: theme.palette.grey[100],
                             textTransform: "uppercase",
                         }}
                     >

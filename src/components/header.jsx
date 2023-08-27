@@ -1,9 +1,8 @@
 import React from "react";
 import theme from "../theme";
 import { Box, Typography } from "@mui/material";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Header({ icon, data, variant, fontSize }) {
+export default function Header({ icon, data }) {
     const IconComponent = icon;
 
     // Fonction pour extraire le texte entouré de ** et les parties avant et après
@@ -45,7 +44,7 @@ export default function Header({ icon, data, variant, fontSize }) {
                     display: "inline-flex",
                     gap: 1,
                     padding: "9px 20px",
-                    border: `2px solid ${theme.palette.text.secondary}`,
+                    border: `2px solid ${theme.palette.grey[500]}`,
                     borderRadius: 5,
                     marginBottom: 5,
                     [theme.breakpoints.down("sm")]: {
@@ -66,15 +65,15 @@ export default function Header({ icon, data, variant, fontSize }) {
                         sx={{
                             width: ".9em",
                             height: ".9em",
+                            color: theme.palette.grey[200],
                         }}
                     />
                 )}
                 <Typography
                     component="h1"
-                    variant="body1"
+                    variant="body2"
                     sx={{
-                        fontSize: "14px",
-                        color: theme.palette.primary,
+                        color: theme.palette.grey[100],
                         textTransform: "uppercase",
                         fontFamily: "Lato, sans-serif",
                     }}
@@ -87,7 +86,7 @@ export default function Header({ icon, data, variant, fontSize }) {
                 component="h2"
                 variant="h3"
                 sx={{
-                    fontSize: { fontSize },
+                    color: theme.palette.grey[100],
                     fontFamily: "Poiret One, cursive",
                     fontWeight: "bold",
                 }}
@@ -99,8 +98,9 @@ export default function Header({ icon, data, variant, fontSize }) {
                     component="span"
                     variant="h3"
                     sx={{
-                        fontSize: { fontSize },
                         color: theme.palette.accent,
+                        fontFamily: "Poiret One, cursive",
+                        fontWeight: "bold",
                     }}
                 >
                     {extractedTexts.extractedText}

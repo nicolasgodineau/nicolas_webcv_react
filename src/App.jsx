@@ -53,7 +53,7 @@ export default function App() {
                     sx={{
                         display: "flex",
                         disableScrolling: "true",
-                        backgroundColor: theme.palette.background.dark,
+                        backgroundColor: theme.palette.grey[900],
                         [theme.breakpoints.down("md")]: {
                             // Styles pour les écrans de largeur maximale "md" (1090px)
                             flexDirection: "column",
