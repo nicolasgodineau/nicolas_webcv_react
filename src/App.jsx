@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import {
@@ -14,6 +14,8 @@ import Resume from "articles/Resume.jsx";
 import Skills from "articles/Skills.jsx";
 import Portfolio from "articles/Portfolio.jsx";
 import Footer from "articles/Footer.jsx";
+
+export const WindowHeightContext = createContext();
 
 export default function App() {
     const { i18n } = useTranslation();
@@ -44,47 +46,67 @@ export default function App() {
         i18n.changeLanguage(language);
     };
 
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const updateWindowHeight = () => {
+            setWindowHeight(window.innerHeight);
+        };
+
+        window.addEventListener("resize", updateWindowHeight);
+
+        return () => {
+            window.removeEventListener("resize", updateWindowHeight);
+        };
+    }, []);
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
-                <Container
-                    component="main"
-                    maxWidth="lg"
-                    sx={{
-                        display: "flex",
-                        disableScrolling: "true",
-                        backgroundColor: theme.palette.grey[900],
-                        [theme.breakpoints.down("md")]: {
-                            // Styles pour les écrans de largeur maximale "md" (1090px)
-                            flexDirection: "column",
-                        },
-                    }}
-                >
-                    <SideBar
-                        AosEffect="fade-up"
-                        AosDelay="0"
-                        selectedLanguage={selectedLanguage}
-                        handleChangeLanguage={handleChangeLanguage}
-                    />
+                <WindowHeightContext.Provider value={windowHeight}>
                     <Container
-                        component="section"
+                        component="main"
+                        maxWidth="lg"
                         sx={{
-                            flexGrow: "1",
-                            overflow: "hidden",
+                            display: "flex",
+                            disableScrolling: "true",
+                            backgroundColor: theme.palette.grey[900],
                             [theme.breakpoints.down("md")]: {
                                 // Styles pour les écrans de largeur maximale "md" (1090px)
-                                padding: 0,
+                                flexDirection: "column",
                             },
                         }}
                     >
-                        {/* <Introduction AosEffect="fade-up" AosDelay="0" /> */}
-                        <About AosEffect="fade-up" AosDelay="0" />
-                        <Resume AosEffect="fade-up" AosDelay="0" />
-                        <Skills AosEffect="fade-up" AosDelay="0" />
-                        <Portfolio AosEffect="fade-up" AosDelay="0" />
+                        <SideBar
+                            AosEffect="fade-up"
+                            AosDelay="0"
+                            selectedLanguage={selectedLanguage}
+                            handleChangeLanguage={handleChangeLanguage}
+                        />
+                        <Container
+                            component="section"
+                            disablegutters="true"
+                            maxWidth="false"
+                            sx={{
+                                overflow: "hidden",
+                                backgroundColor: theme.palette.grey[900],
+                                paddingRight: "0 !important",
+                                [theme.breakpoints.down("md")]: {
+                                    // Styles pour les écrans de largeur maximale "md" (1090px)
+                                    padding: 0,
+                                    marginTop:
+                                        windowHeight >= 650 ? "0px" : "60px",
+                                },
+                            }}
+                        >
+                            <About AosEffect="fade-up" AosDelay="0" />
+                            <Resume AosEffect="fade-up" AosDelay="0" />
+                            <Skills AosEffect="fade-up" AosDelay="0" />
+                            <Portfolio AosEffect="fade-up" AosDelay="0" />
+                        </Container>
                     </Container>
-                </Container>
-                <Footer />
+                    <Footer />
+                </WindowHeightContext.Provider>
             </CssBaseline>
         </ThemeProvider>
     );
