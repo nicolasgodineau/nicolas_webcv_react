@@ -4,6 +4,7 @@ import theme from "../theme";
 import { Typography } from "@mui/material";
 
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
+import WheelProject from "../components/wheelProject.jsx";
 import PersonIcon from "@mui/icons-material/Person";
 
 export default function About({ AosEffect, AosDelay }) {
@@ -33,6 +34,7 @@ export default function About({ AosEffect, AosDelay }) {
             >
                 {t("about.description")}
             </Typography>
+            <WheelProject />
         </CustomArticleContainer>
     );
 }

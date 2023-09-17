@@ -312,9 +312,10 @@ export default function SideBar({
                                 width: "100%",
                                 padding: "12px 44px",
                                 borderRadius: 5,
-                                backgroundColor: theme.palette.accent,
+                                backgroundColor:
+                                    theme.palette.accentTransparent,
                                 border: `2px solid ${theme.palette.accent}`,
-                                color: theme.palette.grey[900],
+                                color: "#bdbdbd",
                                 "&:hover": {
                                     cursor: "pointer",
                                     color: theme.palette.accent,

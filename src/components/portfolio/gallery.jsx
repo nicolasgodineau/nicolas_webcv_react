@@ -5,7 +5,6 @@ import {
     ImageList,
     ImageListItem,
     Modal,
-    Button,
     IconButton,
     Typography,
     Container,

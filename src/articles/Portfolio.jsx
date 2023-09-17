@@ -26,6 +26,7 @@ export default function Portfolio({ AosEffect, AosDelay }) {
             data={dataHeader}
             AosEffect={AosEffect}
             AosDelay={AosDelay}
+            id="#portfolio"
         >
             {Object.entries(dataSection?.projets).map(
                 ([projetKey, projet], index) => {

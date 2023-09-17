@@ -8,9 +8,6 @@ import {
     ListItemIcon,
     Box,
 } from "@mui/material";
-import { faCircle } from "@fortawesome/free-solid-svg-icons"; // icon de la section subtitle
-import CircleIcon from "@mui/icons-material/Circle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Experience({ experience, delay, index }) {
     return (
@@ -23,7 +20,6 @@ export default function Experience({ experience, delay, index }) {
                 marginBottom: 2,
                 paddingRight: "0px!important",
                 [theme.breakpoints.down("sm")]: {
-                    // Styles pour les écrans de largeur maximale 600px
                     padding: 0,
                 },
                 overflow: "hidden",
@@ -63,7 +59,6 @@ export default function Experience({ experience, delay, index }) {
                         background: theme.palette.grey[500],
                     },
                     [theme.breakpoints.down("sm")]: {
-                        // Styles pour les écrans de largeur maximale 600px
                         paddingBottom: 0,
                         paddingLeft: 3,
                     },
@@ -79,7 +74,6 @@ export default function Experience({ experience, delay, index }) {
                         marginBottom: "1rem",
                         paddingRight: 0,
                         [theme.breakpoints.down("sm")]: {
-                            // Styles pour les écrans de largeur maximale 600px
                             flexDirection: "column",
                             alignItems: "start",
                             marginBottom: 1,
@@ -171,7 +165,6 @@ export default function Experience({ experience, delay, index }) {
                                 color: theme.palette.grey[400],
                                 padding: "0 0 0 1rem",
                                 [theme.breakpoints.down("sm")]: {
-                                    // Styles pour les écrans de largeur maximale 600px
                                     padding: 0,
                                 },
                             }}
@@ -186,7 +179,6 @@ export default function Experience({ experience, delay, index }) {
                                     borderRadius: 5,
                                     marginRight: "2rem",
                                     [theme.breakpoints.down("sm")]: {
-                                        // Styles pour les écrans de largeur maximale 600px
                                         height: 8,
                                         minWidth: 8,
                                         marginRight: ".5rem",

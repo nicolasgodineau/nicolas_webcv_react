@@ -50,6 +50,7 @@ let theme = createTheme({
         accentTransparent: "#28e98c0f",
         danger: "#c62828",
         dangerTransparent: "#c628280f",
+        black: "#131516",
     },
     breakpoints: {
         values: {

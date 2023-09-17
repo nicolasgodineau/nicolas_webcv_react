@@ -1,12 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
-import {
-    Container,
-    CssBaseline,
-    ThemeProvider,
-    useMediaQuery,
-} from "@mui/material";
+import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme.js";
 import SideBar from "./articles/sideBar.jsx";
 import About from "articles/About.jsx";
@@ -14,6 +9,7 @@ import Resume from "articles/Resume.jsx";
 import Skills from "articles/Skills.jsx";
 import Portfolio from "articles/Portfolio.jsx";
 import Footer from "articles/Footer.jsx";
+import BackToTop from "components/BackToTop.jsx";
 
 export const WindowHeightContext = createContext();
 
@@ -72,7 +68,6 @@ export default function App() {
                             disableScrolling: "true",
                             backgroundColor: theme.palette.grey[900],
                             [theme.breakpoints.down("md")]: {
-                                // Styles pour les écrans de largeur maximale "md" (1090px)
                                 flexDirection: "column",
                             },
                         }}
@@ -92,7 +87,6 @@ export default function App() {
                                 backgroundColor: theme.palette.grey[900],
                                 paddingRight: "0 !important",
                                 [theme.breakpoints.down("md")]: {
-                                    // Styles pour les écrans de largeur maximale "md" (1090px)
                                     padding: 0,
                                     marginTop:
                                         windowHeight >= 650 ? "0px" : "60px",
@@ -103,6 +97,7 @@ export default function App() {
                             <Resume AosEffect="fade-up" AosDelay="0" />
                             <Skills AosEffect="fade-up" AosDelay="0" />
                             <Portfolio AosEffect="fade-up" AosDelay="0" />
+                            <BackToTop />
                         </Container>
                     </Container>
                     <Footer />

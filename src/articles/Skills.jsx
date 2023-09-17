@@ -47,7 +47,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                         gap: "1rem",
                         flexWrap: "wrap",
                         [theme.breakpoints.down("sm")]: {
-                            // Styles pour les écrans de largeur maximale "md" (1090px)
                             flexDirection: "column",
                         },
                     }}
@@ -107,7 +106,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                         gap: "2rem",
                         overflow: "hidden",
                         [theme.breakpoints.down("md")]: {
-                            // Styles pour les écrans de largeur maximale "md" (1090px)
                             justifyContent: "start",
                         },
                     }}
@@ -167,7 +165,6 @@ export default function Skills({ AosEffect, AosDelay }) {
                         gap: "2rem",
                         overflow: "hidden",
                         [theme.breakpoints.down("md")]: {
-                            // Styles pour les écrans de largeur maximale "md" (1090px)
                             justifyContent: "start",
                         },
                     }}

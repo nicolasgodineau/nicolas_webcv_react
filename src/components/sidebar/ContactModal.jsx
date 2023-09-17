@@ -106,7 +106,6 @@ export default function ContactModal({ toggleContent, dimensions }) {
                         flexDirection: "column",
                         gap: 2,
                         [theme.breakpoints.down("md")]: {
-                            // Styles pour les écrans de largeur maximale "md" (1090px)
                             height: "100%",
                         },
                     }}

@@ -11,10 +11,12 @@ export default function CustomArticleContainer({
     AosEffect,
     AosDelay,
     children,
+    id,
 }) {
     const windowHeight = useContext(WindowHeightContext);
     return (
         <Container
+            id={id}
             component="article"
             disablegutters="true"
             maxWidth="false"
@@ -33,6 +35,7 @@ export default function CustomArticleContainer({
             }}
         >
             <Header component="header" icon={icon} data={data} />
+
             {children}
         </Container>
     );

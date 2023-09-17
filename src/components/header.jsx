@@ -48,12 +48,10 @@ export default function Header({ icon, data }) {
                     borderRadius: 5,
                     marginBottom: 5,
                     [theme.breakpoints.down("sm")]: {
-                        // Styles pour les écrans de largeur maximale "sm" (600px)
                         width: "100%",
                         justifyContent: "center",
                     },
                     [theme.breakpoints.down("md")]: {
-                        // Styles pour les écrans de largeur maximale "md" (1090px)
                         marginBottom: 2.5,
                     },
                 }}
