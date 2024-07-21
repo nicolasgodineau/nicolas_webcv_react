@@ -1,5 +1,4 @@
 import { createTheme, responsiveFontSizes } from "@mui/material";
-import { grey } from "@mui/material/colors";
 
 const loadLCPImage = async () => {
     const image = new Image();
