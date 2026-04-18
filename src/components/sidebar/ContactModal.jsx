@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CloseIcon from "@mui/icons-material/Close";
+import SendIcon from "@mui/icons-material/Send";
 
 export default function ContactModal({ toggleContent, dimensions }) {
     const [isConfettiActive, setConfettiActive] = useState(false);
@@ -60,7 +61,7 @@ export default function ContactModal({ toggleContent, dimensions }) {
             {
                 method: "POST",
                 body: formData,
-            }
+            },
         ).catch((error) => {
             console.log("error:", error);
         });
@@ -127,6 +128,25 @@ export default function ContactModal({ toggleContent, dimensions }) {
                                 sx={{
                                     backgroundColor: theme.palette.grey[500],
                                     borderRadius: 5,
+                                    "& .MuiInputBase-root": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiInputBase-input": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiFilledInput-root": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiFilledInput-root:hover": {
+                                        backgroundColor:
+                                            theme.palette.grey[500],
+                                        borderRadius: 5,
+                                    },
+                                    "& .MuiFilledInput-root.Mui-focused": {
+                                        backgroundColor:
+                                            theme.palette.grey[500],
+                                        borderRadius: 5,
+                                    },
                                     ".css-bgvhg1-MuiFormLabel-root-MuiInputLabel-root":
                                         {
                                             color: theme.palette.grey[900],
@@ -144,7 +164,7 @@ export default function ContactModal({ toggleContent, dimensions }) {
                             pattern: {
                                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                 message: t(
-                                    "personalInformations.invalideEmail"
+                                    "personalInformations.invalideEmail",
                                 ),
                             },
                         }}
@@ -162,6 +182,25 @@ export default function ContactModal({ toggleContent, dimensions }) {
                                 sx={{
                                     backgroundColor: theme.palette.grey[500],
                                     borderRadius: 5,
+                                    "& .MuiInputBase-root": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiInputBase-input": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiFilledInput-root": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiFilledInput-root:hover": {
+                                        backgroundColor:
+                                            theme.palette.grey[500],
+                                        borderRadius: 5,
+                                    },
+                                    "& .MuiFilledInput-root.Mui-focused": {
+                                        backgroundColor:
+                                            theme.palette.grey[500],
+                                        borderRadius: 5,
+                                    },
                                     ".css-bgvhg1-MuiFormLabel-root-MuiInputLabel-root":
                                         {
                                             color: theme.palette.grey[900],
@@ -191,6 +230,25 @@ export default function ContactModal({ toggleContent, dimensions }) {
                                 sx={{
                                     backgroundColor: theme.palette.grey[500],
                                     borderRadius: 5,
+                                    "& .MuiInputBase-root": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiInputBase-input": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiFilledInput-root": {
+                                        borderRadius: 1,
+                                    },
+                                    "& .MuiFilledInput-root:hover": {
+                                        backgroundColor:
+                                            theme.palette.grey[500],
+                                        borderRadius: 5,
+                                    },
+                                    "& .MuiFilledInput-root.Mui-focused": {
+                                        backgroundColor:
+                                            theme.palette.grey[500],
+                                        borderRadius: 5,
+                                    },
                                     ".css-bgvhg1-MuiFormLabel-root-MuiInputLabel-root":
                                         {
                                             color: theme.palette.grey[900],
@@ -210,26 +268,6 @@ export default function ContactModal({ toggleContent, dimensions }) {
                     gap: 1,
                 }}
             >
-                <Button
-                    type="submit"
-                    sx={{
-                        padding: "12px 44px",
-                        borderRadius: 5,
-                        backgroundColor: theme.palette.accent,
-                        border: `2px solid ${theme.palette.accent}`,
-                        color: "black",
-                        ":hover": {
-                            cursor: "pointer",
-                            color: theme.palette.accent,
-                            backgroundColor: theme.palette.accentTransparent,
-                        },
-                    }}
-                    variant="text"
-                    startIcon={<MailOutlineIcon />}
-                >
-                    {t("personalInformations.send")}
-                </Button>{" "}
-                <Confetti active={isConfettiActive} />
                 <IconButton
                     sx={{
                         padding: "12px 44px",
@@ -248,6 +286,26 @@ export default function ContactModal({ toggleContent, dimensions }) {
                 >
                     <CloseIcon />
                 </IconButton>
+                <Confetti active={isConfettiActive} />
+                <IconButton
+                    type="submit"
+                    sx={{
+                        padding: "12px 44px",
+                        borderRadius: 5,
+                        backgroundColor: theme.palette.accent,
+                        border: `2px solid ${theme.palette.accent}`,
+                        color: "black",
+                        ":hover": {
+                            cursor: "pointer",
+                            color: theme.palette.accent,
+                            backgroundColor: theme.palette.accentTransparent,
+                        },
+                    }}
+                    variant="text"
+                    startIcon={<MailOutlineIcon />}
+                >
+                    <SendIcon />
+                </IconButton>{" "}
             </Box>
         </FormControl>
     );

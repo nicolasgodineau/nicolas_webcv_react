@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { IconButton, Menu, MenuItem, Box } from "@mui/material";
+import { IconButton, Menu, MenuItem, Box, Typography } from "@mui/material";
 import theme from "../theme";
 import FR from "../images/icons/FR.png";
 import EN from "../images/icons/EN.png";
@@ -115,7 +115,15 @@ export default function LanguageSelect() {
                             height: "20px",
                         }}
                     />
-                    English
+                    <Typography
+                        variant="body2"
+                        sx={{
+                            color: theme.palette.grey[50],
+                            fontFamily: "Lato, sans-serif",
+                        }}
+                    >
+                        English
+                    </Typography>
                 </MenuItem>
                 <MenuItem
                     value="fr"
@@ -132,7 +140,15 @@ export default function LanguageSelect() {
                             height: "20px",
                         }}
                     />
-                    Français
+                    <Typography
+                        variant="body2"
+                        sx={{
+                            color: theme.palette.grey[50],
+                            fontFamily: "Lato, sans-serif",
+                        }}
+                    >
+                        Francais
+                    </Typography>
                 </MenuItem>
             </Menu>
         </Box>

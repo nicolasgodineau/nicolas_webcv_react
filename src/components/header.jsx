@@ -5,31 +5,67 @@ import { Box, Typography } from "@mui/material";
 export default function Header({ icon, data }) {
     const IconComponent = icon;
 
-    // Fonction pour extraire le texte entouré de ** et les parties avant et après
-    const extractTextAndSurroundings = (inputText) => {
-        const regex = /\*\*(.*?)\*\*/g; // regex pour extraire un mot entrouré de 2 **
-        const matches = inputText.match(regex); // Recherche de toutes les correspondances
+    // Fonction pour parser le texte et extraire les différents formats (**, ~~)
+    const parseText = (inputText) => {
+        const parts = [];
+        let lastIndex = 0;
 
-        if (matches && matches.length > 0) {
-            // S'il y a des correspondances
-            const match = matches[0]; // Prendre la première correspondance
-            const startIndex = inputText.indexOf(match); // Indice de début de la correspondance
-            const endIndex = startIndex + match.length; // Indice de fin de la correspondance
-            const beforeText = inputText.substring(0, startIndex); // Partie de texte avant la correspondance
-            const afterText = inputText.substring(endIndex); // Partie de texte après la correspondance
-            const extractedText = match.replace(/\*\*/g, ""); // Texte extrait sans les **
+        // Regex pour trouver ** et ~~
+        const boldRegex = /\*\*(.*?)\*\*/g;
+        const smallRegex = /~~(.*?)~~/g;
 
-            return {
-                extractedText, // Propriété contenant le texte extrait
-                beforeText, // Propriété contenant la partie de texte avant la correspondance
-                afterText, // Propriété contenant la partie de texte après la correspondance
-            };
+        // Créer un tableau de toutes les correspondances avec leurs positions
+        const allMatches = [];
+
+        let boldMatch;
+        while ((boldMatch = boldRegex.exec(inputText)) !== null) {
+            allMatches.push({
+                start: boldMatch.index,
+                end: boldMatch.index + boldMatch[0].length,
+                type: "bold",
+                text: boldMatch[1],
+            });
         }
 
-        return null; // Si aucune correspondance n'est trouvée, renvoyer null
+        let smallMatch;
+        while ((smallMatch = smallRegex.exec(inputText)) !== null) {
+            allMatches.push({
+                start: smallMatch.index,
+                end: smallMatch.index + smallMatch[0].length,
+                type: "small",
+                text: smallMatch[1],
+            });
+        }
+
+        // Trier par position
+        allMatches.sort((a, b) => a.start - b.start);
+
+        // Créer les parts
+        allMatches.forEach((match) => {
+            if (match.start > lastIndex) {
+                parts.push({
+                    type: "text",
+                    text: inputText.substring(lastIndex, match.start),
+                });
+            }
+            parts.push({
+                type: match.type,
+                text: match.text,
+            });
+            lastIndex = match.end;
+        });
+
+        if (lastIndex < inputText.length) {
+            parts.push({
+                type: "text",
+                text: inputText.substring(lastIndex),
+            });
+        }
+
+        return parts;
     };
 
-    const extractedTexts = extractTextAndSurroundings(data.header.texte); // Appel de la fonction d'extraction
+    const textParts = parseText(data.header.texte);
 
     return (
         <Box
@@ -89,19 +125,39 @@ export default function Header({ icon, data }) {
                 data-aos="zoom-in"
                 data-aos-delay="200"
             >
-                {extractedTexts.beforeText}
-                <Typography
-                    component="span"
-                    variant="h3"
-                    sx={{
-                        color: theme.palette.accent,
-                        fontFamily: "Poiret One, cursive",
-                        fontWeight: "bold",
-                    }}
-                >
-                    {extractedTexts.extractedText}
-                </Typography>
-                {extractedTexts.afterText}
+                {textParts.map((part, index) => {
+                    if (part.type === "bold") {
+                        return (
+                            <Typography
+                                key={index}
+                                component="span"
+                                variant="h3"
+                                sx={{
+                                    color: theme.palette.accent,
+                                    fontFamily: "Poiret One, cursive",
+                                    fontWeight: "bold",
+                                }}
+                            >
+                                {part.text}
+                            </Typography>
+                        );
+                    } else if (part.type === "small") {
+                        return (
+                            <Typography
+                                key={index}
+                                component="span"
+                                sx={{
+                                    fontSize: "0.5em !important",
+                                    fontFamily: "Poiret One, cursive",
+                                    fontWeight: "bold",
+                                }}
+                            >
+                                {part.text}
+                            </Typography>
+                        );
+                    }
+                    return part.text;
+                })}
             </Typography>
         </Box>
     );

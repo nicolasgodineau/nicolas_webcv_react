@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { WindowHeightContext } from "../App";
 import { useTranslation } from "react-i18next";
 import theme from "../theme";
@@ -23,16 +23,20 @@ import WebSiteIcon from "@mui/icons-material/Language";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-import Data from "../lang/en.json";
-
 export default function SideBar({
     selectedLanguage,
     handleChangeLanguage,
     AosEffect,
     AosDelay,
 }) {
-    const { t } = useTranslation();
-    const links = Data.personalInformations.links;
+    const { t, i18n } = useTranslation();
+    const [links, setLinks] = useState([]);
+
+    useEffect(() => {
+        fetch(`/locales/${i18n.language}.json`)
+            .then((res) => res.json())
+            .then((data) => setLinks(data.personalInformations.links || []));
+    }, [i18n.language]);
 
     // Pour mettre à jour la hauteur de la fenêtre
     const windowHeight = useContext(WindowHeightContext);
@@ -226,11 +230,13 @@ export default function SideBar({
                                 color: theme.palette.accent,
                                 fontFamily: "Poiret One, cursive",
                                 fontWeight: "bold",
+                                textAlign: "center",
                             }}
                             data-aos={isMediumScreen ? undefined : "fade-right"}
                             data-aos-once={isMediumScreen ? undefined : "true"}
                         >
-                            {t("personalInformations.subtitle")}
+                            <div>{t("personalInformations.titleLine1")}</div>
+                            <div>{t("personalInformations.titleLine2")}</div>
                         </Typography>
                         <List
                             component="ul"
@@ -278,7 +284,11 @@ export default function SideBar({
                                         data-aos-once={
                                             isMediumScreen ? undefined : "true"
                                         }
-                                        data-aos-delay="600"
+                                        data-aos-delay={
+                                            isMediumScreen
+                                                ? ""
+                                                : `${400 + (links.length - 1 - index) * 100}`
+                                        }
                                     >
                                         {/* Icon */}
                                         {IconComponent && (

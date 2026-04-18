@@ -1,7 +1,7 @@
 {
     "personalInformations": {
-        "titleLine1": "Web Developper",
-        "titleLine2": "Photographer",
+        "titleLine1": "Project Coordinator",
+        "titleLine2": "Photographer & Web",
         "subtitle": "Web Developper & Photographer",
         "name": "Nicolas",
         "lastName": "Godineau",
@@ -36,21 +36,18 @@
         "send": "Send",
         "sendSucces": "Your message has been sent !",
         "required": "This field is required",
-        "invalideEmail": "Invalid email address"
-    },
-    "introduction": {
-        "header": {
-            "subtitle": "introduction",
-            "text": "hey! I'm **Nicolas**, web developer and photographer."
-        },
-        "description": "I design and code beautifully simple things and love what I do. As simple as that!"
+        "invalideEmail": "Invalid email address",
+        "noPrint": "Printing not recommended",
+        "noPrintMessage": "For a better experience, download the PDF version of the CV instead!",
+        "downloadPdf": "Download PDF",
+        "printAnyway": "Print anyway"
     },
     "about": {
         "header": {
-            "subtitle": "about",
-            "text": "Hey! I'm **Nicolas**, web developer and photographer."
+            "subtitle": "About",
+            "text": "Hey! I'm **Nicolas**, a telecommunications project coordinator with a passion for photography and web."
         },
-        "description": "I am passionate about this new stage of my career and look forward to working with you to bring your ideas and goals to life online. Feel free to browse my portfolio to discover some of my past projects."
+        "description": "I coordinate complex projects with a smile and I love what I do. As simple as that!"
     },
     "resume": {
         "header": {
@@ -60,6 +57,55 @@
         "experiences": {
             "title": "Experiences",
             "list": [
+                {
+                    "year": "2025 -> Today",
+                    "title": "Project Coordinator",
+                    "location": "Réseau ConnectCom - Montreal, Canada",
+                    "subtitle": "McGill University (200+ buildings) and Commission scolaire de Montréal (nearly 200 buildings).",
+                    "descriptions": [
+                        {
+                            "line": "Full project lifecycle management: planning, site visits, material procurement, client follow-up and pre-billing."
+                        },
+                        {
+                            "line": "Supervision and coordination of field teams of 4 to 15 technicians depending on project scope."
+                        },
+                        {
+                            "line": "Regular communication with institutional clients: progress reports, follow-up meetings and expectation management."
+                        },
+                        {
+                            "line": "Validation of copper and fiber optic installations in accordance with industry standards using Fluke equipment."
+                        },
+                        {
+                            "line": "Use of Notion, Microsoft Office Suite and Bluebeam for document management and blueprint reading."
+                        }
+                    ]
+                },
+                {
+                    "year": "January 2024 -> 2025",
+                    "title": "Project Coordinator",
+                    "location": "Com-net - Montreal, Canada",
+                    "subtitle": "Coordination of telecommunications projects across McGill University campus.",
+                    "descriptions": [
+                        {
+                            "line": "Coordination of telecommunications projects across McGill University campus (200+ buildings)."
+                        },
+                        {
+                            "line": "Full project lifecycle management: planning, site visits, material procurement, client follow-up and pre-billing."
+                        },
+                        {
+                            "line": "Supervision and coordination of field teams of 4 to 15 technicians depending on project scope."
+                        },
+                        {
+                            "line": "Regular communication with institutional client: progress reports, follow-up meetings and expectation management."
+                        },
+                        {
+                            "line": "Validation of copper and fiber optic installations in accordance with industry standards using Fluke equipment."
+                        },
+                        {
+                            "line": "Use of Notion, Microsoft Office Suite and Bluebeam for document management and blueprint reading."
+                        }
+                    ]
+                },
                 {
                     "year": "June 2023 -> July 2023",
                     "title": "Internship",
@@ -206,10 +252,10 @@
                 "title": "Knowledge",
                 "list": [
                     {
-                        "name": "Work coordination"
+                        "name": "Project lifecycle management"
                     },
                     {
-                        "name": "Project Design"
+                        "name": "Blueprint reading (Bluebeam)"
                     },
                     {
                         "name": "Team Management"
@@ -218,12 +264,21 @@
                         "name": "Report Creation"
                     },
                     {
+                        "name": "Cable & fiber optic validation (Fluke)"
+                    },
+                    {
                         "name": "Linux - Windows - Mac"
+                    },
+                    {
+                        "name": "Use of generative AI tools"
+                    },
+                    {
+                        "name": "Workflow automation (n8n)"
                     }
                 ]
             },
             "langagesFrameworks": {
-                "title": "Developement stack",
+                "title": "Development stack",
                 "list": [
                     {
                         "name": "React",
@@ -274,6 +329,21 @@
                         "name": "Photoshop",
                         "percentage": 83,
                         "className": "devicon-photoshop-plain"
+                    },
+                    {
+                        "name": "Notion",
+                        "percentage": 95,
+                        "icon": "/icons/Notion.png"
+                    },
+                    {
+                        "name": "Bluebeam",
+                        "percentage": 45,
+                        "icon": "/icons/Bluebeam.png"
+                    },
+                    {
+                        "name": "Microsoft Office",
+                        "percentage": 75,
+                        "icon": "/icons/365.png"
                     }
                 ]
             }

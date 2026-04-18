@@ -22,8 +22,8 @@ export default function Skill({ skill, delay }) {
             data-aos="fade-left"
             data-aos-delay={`${delay}`}
         >
-            {/* Affiche l'icône de compétence */}
-            {skill.className && ( // Affiche uniquement l'icon si il y a une className
+            {/* Affiche l'icône devicon si className existe */}
+            {skill.className && (
                 <Icon
                     className={skill.className}
                     sx={{
@@ -33,10 +33,26 @@ export default function Skill({ skill, delay }) {
                     }}
                 />
             )}
-            {/* Utilise le composant ProgressIncrementer pour afficher et incrémenter progressivement le pourcentage */}
+
+            {/* Affiche le PNG si icon existe */}
+            {skill.icon && (
+                <Box
+                    component="img"
+                    src={skill.icon}
+                    alt={skill.name}
+                    sx={{
+                        width: "70px",
+                        height: "70px",
+                        margin: "auto",
+                        objectFit: "contain",
+                    }}
+                />
+            )}
+
             {skill.percentage && (
                 <ProgressIncrementer targetPercentage={skill.percentage} />
             )}
+
             <Typography
                 component="p"
                 variant="body1"

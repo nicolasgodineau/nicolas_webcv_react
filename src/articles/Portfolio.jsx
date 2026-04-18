@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import theme from "../theme";
 import { Divider, Typography, Box } from "@mui/material";
-
 import CustomArticleContainer from "components/CustomArticleContainer.jsx";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
-import data from "../lang/en.json"; // import des data du JSON anglais
 import Gallery from "../components/portfolio/gallery.jsx";
 
 export default function Portfolio({ AosEffect, AosDelay }) {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const [dataSection, setDataSection] = useState(null);
+
+    useEffect(() => {
+        fetch(`/locales/${i18n.language}.json`)
+            .then((res) => res.json())
+            .then((data) => setDataSection(data.portfolio));
+    }, [i18n.language]);
+
+    if (!dataSection) return null;
 
     const dataHeader = {
         header: {
@@ -17,8 +24,6 @@ export default function Portfolio({ AosEffect, AosDelay }) {
             texte: t("portfolio.header.text"),
         },
     };
-
-    const dataSection = data.portfolio; // Extraire la data
 
     return (
         <CustomArticleContainer
@@ -76,7 +81,6 @@ export default function Portfolio({ AosEffect, AosDelay }) {
                                 {t(descriptionKey)}
                             </Typography>
                             <Gallery projet={projet} dossier={projetKey} />
-                            {/* Condition pour afficher le Divider sauf pour le dernier élément */}
                             {index !==
                             Object.keys(dataSection?.projets).length - 1 ? (
                                 <Divider
@@ -90,7 +94,7 @@ export default function Portfolio({ AosEffect, AosDelay }) {
                             ) : null}
                         </Box>
                     );
-                }
+                },
             )}
         </CustomArticleContainer>
     );

@@ -3,13 +3,14 @@ import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme.js";
-import SideBar from "./articles/sideBar.jsx";
+import SideBar from "./articles/SideBar.jsx";
 import About from "articles/About.jsx";
 import Resume from "articles/Resume.jsx";
 import Skills from "articles/Skills.jsx";
 import Portfolio from "articles/Portfolio.jsx";
 import Footer from "articles/Footer.jsx";
 import BackToTop from "components/BackToTop.jsx";
+import PrintWarning from "components/PrintWarning.jsx";
 
 export const WindowHeightContext = createContext();
 
@@ -59,6 +60,7 @@ export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
+                <PrintWarning />
                 <WindowHeightContext.Provider value={windowHeight}>
                     <Container
                         component="main"

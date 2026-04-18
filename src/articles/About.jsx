@@ -27,14 +27,14 @@ export default function About({ AosEffect, AosDelay }) {
                 component="p"
                 variant="subtitle1"
                 sx={{
-                    maxWidth: "480px",
+                    maxWidth: "500px",
                     marginBottom: "30px",
                     color: theme.palette.grey[400],
                 }}
             >
                 {t("about.description")}
             </Typography>
-            <WheelProject />
+            {/* <WheelProject /> */}
         </CustomArticleContainer>
     );
 }

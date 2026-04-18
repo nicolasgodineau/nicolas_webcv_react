@@ -1,41 +1,53 @@
 {
     "personalInformations": {
-        "titleLine1": "Développeur Web",
-        "titleLine2": "Photographe",
-        "subtitle": "Développeur Web & Photographe",
+        "titleLine1": "Coordinateur de projets",
+        "titleLine2": "Photographe & Web",
+        "subtitle": "Coordinateur de projets, Photographe & Web",
         "name": "Nicolas",
         "lastName": "Godineau",
         "baseIn": "Situé à",
         "city": "Montréal",
         "country": "CA",
         "projects": "- Mes projets - Mes projets -",
+        "links": [
+            {
+                "name": "instagram",
+                "url": "https://www.instagram.com/nicolasg_travel/",
+                "icon": "instagram"
+            },
+            {
+                "name": "Github",
+                "url": "https://github.com/nicolasgodineau",
+                "icon": "github"
+            },
+            {
+                "name": "Website",
+                "url": "https://nicolasgodineau.com/",
+                "icon": "website"
+            },
+            {
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/in/nicolasgodineau/",
+                "icon": "linkedin"
+            }
+        ],
         "textCallToAction": "contactez-moi !",
         "fromName": "Prénom & nom",
-        "send": "Envoyer",
+        "send": "",
         "sendSucces": "Votre message a été envoyé avec succès !",
         "required": "Ce champ est obligatoire",
-        "invalideEmail": "Adresse e-mail invalide"
-    },
-    "introduction": {
-        "header": {
-            "subtitle": "introduction",
-            "text": "Hey! moi c'est **Nicolas**, développeur Web et photographe."
-        },
-        "description": "Je conçois et code des choses magnifiquement simples et j'aime ce que je fais. Aussi simple comme ça !"
-    },
-    "about2": {
-        "header": {
-            "subtitle": "A propos",
-            "text": "De la construction au développement web : **une transition passionnante!**"
-        },
-        "description": "Je suis passionné par cette nouvelle étape de ma carrière et j'ai hâte de travailler avec vous pour donner vie à vos idées et objectifs en ligne. N'hésitez pas à parcourir mon portfolio pour découvrir quelques-uns de mes projets passés."
+        "invalideEmail": "Adresse e-mail invalide",
+        "noPrint": "Impression déconseillée",
+        "noPrintMessage": "Pour une meilleure expérience, téléchargez plutôt la version PDF du CV !",
+        "downloadPdf": "Télécharger le PDF",
+        "printAnyway": "Imprimer quand même"
     },
     "about": {
         "header": {
             "subtitle": "A propos",
-            "text": "Hey! moi c'est **Nicolas**, développeur web et photographe."
+            "text": "Hey! moi c'est **Nicolas**, coordinateur de projets en télécommunications, passionné de photographie et de web."
         },
-        "description": "Je conçois et code des choses magnifiquement simples et j'aime ce que je fais. Aussi simple comme ça !"
+        "description": "Je coordonne des projets complexes avec le sourire et j'aime ce que je fais. Aussi simple comme ça !"
     },
     "resume": {
         "header": {
@@ -45,6 +57,55 @@
         "experiences": {
             "title": "Expériences",
             "list": [
+                {
+                    "year": "2025 -> Aujourd'hui",
+                    "title": "Coordinateur de projet",
+                    "location": "Réseau ConnectCom - Montréal, Canada",
+                    "subtitle": "Université McGill (plus de 200 bâtiments) et Commission scolaire de Montréal (près de 200 établissements).",
+                    "descriptions": [
+                        {
+                            "line": "Gestion du cycle de vie complet des projets : planification, visites de chantier, commandes de matériel, suivi client et pré-facturation."
+                        },
+                        {
+                            "line": "Supervision et coordination d'équipes terrain de 4 à 15 techniciens selon l'envergure des projets."
+                        },
+                        {
+                            "line": "Communication régulière avec les clients institutionnels : rapports d'avancement, réunions de suivi et gestion des attentes."
+                        },
+                        {
+                            "line": "Validation des installations câble et fibre optique selon les normes en vigueur à l'aide d'équipements Fluke."
+                        },
+                        {
+                            "line": "Utilisation de Notion, de la suite Microsoft Office et de Bluebeam pour la gestion documentaire et la lecture de plans."
+                        }
+                    ]
+                },
+                {
+                    "year": "Octobre 2024 -> Janvier 2025",
+                    "title": "Coordinateur de projet",
+                    "location": "Com-net - Montréal, Canada",
+                    "subtitle": "Coordination de projets de télécommunications sur le campus de l'Université McGill.",
+                    "descriptions": [
+                        {
+                            "line": "Coordination de projets de télécommunications sur le campus de l'Université McGill (plus de 200 bâtiments)."
+                        },
+                        {
+                            "line": "Gestion du cycle de vie complet des projets : planification, visites de chantier, commandes de matériel, suivi client et pré-facturation."
+                        },
+                        {
+                            "line": "Supervision et coordination d'équipes terrain de 4 à 15 techniciens selon l'envergure des projets."
+                        },
+                        {
+                            "line": "Communication régulière avec le client institutionnel : rapports d'avancement, réunions de suivi et gestion des attentes."
+                        },
+                        {
+                            "line": "Validation des installations câble et fibre optique selon les normes en vigueur à l'aide d'équipements Fluke."
+                        },
+                        {
+                            "line": "Utilisation de Notion, de la suite Microsoft Office et de Bluebeam pour la gestion documentaire et la lecture de plans."
+                        }
+                    ]
+                },
                 {
                     "year": "Juin 2023 -> Juillet 2023",
                     "title": "Stage",
@@ -191,27 +252,100 @@
                 "title": "Connaissances",
                 "list": [
                     {
-                        "name": "Coordination de travaux"
+                        "name": "Gestion de cycle de vie de projet"
                     },
                     {
-                        "name": "Conception de projet"
+                        "name": "Lecture de plans (Bluebeam)"
                     },
                     {
-                        "name": "Gestion d’équipes"
+                        "name": "Gestion d'équipes"
                     },
                     {
                         "name": "Création de rapport"
                     },
                     {
+                        "name": "Validation câble & fibre optique (Fluke)"
+                    },
+                    {
                         "name": "Linux - Windows - Mac"
+                    },
+                    {
+                        "name": "Utilisation des outils d'IA générative"
+                    },
+                    {
+                        "name": "Automatisation de workflows (n8n)"
                     }
                 ]
             },
             "langagesFrameworks": {
-                "title": "Stack de développement"
+                "title": "Stack de développement",
+                "list": [
+                    {
+                        "name": "React",
+                        "percentage": 71,
+                        "className": "devicon-react-original"
+                    },
+                    {
+                        "name": "VueJs",
+                        "percentage": 62,
+                        "className": "devicon-vuejs-plain"
+                    },
+                    {
+                        "name": "Laravel",
+                        "percentage": 75,
+                        "className": "devicon-laravel-plain"
+                    },
+                    {
+                        "name": "Tailwind CSS",
+                        "percentage": 79,
+                        "className": "devicon-tailwindcss-plain"
+                    },
+                    {
+                        "name": "Mysql",
+                        "percentage": 67,
+                        "className": "devicon-mysql-plain"
+                    }
+                ]
             },
             "logicielsOutils": {
-                "title": "Logiciel"
+                "title": "Logiciels",
+                "list": [
+                    {
+                        "name": "Git",
+                        "percentage": 63,
+                        "className": "devicon-git-plain"
+                    },
+                    {
+                        "name": "Figma",
+                        "percentage": 82,
+                        "className": "devicon-figma-plain"
+                    },
+                    {
+                        "name": "Illustrator",
+                        "percentage": 78,
+                        "className": "devicon-illustrator-plain"
+                    },
+                    {
+                        "name": "Photoshop",
+                        "percentage": 83,
+                        "className": "devicon-photoshop-plain"
+                    },
+                    {
+                        "name": "Notion",
+                        "percentage": 95,
+                        "icon": "/icons/Notion.png"
+                    },
+                    {
+                        "name": "Bluebeam",
+                        "percentage": 45,
+                        "icon": "/icons/Bluebeam.png"
+                    },
+                    {
+                        "name": "Microsoft Office",
+                        "percentage": 75,
+                        "icon": "/icons/365.png"
+                    }
+                ]
             }
         }
     },

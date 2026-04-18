@@ -4,31 +4,24 @@ import "./index.css";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import HttpBackend from "i18next-http-backend";
 import "aos/dist/aos.css";
-
 import App from "./App";
-import translationEN from "./lang/en.json";
-import translationFR from "./lang/fr.json";
 
-// Configurer i18next
-i18n.use(LanguageDetector) // Utilise le détecteur de langue du navigateur
+i18n
+    .use(HttpBackend)
+    .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        resources: {
-            en: {
-                translation: translationEN,
-            },
-            fr: {
-                translation: translationFR,
-            },
+        backend: {
+            loadPath: "/locales/{{lng}}.json",
         },
-        fallbackLng: "en", // Langue de secours si la langue détectée n'est pas prise en charge
+        fallbackLng: "en",
         interpolation: {
             escapeValue: false,
         },
     });
 
-// Rendre l'application en utilisant createRoot de ReactDOM
 const root = createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>

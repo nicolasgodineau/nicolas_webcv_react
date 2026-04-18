@@ -3,7 +3,7 @@ import { WindowHeightContext } from "../App";
 import theme from "../theme";
 import { Container } from "@mui/material";
 
-import Header from "../components/header.jsx"; // pour le header de la section
+import Header from "./header.jsx"; // pour le header de la section
 
 export default function CustomArticleContainer({
     icon,
