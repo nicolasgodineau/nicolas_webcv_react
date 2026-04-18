@@ -32,3 +32,4 @@ public/index.html
 
 .gitignore
 package-lock.json
+build.zip

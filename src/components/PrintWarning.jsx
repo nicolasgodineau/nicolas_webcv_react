@@ -51,7 +51,7 @@ export default function PrintWarning() {
                     backdropFilter: "blur(4px)",
                     maxWidth: "400px",
                     textAlign: "center",
-                    fontFamily: "Poiret One, cursive",
+                    fontFamily: theme.typography.fontFamilyPoiretOne,
                     fontWeight: "bold",
                 }}
             >

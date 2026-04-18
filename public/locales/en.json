@@ -352,7 +352,7 @@
     "portfolio": {
         "header": {
             "subtitle": "portfolio",
-            "text": "Featured **Projects**"
+            "text": "Personal **Projects**"
         },
         "projets": {
             "mars": {
@@ -402,6 +402,7 @@
     },
     "footer": {
         "line1": "Made by me, for me!",
-        "line2": "I am aware that the hue of green is very similar to the one used by Spotify. However, I have no control on the fact that they draw their inspiration from my creativity..."
+        "line2": "I am aware that the hue of green is very similar to the one used by Spotify.",
+        "line3": "However, I have no control on the fact that they draw their inspiration from my creativity..."
     }
 }

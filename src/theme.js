@@ -38,6 +38,7 @@ let theme = createTheme({
     },
     typography: {
         fontFamily: "Lato, sans-serif", // Police par défaut
+        fontFamilyPoiretOne: "Poiret One, cursive",
         fontWeightRegular: 300,
         body3: {
             fontSize: "1.1rem",

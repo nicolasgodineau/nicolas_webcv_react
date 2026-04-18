@@ -132,7 +132,7 @@ export default function SideBar({
                         borderRadius: 0,
                         borderBottom: `2px solid ${theme.palette.grey[500]}`,
                     },
-                    fontFamily: "Poiret One, cursive",
+                    fontFamily: theme.typography.fontFamilyPoiretOne,
                     fontWeight: "bold",
                 }}
                 data-aos={isMediumScreen ? undefined : AosEffect}
@@ -159,7 +159,7 @@ export default function SideBar({
                         variant="h4"
                         sx={{
                             color: theme.palette.grey[50],
-                            fontFamily: "Poiret One, cursive",
+                            fontFamily: theme.typography.fontFamilyPoiretOne,
                             fontWeight: "bold",
                         }}
                         data-aos={isMediumScreen ? undefined : "fade-right"}
@@ -228,7 +228,8 @@ export default function SideBar({
                             disablepadding="true"
                             sx={{
                                 color: theme.palette.accent,
-                                fontFamily: "Poiret One, cursive",
+                                fontFamily:
+                                    theme.typography.fontFamilyPoiretOne,
                                 fontWeight: "bold",
                                 textAlign: "center",
                             }}

@@ -38,16 +38,19 @@ export default function Resume({ AosEffect, AosDelay }) {
             >
                 {t(`resume.experiences.title`)}
             </Typography>
-            {t("resume.experiences.list", {
-                returnObjects: true,
-            }).map((experience, index) => (
-                <Experience
-                    key={index}
-                    index={index}
-                    experience={experience}
-                    delay={index * 150}
-                />
-            ))}
+            {Array.isArray(
+                t("resume.experiences.list", { returnObjects: true }),
+            ) &&
+                t("resume.experiences.list", { returnObjects: true }).map(
+                    (experience, index) => (
+                        <Experience
+                            key={index}
+                            index={index}
+                            experience={experience}
+                            delay={index * 150}
+                        />
+                    ),
+                )}
             {/* Scolarité */}
             <Typography
                 component="h3"
@@ -63,16 +66,19 @@ export default function Resume({ AosEffect, AosDelay }) {
             >
                 {t(`resume.schooling.title`)}
             </Typography>
-            {t("resume.schooling.list", {
-                returnObjects: true,
-            }).map((experience, index) => (
-                <Experience
-                    key={index}
-                    index={index}
-                    experience={experience}
-                    delay={index * 150}
-                />
-            ))}
+            {Array.isArray(
+                t("resume.schooling.list", { returnObjects: true }),
+            ) &&
+                t("resume.schooling.list", { returnObjects: true }).map(
+                    (experience, index) => (
+                        <Experience
+                            key={index}
+                            index={index}
+                            experience={experience}
+                            delay={index * 150}
+                        />
+                    ),
+                )}
         </CustomArticleContainer>
     );
 }

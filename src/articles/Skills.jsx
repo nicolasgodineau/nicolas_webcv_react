@@ -53,15 +53,20 @@ export default function Skills({ AosEffect, AosDelay }) {
                     data-aos="fade-left"
                     data-aos-delay="100"
                 >
-                    {t("skills.category.connaissance.list", {
-                        returnObjects: true,
-                    }).map((skill, index) => (
-                        <Skill
-                            key={skill.name}
-                            skill={skill}
-                            delay={index * 150}
-                        />
-                    ))}
+                    {Array.isArray(
+                        t("skills.category.connaissance.list", {
+                            returnObjects: true,
+                        }),
+                    ) &&
+                        t("skills.category.connaissance.list", {
+                            returnObjects: true,
+                        }).map((skill, index) => (
+                            <Skill
+                                key={skill.name}
+                                skill={skill}
+                                delay={index * 150}
+                            />
+                        ))}
                 </Grid>
             </Box>
             <Divider
@@ -112,15 +117,21 @@ export default function Skills({ AosEffect, AosDelay }) {
                     data-aos="fade-left"
                     data-aos-delay="100"
                 >
-                    {t("skills.category.langagesFrameworks.list", {
-                        returnObjects: true,
-                    }).map((skill, index) => (
-                        <Skill
-                            key={skill.name}
-                            skill={skill}
-                            delay={index * 150}
-                        />
-                    ))}
+                    {/* langagesFrameworks */}
+                    {Array.isArray(
+                        t("skills.category.langagesFrameworks.list", {
+                            returnObjects: true,
+                        }),
+                    ) &&
+                        t("skills.category.langagesFrameworks.list", {
+                            returnObjects: true,
+                        }).map((skill, index) => (
+                            <Skill
+                                key={skill.name}
+                                skill={skill}
+                                delay={index * 150}
+                            />
+                        ))}
                 </Box>
             </Box>
             <Divider
@@ -171,15 +182,21 @@ export default function Skills({ AosEffect, AosDelay }) {
                     data-aos="fade-left"
                     data-aos-delay="100"
                 >
-                    {t("skills.category.logicielsOutils.list", {
-                        returnObjects: true,
-                    }).map((skill, index) => (
-                        <Skill
-                            key={skill.name}
-                            skill={skill}
-                            delay={index * 150}
-                        />
-                    ))}
+                    {/* logicielsOutils */}
+                    {Array.isArray(
+                        t("skills.category.logicielsOutils.list", {
+                            returnObjects: true,
+                        }),
+                    ) &&
+                        t("skills.category.logicielsOutils.list", {
+                            returnObjects: true,
+                        }).map((skill, index) => (
+                            <Skill
+                                key={skill.name}
+                                skill={skill}
+                                delay={index * 150}
+                            />
+                        ))}
                 </Box>
             </Box>
         </CustomArticleContainer>

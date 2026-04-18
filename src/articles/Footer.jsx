@@ -30,6 +30,16 @@ export default function Footer() {
             >
                 {t("footer.line2")}
             </Typography>
+            <Typography
+                component="p"
+                variant="caption"
+                sx={{
+                    padding: 0,
+                    color: theme.palette.grey[400],
+                }}
+            >
+                {t("footer.line3")}
+            </Typography>
         </Box>
     );
 }

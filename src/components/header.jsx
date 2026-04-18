@@ -119,7 +119,7 @@ export default function Header({ icon, data }) {
                 variant="h3"
                 sx={{
                     color: theme.palette.grey[100],
-                    fontFamily: "Poiret One, cursive",
+                    fontFamily: theme.typography.fontFamilyPoiretOne,
                     fontWeight: "bold",
                 }}
                 data-aos="zoom-in"
@@ -134,7 +134,8 @@ export default function Header({ icon, data }) {
                                 variant="h3"
                                 sx={{
                                     color: theme.palette.accent,
-                                    fontFamily: "Poiret One, cursive",
+                                    fontFamily:
+                                        theme.typography.fontFamilyPoiretOne,
                                     fontWeight: "bold",
                                 }}
                             >
@@ -148,7 +149,8 @@ export default function Header({ icon, data }) {
                                 component="span"
                                 sx={{
                                     fontSize: "0.5em !important",
-                                    fontFamily: "Poiret One, cursive",
+                                    fontFamily:
+                                        theme.typography.fontFamilyPoiretOne,
                                     fontWeight: "bold",
                                 }}
                             >

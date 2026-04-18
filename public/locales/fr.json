@@ -352,149 +352,54 @@
     "portfolio": {
         "header": {
             "subtitle": "portfolio",
-            "text": "**Projets** en vedette"
+            "text": "**Projets** personnels"
         },
         "projets": {
             "mars": {
                 "title": "Projet Maison sur Mars",
                 "subtitle": "Créer un site static avec Laravel.",
                 "description": "Le projet doit avoir au moins 4 routes pointées vers le contrôleur.\nAvoir un formulaire et utiliser la méthode post.\nTraiter les données reçues et les afficher dans une page.\nTravailler avec un fichier « Master » et utiliser « blade » pour les vues.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/mars/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/mars/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/mars/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/mars/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/mars/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/mars/Projet1_3.webp"
-                    }
-                ]
+                "img": 3,
+                "textAlt": "Projet maison sur Mars"
             },
             "faceMaisonneuve": {
                 "title": "Projet FaceMaisonneuve",
                 "subtitle": "Créer un site de discussion pour étudiant.",
                 "description": "Générer 15 villes, 100 étudiants et 10 articles en utilisant Faker Factory.\nImplémenter les méthodes pour afficher, créer, modifier et supprimer un étudiant et/ou article.\nCréer une page de connexion avec un mot de passe crypté.\nMettre en place un système multilingue.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_5.webp"
-                    }
-                ]
+                "img": 5,
+                "textAlt": "Projet FaceMaisonneuve"
             },
             "meteo": {
                 "title": "Projet Météo",
                 "subtitle": "Créer une single page application avec REst",
                 "description": "Création un serveur nodeJS.\nRécupération des données d’une API de notre choix.\nAu lancement du serveur, le fichier JSON doit être mis à jour.\nCréer des pages pour afficher différentes informations que l'api nous renvoie",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_5.webp"
-                    }
-                ]
+                "img": 3,
+                "textAlt": "Projet Météo"
             },
             "stampee": {
                 "title": "Projet Stampee",
                 "subtitle": "Créer un site de vente aux enchère multi-pages.",
-                "description": "Créer une identité visuelle et les pages HTML et CSS + une base de données\nLe projet doit être de type MVC mais sans framework\nPossibilité de créer un compte, de le modifier, de créer une annonce et d’enchérir sur les ventes.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_3.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_4.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_4.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/faceMaisonneuve/thumbnails/Projet1_5.webp",
-                        "img": "/portfolio/faceMaisonneuve/Projet1_5.webp"
-                    }
-                ]
+                "description": "Créer une identité visuelle et les pages HTML et CSS + une base de données\nLe projet doit être de type MVC mais sans framework\nPossibilité de créer un compte, de le modifier, de créer une annonce et d'enchérir sur les ventes.",
+                "img": 4,
+                "textAlt": "Projet Stampee"
             },
             "noemie": {
                 "title": "Site professionnel make-up artiste",
                 "subtitle": "Créer avec WordPress.",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/noemie/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/noemie/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/noemie/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/noemie/Projet1_3.webp"
-                    }
-                ]
+                "img": 3,
+                "textAlt": "Site professionnel maquillage"
             },
             "photographie": {
                 "title": "Site web perso",
                 "subtitle": "Créer avec VueJs et TailwindCss",
-                "img": [
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Projet1_1.webp",
-                        "img": "/portfolio/photographie/Projet1_1.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Projet1_2.webp",
-                        "img": "/portfolio/photographie/Projet1_2.webp"
-                    },
-                    {
-                        "thumbnail": "/portfolio/photographie/thumbnails/Projet1_3.webp",
-                        "img": "/portfolio/photographie/Projet1_3.webp"
-                    }
-                ]
+                "img": 3,
+                "textAlt": "Site web personnel photographie"
             }
         }
     },
     "footer": {
         "line1": "Fait par moi, pour moi!",
-        "line2": "Je suis conscient que la teinte de vert est très similaire à celle utilisée par Spotify. Cependant, je n'ai aucun contrôle sur le fait qu'ils puisent leurs inspirations dans ma créativité..."
+        "line2": "Je suis conscient que la teinte de vert est très similaire à celle utilisée par Spotify.",
+        "line3": "Cependant, je n'ai aucun contrôle sur le fait qu'ils puisent leurs inspirations dans ma créativité..."
     }
 }

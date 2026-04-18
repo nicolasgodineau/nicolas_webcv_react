@@ -61,7 +61,7 @@ export default function WheelProject() {
                     id="text"
                     fontSize="11"
                     fill={theme.palette.grey[100]}
-                    fontFamily="Poiret One, cursive"
+                    fontFamily={theme.typography.fontFamilyPoiretOne}
                 >
                     <textPath id="textPath" href="#circlePath">
                         {translatedText}
