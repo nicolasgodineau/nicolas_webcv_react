@@ -1,8 +1,9 @@
 import { createTheme, responsiveFontSizes } from "@mui/material";
+import NicolasImg from "./images/Nicolas.webp";
 
 const loadLCPImage = async () => {
     const image = new Image();
-    image.src = "../images/Nicolas.webp";
+    image.src = NicolasImg;
 
     await new Promise((resolve) => {
         image.onload = resolve;
@@ -31,7 +32,7 @@ let theme = createTheme({
         }`,
             "@global": {
                 ".mui-preload-image": {
-                    backgroundImage: `url('../images/Nicolas.webp')`,
+                    backgroundImage: `url('${NicolasImg}')`,
                 },
             },
         },
