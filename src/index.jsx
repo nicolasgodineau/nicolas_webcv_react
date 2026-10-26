@@ -16,6 +16,8 @@ i18n
         backend: {
             loadPath: "/locales/{{lng}}.json",
         },
+        // Langues disponibles : "fr-FR" devient "fr", "en-US" devient "en"
+        supportedLngs: ["en", "fr"],
         fallbackLng: "en",
         interpolation: {
             escapeValue: false,
