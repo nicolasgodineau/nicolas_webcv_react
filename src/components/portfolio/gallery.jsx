@@ -12,6 +12,12 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
+// Images des projets, indexées par chemin (ex. "../../images/portfolio/mars/img_1.webp")
+const images = import.meta.glob("../../images/portfolio/*/*.webp", {
+    eager: true,
+    import: "default",
+});
+
 // Composant de la galerie
 export default function Gallery({ projet, dossier }) {
     const { t } = useTranslation();
@@ -54,9 +60,7 @@ export default function Gallery({ projet, dossier }) {
                             }}
                             onClick={() =>
                                 handleImageClick({
-                                    img: require(`../../images/portfolio/${dossier}/img_${
-                                        index + 1
-                                    }.webp`),
+                                    img: images[`../../images/portfolio/${dossier}/img_${index + 1}.webp`],
                                     alt: `${t(
                                         `portfolio.projets.${dossier}.title`
                                     )}${index + 1}`,
@@ -66,9 +70,7 @@ export default function Gallery({ projet, dossier }) {
                             data-aos-delay={delay}
                         >
                             <img
-                                src={require(`../../images/portfolio/${dossier}/thumbnails_${
-                                    index + 1
-                                }.webp`)}
+                                src={images[`../../images/portfolio/${dossier}/thumbnails_${index + 1}.webp`]}
                                 alt={`${t(
                                     `portfolio.projets.${dossier}.title`
                                 )}${index + 1}`}

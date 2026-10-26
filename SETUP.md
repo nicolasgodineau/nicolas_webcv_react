@@ -4,7 +4,7 @@
 
 Assurez-vous d'avoir installé :
 
-- **Node.js** (v14 ou supérieur)
+- **Node.js** (v22.12 ou supérieur)
 - **npm** ou **yarn**
 - **Git**
 
@@ -81,4 +81,4 @@ public/
 
 - Le projet utilise **React 18** avec **Material-UI** pour le design
 - **i18next** pour la gestion multilingue
-- **Tailwind CSS** et **PostCSS** pour les styles
+- **Vite** pour le serveur de développement et le build
